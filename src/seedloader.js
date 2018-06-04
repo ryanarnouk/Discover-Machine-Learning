@@ -1,0 +1,1 @@
+//load in the seed data and set it as the component props 

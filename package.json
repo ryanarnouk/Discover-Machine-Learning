@@ -1,0 +1,24 @@
+{
+  "name": "machine-learning-introduction",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "joi": "^13.3.0",
+    "node-blockly": "^1.0.34",
+    "query-string": "^6.1.0",
+    "react": "^16.3.2",
+    "react-burger-menu": "^2.4.4",
+    "react-dom": "^16.3.2",
+    "react-modal": "^3.4.4",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

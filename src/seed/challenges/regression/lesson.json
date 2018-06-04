@@ -1,0 +1,36 @@
+{
+  "challenges": [
+    {
+      "name": "Intro to Machine Learning",
+      "section": "regression",
+      "number": 1,
+      "description": "Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning. Machine learning is this idea that computers learn based on data. Data is all around us, companies collect many data, then using it they can use algorithms based on math to make a machine predict things based on that data. Computers do not need to be programmed to do things, but instead could be fed data that they could learn with and get better with over time as more people use the service. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning.",
+      "tests": [
+        {
+          "text": "set value to 20",
+          "test": "assert()"
+        }
+      ],
+      "codeblocks": "no",
+      "hints": [
+
+      ]
+    }, 
+    {
+      "name": "Lesson 2",
+      "section": "regression",
+      "number": 1,
+      "description": [
+        "this is the second lesson of the classification part of the introduction to machine learning",
+        "<img src={require('../img/regression/linearregressionexample.png')} alt='test'>",
+        "this is more text to go in after the image"
+      ],
+      "tests": [
+        {
+          "text": "second part"
+        }
+      ],
+      "codeblocks": "no"
+    }
+  ] 
+}

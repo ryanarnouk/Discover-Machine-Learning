@@ -1,0 +1,130 @@
+.block {
+  background-color: black;
+  background-size: 200; 
+  height: 200; 
+}
+
+.sidebar {
+  background-color: #424242;
+  height: 100vh;
+  width: 30%;
+  position: fixed;
+}
+
+.editor {
+  background-color: #212121;
+  height: 100vh;
+  width: 70%;
+  margin-left: 30%;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: rgb(235, 231, 231);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #616161;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.menu-item {
+  text-decoration: none;
+  color:rgb(235, 231, 231);
+}
+
+.menu-item:hover {
+  color: rgb(201, 200, 200);
+}
+
+.blocky-div {
+  position: absolute;
+}
+
+.blocklyFlyoutBackground {
+  fill: #212121;
+}
+
+.challenge {
+  margin-top: 90px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.name {
+  color:rgb(235, 231, 231);
+}
+
+.text {
+  color:rgb(235, 231, 231);
+}
+
+.check {
+  background-color: #007F21;
+  border: none; 
+  width: 60%;
+  height: 44px;
+  margin-left: 10%;
+  color: white;
+  font-size: 20px;
+}
+
+.hint {
+  background-color: #4DFF7B;
+  border: none; 
+  width: 20%;
+  height: 44px;
+  margin-right: 10%;
+  color: white;
+  font-size: 20px;
+}
+
+.check,.hint:focus{
+  outline: 0;
+} 
+
+.check:hover {
+  opacity: 0.7;
+}
+
+.hint:hover{
+  opacity: 0.7;
+}
