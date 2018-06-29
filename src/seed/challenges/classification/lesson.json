@@ -1,34 +1,36 @@
 {
   "challenges": [
     {
-      "name": "Lesson 1",
+      "name": "Intro to classification",
       "section": "classification",
       "number": 1,
-      "description": [
-        "this is the first lesson of the classification part of the introduction to machine learning",
-        {
-          "text": "",
-          "img": ""
-        },
-        "this is more text to go in after the image"
-      ],
+      "description": "This is the the classification section",
       "tests": [
         {
           "text": "set value to 20",
           "test": "assert()"
         }
+      ],
+      "codeblocks": "no",
+      "hints": [
+
       ]
     }, 
     {
       "name": "Lesson 2",
       "section": "classification",
       "number": 1,
-      "text": "this is the second lesson of the classification part of the introduction to machine learning",
+      "description": [
+        "this is the second lesson of the classification part of the introduction to machine learning",
+        "<img src={require('../img/regression/linearregressionexample.png')} alt='test'>",
+        "this is more text to go in after the image"
+      ],
       "tests": [
         {
           "text": "second part"
         }
-      ]
+      ],
+      "codeblocks": "no"
     }
   ] 
 }

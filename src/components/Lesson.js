@@ -4,12 +4,13 @@ import Map from './Map'
 import Blockly from 'node-blockly/browser'
 import '../customblocks.js'
 import Modal from 'react-modal';
-import JSONData from '../seed/challenges/regression/lesson.json';
+import regression from '../seed/challenges/regression/lesson.json';
+import classification from '../seed/challenges/classification/lesson.json';
 import ValidateJSON from '../seed/Schema/ChallengeScema';
-ValidateJSON(JSONData[window.location.pathname.split('/'[3] - 1)]);
+ValidateJSON(regression[window.location.pathname.split('/'[3] - 1)]);
 
 // need to figure out how to url params here and not in the object
-console.log(window.location.pathname.split('/')[3] -1)
+console.log(window.location.pathname.split('/')[2])
 
 const toolbox = `
   <xml>
@@ -88,19 +89,37 @@ class Lesson extends Component {
 
   componentDidUpdate() {
     window.removeEventListener('resize', this.blockly, false)
+  } 
+
+  name = (a) => {
+    if(a === 'regression') {
+      return regression.challenges[this.state.lessonNumber].name;
+    } else if(a === 'classification') {
+      return classification.challenges[this.state.lessonNumber].name;
+    }
+  }
+
+  description = (a)  => {
+    if(a === 'regression') {
+      return regression.challenges[this.state.lessonNumber].description; 
+    } else if(a === 'classification') {
+      return classification.challenges[this.state.lessonNumber].description
+    }
   }
 
   render() { 
     console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
-    return ( 
+    var a = this.props.match.params.section;
+
+    return (  
       <div>
         <div className="sidebar">
           <div>
             <Map/>
           </div>
           <div className="challenge">
-            <h2 className="name">{JSONData.challenges[this.state.lessonNumber].name}</h2>
-            <p className="text">{JSONData.challenges[this.state.lessonNumber].description}</p>
+            <h2 className="name">{this.name(a)}</h2>
+            <p className="text">{this.description(a)}</p>
             <div className="buttons">
               <button className="check" onClick={this.openModal}>Check</button>
               <Modal 
