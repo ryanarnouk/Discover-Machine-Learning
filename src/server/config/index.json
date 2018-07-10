@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://localhost/machine-learning-introduction",
+  "jwtSecret": "secretkey"
+}

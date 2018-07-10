@@ -53,7 +53,7 @@ class Lesson extends Component {
     Blockly.svgResize(workspacePlayground)
   }
 
-  componentDidMount() {
+  componentDidMount() { 
     if(regression.challenges[this.state.lessonNumber].codeblocks === true) {
       this.blockly();
     } /*
