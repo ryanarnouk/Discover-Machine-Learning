@@ -11,7 +11,7 @@
           "test": "assert()"
         }
       ],
-      "codeblocks": "no",
+      "codeblocks": false,
       "hints": [
 
       ]
@@ -19,7 +19,7 @@
     {
       "name": "Intro to Linear Regression",
       "section": "regression",
-      "number": 1,
+      "number": 2,
       "description": [
         "this is the second lesson of the classification part of the introduction to machine learning",
         "<img src={require('../img/regression/linearregressionexample.png')} alt='test'>",
@@ -30,7 +30,7 @@
           "text": "second part"
         }
       ],
-      "codeblocks": "no"
+      "codeblocks": false
     }
   ] 
 }

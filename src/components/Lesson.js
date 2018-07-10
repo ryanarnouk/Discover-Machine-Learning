@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
-import Map from './Map'
 import Blockly from 'node-blockly/browser'
 import '../customblocks.js'
-import Modal from 'react-modal';
+import Sidebar from './Sidebar';
 import regression from '../seed/challenges/regression/lesson.json';
 import classification from '../seed/challenges/classification/lesson.json';
 import ValidateJSON from '../seed/Schema/ChallengeScema';
@@ -22,42 +20,14 @@ const toolbox = `
     </xml
   `
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
 class Lesson extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modalOpen: false,
       lessonNumber: this.props.match.params.id - 1,
     }
-
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
     this.blockly = this.blockly.bind(this);
-  }
-
-  openModal() {
-    this.setState({modalOpen: true});
-  }
-
-  afterOpenModal() {
-
-  }
-
-  closeModal() {
-    this.setState({modalOpen: false});
   }
 
   onresize = (e) => {
@@ -84,58 +54,40 @@ class Lesson extends Component {
   }
 
   componentDidMount() {
-    this.blockly();
+    if(regression.challenges[this.state.lessonNumber].codeblocks === true) {
+      this.blockly();
+    } /*
+    if(classification.challenges[this.state.lessonNumber].codeblocks === true) {
+      this.blockly();
+    } */
   }
 
   componentDidUpdate() {
     window.removeEventListener('resize', this.blockly, false)
   } 
 
-  name = (a) => {
-    if(a === 'regression') {
-      return regression.challenges[this.state.lessonNumber].name;
-    } else if(a === 'classification') {
-      return classification.challenges[this.state.lessonNumber].name;
-    }
-  }
-
-  description = (a)  => {
-    if(a === 'regression') {
-      return regression.challenges[this.state.lessonNumber].description; 
-    } else if(a === 'classification') {
-      return classification.challenges[this.state.lessonNumber].description
-    }
-  }
-
   render() { 
-    console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
-    var a = this.props.match.params.section;
+    //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
+      
+    console.log(regression.challenges[this.state.lessonNumber].codeblocks)
+    console.log(window['regression'])
 
     return (  
-      <div>
-        <div className="sidebar">
-          <div>
-            <Map/>
+      <div style={{display: 'flex'}}>
+        <Sidebar route={this.props.match}/>
+        {/*need to figure out how to dynamically import json file based on url */}
+        {regression.challenges[this.state.lessonNumber].codeblocks ? (
+          <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
+            <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
           </div>
-          <div className="challenge">
-            <h2 className="name">{this.name(a)}</h2>
-            <p className="text">{this.description(a)}</p>
-            <div className="buttons">
-              <button className="check" onClick={this.openModal}>Check</button>
-              <Modal 
-                isOpen={this.state.modalOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                style={customStyles}
-                contentLabel="Check"
-              />
-              <button className="hint" onClick={this.hint}>Hint</button>
-            </div>
+        ) : (
+          <div style={{marginLeft: '30%'}}>
+            <p>this challenge does not require codeblocks 
+              We can put text here or anything relevant to the information on the sidebar
+            </p>
           </div>
-        </div>
-        <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
-          <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
-        </div>
+        )
+        }
       </div>
     );
   }

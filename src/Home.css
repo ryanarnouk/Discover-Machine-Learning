@@ -29,6 +29,7 @@ body, html {
   /*vendor prefixes*/
   -moz-transition: background-color  .30s ease-in-out;
   -webkit-transition: background-color  .30s ease-in-out;
+  cursor: pointer;
 }
 
 .getstarted:focus {
