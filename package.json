@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.16.3",
     "joi": "^13.3.0",
     "node-blockly": "^1.0.34",
     "query-string": "^6.1.0",

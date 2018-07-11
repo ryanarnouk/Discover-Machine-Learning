@@ -1,0 +1,15 @@
+.learnmore {
+  background: url('../img/homepage-background.jpg');
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color:  white;
+  font-size: 24px;
+  font-weight: 900;
+}

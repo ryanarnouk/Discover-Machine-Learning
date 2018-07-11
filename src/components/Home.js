@@ -1,17 +1,24 @@
 // home landing page 
 import React, { Component } from 'react';
 
-import '../Home.css'
+import '../styles/Home.css'
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 class Home extends Component {
   render() { 
     return ( 
       <div>
+        <Navbar/>
         <div className="home"> 
           <div>
             <h1>Machine Learning Introduction</h1>
             <p>Interactive code block based introduction to the world of Machine Learning</p>
-            <button className="getstarted" onClick={() => this.props.history.replace('/challenges/regression/1')}>Get Started</button>
+            <div>
+              <button className="getstarted" onClick={() => this.props.history.replace('/challenges/regression/1')}>Get Started</button>
+              <p>Already have an account? <Link to="/login" style={{color: 'white'}}>Login</Link></p>
+            </div>
           </div>
         </div> 
         <div className="introduction">
@@ -31,14 +38,12 @@ class Home extends Component {
             </div>
           </div>
           <button className="getstarted startlearningbutton">Start Learning Today!</button>
-          <p>Want more information? Click here for more detailed curriculum details</p>
+          <p>Want more information? <Link to="/learnmore" style={{color: 'black'}}>Click here</Link> for more detailed curriculum details</p>
         </div>
         <div className="testimonies">
           <p>testimonies</p>
         </div>
-        <div className="footer">
-          <h3>Developed by Ryan Arnouk azbo400.github.io</h3>
-        </div>
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,22 @@
+.signupscreen {
+  background-color: #311FFF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.border {
+  border-left: 2px solid white;
+  height: 500px;
+}
+
+.guest {
+  width: 50%;
+}
+
+.signup {
+  width: 50%;
+}
