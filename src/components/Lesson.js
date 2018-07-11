@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import Blockly from 'node-blockly/browser'
 import '../customblocks.js'
 import Sidebar from './Sidebar';
-import regression from '../seed/challenges/regression/lesson.json';
-import classification from '../seed/challenges/classification/lesson.json';
+import JSONloader from './JSONloader'
 import ValidateJSON from '../seed/Schema/ChallengeScema';
-ValidateJSON(regression[window.location.pathname.split('/'[3] - 1)]);
-
-// need to figure out how to url params here and not in the object
-console.log(window.location.pathname.split('/')[2])
 
 const toolbox = `
   <xml>
@@ -54,7 +49,7 @@ class Lesson extends Component {
   }
 
   componentDidMount() { 
-    if(regression.challenges[this.state.lessonNumber].codeblocks === true) {
+    if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
       this.blockly();
     } /*
     if(classification.challenges[this.state.lessonNumber].codeblocks === true) {
@@ -69,14 +64,13 @@ class Lesson extends Component {
   render() { 
     //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
       
-    console.log(regression.challenges[this.state.lessonNumber].codeblocks)
-    console.log(window['regression'])
+    console.log(JSONloader.challenges[this.state.lessonNumber].codeblocks)
 
     return (  
       <div style={{display: 'flex'}}>
         <Sidebar route={this.props.match}/>
         {/*need to figure out how to dynamically import json file based on url */}
-        {regression.challenges[this.state.lessonNumber].codeblocks ? (
+        {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
           <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
             <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
           </div>

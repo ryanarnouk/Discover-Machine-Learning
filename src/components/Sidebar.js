@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Map from './Map';
-import regression from '../seed/challenges/regression/lesson.json';
-import classification from '../seed/challenges/classification/lesson.json';
+import JSONloader from './JSONloader';
 
 const customStyles = {
   content : {
@@ -41,20 +40,12 @@ class Sidebar extends Component {
     this.setState({modalOpen: false});
   }
 
-  name = (a) => {
-    if(a === 'regression') {
-      return regression.challenges[this.state.lessonNumber].name;
-    } else if(a === 'classification') {
-      return classification.challenges[this.state.lessonNumber].name;
-    }
+  name = () => {
+    return JSONloader.challenges[this.state.lessonNumber].name;
   }
 
-  description = (a)  => {
-    if(a === 'regression') {
-      return regression.challenges[this.state.lessonNumber].description; 
-    } else if(a === 'classification') {
-      return classification.challenges[this.state.lessonNumber].description
-    }
+  description = ()  => {
+    return JSONloader.challenges[this.state.lessonNumber].description; 
   }
 
   render() {
