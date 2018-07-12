@@ -8,6 +8,7 @@ import Lesson from './Lesson';
 import Signup from './Signup';
 import Login from './Login';
 import LearnMore from './LearnMore';
+import About from './About';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/learnmore" component={LearnMore} />
+          <Route path="/about" component={About} />
           <Route component={NoMatch} />
         </Switch>
       </Router>

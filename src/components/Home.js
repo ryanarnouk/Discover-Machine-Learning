@@ -16,7 +16,7 @@ class Home extends Component {
             <h1>Machine Learning Introduction</h1>
             <p>Interactive code block based introduction to the world of Machine Learning</p>
             <div>
-              <button className="getstarted" onClick={() => this.props.history.replace('/challenges/regression/1')}>Get Started</button>
+              <Link to="/signup"><button className="getstarted">Get Started</button></Link>
               <p>Already have an account? <Link to="/login" style={{color: 'white'}}>Login</Link></p>
             </div>
           </div>

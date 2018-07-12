@@ -1,9 +1,46 @@
 .loginscreen {
-  background-color: #311FFF;
+  background-color: #1565C0;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.login {
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 30%;
+}
+
+.email, .password {
+  width: 80%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  background-color: lightblue;
+  border: 0;
+  outline: none;
+}
+
+.submit {
+  border: 0;
+  background-color: lightskyblue;
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color .30s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color  .30s ease-in-out;
+  -webkit-transition: background-color  .30s ease-in-out;
+}
+
+.submit:hover {
+  background-color: darkblue;
+  color: white;
+  transition: background-color .30s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color  .30s ease-in-out;
+  -webkit-transition: background-color  .30s ease-in-out;
 }
