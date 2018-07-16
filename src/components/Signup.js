@@ -11,11 +11,13 @@ class Signup extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      name: '',
     }
 
     this.emailChange = this.emailChange.bind(this);
     this.passwordChange = this.passwordChange.bind(this);
+    this.nameChange = this.nameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -31,15 +33,21 @@ class Signup extends Component {
     });
   }
 
+  nameChange(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+
   handleSubmit(event) {
     // submit the signup form
-    axios.post('http://localhost:3001/auth/signup', `name=${this.state.email}$email=${this.state.password}`, {
+    axios.post('http://localhost:3001/auth/signup', `name=${this.state.name}&email=${this.state.email}&password=${this.state.password}`, {
       'Content-Type': 'application/x-www-form-urlencoded'
     }).then((res) => {
       localStorage.setItem('user', res.data.token);
       console.log(res);
     }).catch((err) => {
-      console.log(err.response)l
+      console.log(err.response);
     });
     event.preventDefault();
   }
@@ -51,6 +59,7 @@ class Signup extends Component {
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>
           <form onSubmit={this.handleSubmit}>
+            <input type="input" placeholder="Username" className="email" value={this.state.name} onChange={this.nameChange}/><br />
             <input type="email" placeholder="Email" className="email" value={this.state.email} onChange={this.emailChange}/><br />
             <input className="password" type="password" placeholder="Password" value={this.state.password} onChange={this.passwordChange}/><br />
             <input type="submit" value="Sign Up" className="submit"/> 
