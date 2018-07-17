@@ -4,64 +4,27 @@ import '../styles/Signup.css';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
-import axios from 'axios';
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import { SignUpAction } from '../actions';
 
 class Signup extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      name: '',
-    }
-
-    this.emailChange = this.emailChange.bind(this);
-    this.passwordChange = this.passwordChange.bind(this);
-    this.nameChange = this.nameChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  emailChange(event) {
-    this.setState({
-      email: event.target.value
-    });
-  }
-
-  passwordChange(event) {
-    this.setState({
-      password: event.target.value
-    });
-  }
-
-  nameChange(event) {
-    this.setState({
-      name: event.target.value
-    });
-  }
-
-  handleSubmit(event) {
-    // submit the signup form
-    axios.post('http://localhost:3001/auth/signup', `name=${this.state.name}&email=${this.state.email}&password=${this.state.password}`, {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }).then((res) => {
-      localStorage.setItem('user', res.data.token);
-      console.log(res);
-    }).catch((err) => {
-      console.log(err.response);
-    });
-    event.preventDefault();
+  submit = (values) => {
+    console.log(values);
+    this.props.SignUpAction(values, this.props.history);
   }
 
   render() { 
+    const { handleSubmit } = this.props;
     return ( 
       <div className="signupscreen"> 
         <div className="signup">
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>
-          <form onSubmit={this.handleSubmit}>
-            <input type="input" placeholder="Username" className="email" value={this.state.name} onChange={this.nameChange}/><br />
-            <input type="email" placeholder="Email" className="email" value={this.state.email} onChange={this.emailChange}/><br />
-            <input className="password" type="password" placeholder="Password" value={this.state.password} onChange={this.passwordChange}/><br />
+          <form onSubmit={ handleSubmit(this.submit) }>
+            <Field type="input" placeholder="Username" className="email" component="input" name="username" onChange={this.nameChange}/><br />
+            <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
+            <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />
             <input type="submit" value="Sign Up" className="submit"/> 
             <p style={{fontSize: 13}}>By creating an account you agree to our <Link to="#" style={{color: 'dodgerblue'}}>Terms & Privacy</Link></p>
           </form>
@@ -85,5 +48,13 @@ class Signup extends Component {
     );   
   }
 }
+
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.error }
+}
+
+const reduxFormSignup = reduxForm({
+  form: 'signup'
+})(Signup);
  
-export default Signup;
+export default connect(mapStateToProps, {SignUpAction})(reduxFormSignup);

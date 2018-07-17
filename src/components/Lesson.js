@@ -3,7 +3,7 @@ import Blockly from 'node-blockly/browser'
 import '../customblocks.js'
 import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
-import ValidateJSON from '../seed/Schema/ChallengeScema';
+import { signOutAction } from '../actions';
 
 const toolbox = `
   <xml>
@@ -76,6 +76,7 @@ class Lesson extends Component {
           </div>
         ) : (
           <div style={{marginLeft: '30%'}}>
+            <button onClick={() => signOutAction()}>Logout</button>
             <p>this challenge does not require codeblocks 
               We can put text here or anything relevant to the information on the sidebar
             </p>
