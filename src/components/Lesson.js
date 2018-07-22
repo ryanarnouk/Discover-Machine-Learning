@@ -51,10 +51,8 @@ class Lesson extends Component {
   componentDidMount() { 
     if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
       this.blockly();
-    } /*
-    if(classification.challenges[this.state.lessonNumber].codeblocks === true) {
-      this.blockly();
-    } */
+    }
+    document.title = "Ryan A - " + JSONloader.challenges[this.state.lessonNumber].name;
   }
 
   componentDidUpdate() {
@@ -68,7 +66,7 @@ class Lesson extends Component {
 
     return (  
       <div style={{display: 'flex'}}>
-        <Sidebar route={this.props.match}/>
+        <Sidebar route={this.props.match} blockly={Blockly}/>
         {/*need to figure out how to dynamically import json file based on url */}
         {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
           <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
