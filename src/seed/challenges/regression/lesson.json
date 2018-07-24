@@ -4,7 +4,7 @@
       "name": "Intro to Machine Learning",
       "section": "regression",
       "number": 1,
-      "description": "Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning. Machine learning is this idea that computers learn based on data. Data is all around us, companies collect many data, then using it they can use algorithms based on math to make a machine predict things based on that data. Computers do not need to be programmed to do things, but instead could be fed data that they could learn with and get better with over time as more people use the service. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning.",
+      "description": "<p>Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning. Machine learning is this idea that computers learn based on data. Data is all around us, companies collect many data, then using it they can use algorithms based on math to make a machine predict things based on that data. Computers do not need to be programmed to do things, but instead could be fed data that they could learn with and get better with over time as more people use the service. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning.</p>",
       "tests": [
         {
           "text": "set value to 20",
@@ -17,20 +17,40 @@
       ]
     }, 
     {
-      "name": "Intro to Linear Regression",
+      "name": "How does machine learning work?",
       "section": "regression",
       "number": 2,
-      "description": [
-        "this is the second lesson of the classification part of the introduction to machine learning",
-        "<img src={require('../img/regression/linearregressionexample.png')} alt='test'>",
-        "this is more text to go in after the image"
-      ],
+      "description": "Wonder how that not-hotdog predictor works? It works by taking thousands of images of hotdogs and a mathematical algorithm that lets the computer learn what a hotdog looks like. This way, it can detect if there is a hotdog in the image based on the images fed to it. It took ______ images to train the predictor and it can get better the more it is used as more images are fed into the algorithm. Traditionally, if we wanted to build something to recognize a hotdog we would have to put the details of a hotdog and tell the computer every little detail, such as the colours, the shapes, etc. With machine learning the computer can learn from images instead of telling it exactly what a hotdog looks like. Similar to how us humans learn from our surroundings. In this course we learn more about these algorithms and make our own!",
       "tests": [
         {
           "text": "second part"
         }
       ],
       "codeblocks": false
+    }, 
+    {
+      "name": "What are the different types of machine learning?",
+      "section": "regression",
+      "number": 3, 
+      "description": "There are 3 different types of machine learning. Supervised learning, unsupervised learning, and reinforcement learning.",
+      "tests": [
+        {
+
+        }
+      ],
+      "codeblocks": false
+    },
+    {
+      "name": "Intro to Linear Regression",
+      "section": "regression",
+      "number": 4, 
+      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. We can use linear regression to predict prices. PUT IMAGE Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parameters. For example, making a house price predictor you can plot a line through data that represents square feet and the actual price. That way we can input square feet and get a prediction on the price. Linear regression is supervised learning because the data is labeled.</p></div>",
+      "tests": [
+        {
+      
+        }
+      ],
+      "codeblocks": true
     }
   ] 
 }

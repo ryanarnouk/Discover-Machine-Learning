@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Map from './Map';
 import JSONloader from './JSONloader';
+import Parser from 'html-react-parser';
 
 const customStyles = {
   content : {
@@ -30,6 +31,11 @@ class Sidebar extends Component {
 
   openModal() {
     this.setState({modalOpen: true});
+    // need to figure out how to save user code that uses blockly
+    console.log(this.props.blockly);
+    localStorage.setItem('hi', 'hi this is a test');
+    console.log(localStorage.getItem('hi'))
+    console.log(this.props.blockly.Xml.workspaceToDom(this.props.blockly));
   }
 
   afterOpenModal() {
@@ -45,7 +51,8 @@ class Sidebar extends Component {
   }
 
   description = ()  => {
-    return JSONloader.challenges[this.state.lessonNumber].description; 
+    console.log(JSONloader.challenges[this.state.lessonNumber].description);
+    return Parser(JSONloader.challenges[this.state.lessonNumber].description);
   }
 
   render() {
@@ -60,7 +67,9 @@ class Sidebar extends Component {
         </div>
         <div className="challenge">
           <h2 className="name">{this.name(a)}</h2>
-          <p className="text">{this.description(a)}</p>
+          <div className="text">
+            {this.description()}
+          </div>
           <div className="buttons">
             <button className="check" onClick={this.openModal}>Check</button>
             <Modal 
