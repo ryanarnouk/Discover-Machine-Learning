@@ -11,11 +11,22 @@
   position: fixed;
 }
 
+.sidebartop {
+  background-color: #424242;
+  height: 100vh;
+}
+
 .editor {
   background-color: #212121;
   height: 100vh;
   width: 70%;
   margin-left: 30%;
+}
+
+.editortop {
+  background-color: #212121;
+  width: 100vw;
+  height: 50vh;
 }
 
 /* Position and sizing of burger button */

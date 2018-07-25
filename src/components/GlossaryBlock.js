@@ -6,7 +6,8 @@ import Glossary from '../seed/glossary/glossary.json';
 const customStyles = {
   content : {
     backgroundColor: '#4CA1FF',
-    textAlign: 'center'
+    textAlign: 'center',
+    overlay: {zIndex: 1000}
   }
 };
 

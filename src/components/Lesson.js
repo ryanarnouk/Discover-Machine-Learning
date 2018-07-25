@@ -4,6 +4,7 @@ import '../customblocks.js'
 import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
 import { signOutAction } from '../actions';
+import Media from 'react-media';
 
 const toolbox = `
   <xml>
@@ -64,23 +65,47 @@ class Lesson extends Component {
       
     console.log(JSONloader.challenges[this.state.lessonNumber].codeblocks)
 
-    return (  
-      <div style={{display: 'flex'}}>
-        <Sidebar route={this.props.match} blockly={Blockly}/>
-        {/*need to figure out how to dynamically import json file based on url */}
-        {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
-          <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
-            <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
-          </div>
-        ) : (
-          <div style={{marginLeft: '30%'}}>
-            <button onClick={() => signOutAction()}>Logout</button>
-            <p>this challenge does not require codeblocks 
-              We can put text here or anything relevant to the information on the sidebar
-            </p>
-          </div>
-        )
-        }
+    return (
+      <div>
+        <Media query="(max-width: 600px)">
+          {matches => 
+            matches ? (
+              <div>
+                <Sidebar route={this.props.match} blockly={Blockly}/>
+                {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
+                  <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
+                    <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
+                  </div>
+                ) : (
+                  <div>
+                    <button onClick={() => signOutAction()}>Logout</button>
+                    <p>this challenge does not require codeblocks 
+                      We can put text here or anything relevant to the information on the sidebar
+                    </p>
+                  </div>
+                )
+                }
+              </div>
+            ) : (
+              <div style={{display: 'flex'}}>
+                <Sidebar route={this.props.match} blockly={Blockly}/>
+                {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
+                  <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
+                    <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
+                  </div>
+                ) : (
+                  <div style={{marginLeft: '30%'}}>
+                    <button onClick={() => signOutAction()}>Logout</button>
+                    <p>this challenge does not require codeblocks 
+                      We can put text here or anything relevant to the information on the sidebar
+                    </p>
+                  </div>
+                )
+                }
+              </div>
+            )
+          }
+        </Media>
       </div>
     );
   }

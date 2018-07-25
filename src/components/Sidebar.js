@@ -4,6 +4,7 @@ import Map from './Map';
 import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
 import GlossaryBlock from './GlossaryBlock';
+import Media from "react-media";
 
 const customStyles = {
   content : {
@@ -61,29 +62,62 @@ class Sidebar extends Component {
     const a = this.props.route.params.section;
 
     return (
-      <div className="sidebar">
-        <div>
-          <Map/>
-        </div>
-        <div className="challenge">
-          <h2 className="name">{this.name(a)}</h2>
-          <div className="text">
-            {this.description()}
-            <GlossaryBlock term="Linear Regression" id={0}/>
-            <GlossaryBlock term="Supervised Learning" id={1}/>
-          </div>
-          <div className="buttons">
-            <button className="check" onClick={this.openModal}>Check</button>
-            <Modal 
-              isOpen={this.state.modalOpen}
-              onAfterOpen={this.afterOpenModal}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="Check"
-            />
-            <button className="hint" onClick={this.hint}>Hint</button>
-          </div>
-        </div>
+      <div>
+        <Media query="(max-width: 600px)">
+          {matches => 
+            matches ? (
+              <div className="sidebartop">
+                <div>
+                  <Map/>
+                </div>
+                <div className="challenge">
+                  <h2 className="name">{this.name(a)}</h2>
+                  <div className="text">
+                    {this.description()}
+                    <GlossaryBlock term="Linear Regression" id={0}/>
+                    <GlossaryBlock term="Supervised Learning" id={1}/>
+                  </div>
+                  <div className="buttons">
+                    <button className="check" onClick={this.openModal}>Check</button>
+                    <Modal 
+                      isOpen={this.state.modalOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={customStyles}
+                      contentLabel="Check"
+                    />
+                    <button className="hint" onClick={this.hint}>Hint</button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="sidebar">
+                <div>
+                  <Map/>
+                </div>
+                <div className="challenge">
+                  <h2 className="name">{this.name(a)}</h2>
+                  <div className="text">
+                    {this.description()}
+                    <GlossaryBlock term="Linear Regression" id={0}/>
+                    <GlossaryBlock term="Supervised Learning" id={1}/>
+                  </div>
+                  <div className="buttons">
+                    <button className="check" onClick={this.openModal}>Check</button>
+                    <Modal 
+                      isOpen={this.state.modalOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={customStyles}
+                      contentLabel="Check"
+                    />
+                    <button className="hint" onClick={this.hint}>Hint</button>
+                  </div>
+                </div>
+              </div>
+            )
+          }
+        </Media>
       </div>
     );
   }
