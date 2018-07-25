@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import Map from './Map';
 import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
+import GlossaryBlock from './GlossaryBlock';
 
 const customStyles = {
   content : {
@@ -51,7 +52,6 @@ class Sidebar extends Component {
   }
 
   description = ()  => {
-    console.log(JSONloader.challenges[this.state.lessonNumber].description);
     return Parser(JSONloader.challenges[this.state.lessonNumber].description);
   }
 
@@ -69,6 +69,8 @@ class Sidebar extends Component {
           <h2 className="name">{this.name(a)}</h2>
           <div className="text">
             {this.description()}
+            <GlossaryBlock term="Linear Regression" id={0}/>
+            <GlossaryBlock term="Supervised Learning" id={1}/>
           </div>
           <div className="buttons">
             <button className="check" onClick={this.openModal}>Check</button>

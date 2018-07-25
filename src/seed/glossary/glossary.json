@@ -1,0 +1,12 @@
+{
+  "definitions": [
+    {
+      "name": "Linear Regression",
+      "definition": "Linear regression is when we do some awesome stuff to predict house prices <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/438px-Linear_regression.svg.png'></img>"
+    },
+    {
+      "name": "Supervised Learning",
+      "definition": "Supervised learning is dope"
+    }
+  ]
+}
