@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
 import { signOutAction } from '../actions';
 import Media from 'react-media';
+import ProfileNavbar from './ProfileNavbar'
 
 const toolbox = `
   <xml>
@@ -78,7 +79,7 @@ class Lesson extends Component {
                   </div>
                 ) : (
                   <div>
-                    <button onClick={() => signOutAction()}>Logout</button>
+                    <ProfileNavbar />
                     <p>this challenge does not require codeblocks 
                       We can put text here or anything relevant to the information on the sidebar
                     </p>
@@ -95,7 +96,7 @@ class Lesson extends Component {
                   </div>
                 ) : (
                   <div style={{marginLeft: '30%'}}>
-                    <button onClick={() => signOutAction()}>Logout</button>
+                    <ProfileNavbar/>
                     <p>this challenge does not require codeblocks 
                       We can put text here or anything relevant to the information on the sidebar
                     </p>
