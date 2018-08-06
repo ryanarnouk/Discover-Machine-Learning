@@ -61,6 +61,7 @@ class Sidebar extends Component {
 
     const a = this.props.route.params.section;
 
+    console.log(this.description());
     return (
       <div>
         <Media query="(max-width: 600px)">
@@ -98,6 +99,7 @@ class Sidebar extends Component {
                 <div className="challenge">
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
+                    {/*<div dangerouslySetInnerHTML={{__html: JSONloader.description[this.state.lessonNumber].description}}></div>*/}
                     {this.description()}
                     <GlossaryBlock term="Linear Regression" id={0}/>
                     <GlossaryBlock term="Supervised Learning" id={1}/>
