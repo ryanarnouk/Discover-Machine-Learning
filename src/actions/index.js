@@ -17,7 +17,7 @@ export function signInAction({ email, password }, history){
       console.log(res);
       // do not know whether to use history.push or window.location
       //history.push('/dashboard');
-      window.location.href = "/dashboard";
+      window.location.href = "/profile";
       console.log('worked!');
     }).catch((error) => {
       console.log(error);

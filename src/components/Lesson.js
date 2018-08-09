@@ -3,7 +3,6 @@ import Blockly from 'node-blockly/browser'
 import '../customblocks.js'
 import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
-import { signOutAction } from '../actions';
 import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
 
