@@ -37,7 +37,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={noRequireAuth(Home)} />
-            <Route path="/challenges/:section/:id" component={Lesson} />
+            <Route path="/challenges/:section/:id" component={noRequireAuth(Lesson)} />
             <Route path="/signup" component={noRequireAuth(Signup)} />
             <Route path="/login" component={noRequireAuth(Login)} />
             <Route path="/learnmore" component={noRequireAuth(LearnMore)} />
