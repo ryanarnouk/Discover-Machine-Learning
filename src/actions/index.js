@@ -14,10 +14,10 @@ export function signInAction({ email, password }, history){
       console.log(email, password);
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
-      console.log(res);
+      localStorage.setItem('user_name', res.data.user.name);
       // do not know whether to use history.push or window.location
       //history.push('/dashboard');
-      window.location.href = "/profile";
+      //window.location.href = "/profile";
       console.log('worked!');
     }).catch((error) => {
       console.log(error);
@@ -37,6 +37,7 @@ export function SignUpAction({ name, email, password }, history) {
     }).then((res) => {
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
+      localStorage.setItem('userinfo', res.data);
       //window.location.href="/dashboard";
     }).catch((err) => {
       console.log(err.response);

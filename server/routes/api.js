@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.get('/dashboard', (req, res) => {
+app.get('/profile', (req, res) => {
   res.status(200).json({
     message: 'Authorized'
   });
