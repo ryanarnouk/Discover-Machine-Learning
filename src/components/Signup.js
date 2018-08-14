@@ -22,7 +22,7 @@ class Signup extends Component {
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>
           <form onSubmit={ handleSubmit(this.submit) }>
-            <Field type="input" placeholder="Username" className="email" component="input" name="username" onChange={this.nameChange}/><br />
+            <Field type="input" placeholder="Username" className="email" component="input" name="name" onChange={this.nameChange}/><br />
             <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
             <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />
             <input type="submit" value="Sign Up" className="submit"/> 
