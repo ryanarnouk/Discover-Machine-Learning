@@ -195,3 +195,22 @@
   -moz-transition: color .30s ease-in-out;
   -webkit-transition: color .30s ease-in-out;
 }
+
+.glossaryblock {
+  background-color: #4CA1FF;
+  padding: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color .20s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color .20s ease-in-out;
+  -webkit-transition: background-color .20s ease-in-out;
+}
+
+.glossaryblock:hover {
+  background-color: rgb(45, 125, 218);
+  transition: background-color .20s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color .20s ease-in-out;
+  -webkit-transition: background-color .20s ease-in-out;  
+}

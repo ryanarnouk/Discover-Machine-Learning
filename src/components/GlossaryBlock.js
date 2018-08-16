@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import Parser from 'html-react-parser';
 import Glossary from '../seed/glossary/glossary.json';
+import '../styles/App.css'
 
 const customStyles = {
   content : {
@@ -42,7 +43,7 @@ class GlossaryBlock extends Component {
   render() { 
     return ( 
       <div>
-        <div style={{backgroundColor: '#4CA1FF', padding: 4, borderRadius: 8, cursor: 'pointer'}} onClick={this.openModal}>
+        <div className="glossaryblock" onClick={this.openModal}>
           {this.props.term}
         </div>
         <Modal

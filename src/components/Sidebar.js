@@ -40,7 +40,7 @@ class Sidebar extends Component {
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
-
+ 
   openModal() {
     this.setState({modalOpen: true});
     // need to figure out how to save user code that uses blockly
