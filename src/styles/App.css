@@ -9,6 +9,7 @@
   height: 100vh;
   width: 30%;
   position: fixed;
+  overflow-y: scroll;
 }
 
 .sidebartop {

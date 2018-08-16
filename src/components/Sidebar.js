@@ -17,6 +17,16 @@ const customStyles = {
   }
 };
 
+/*
+var componentList = {
+  Glossary: GlossaryBlock
+}
+
+var GlossaryComponent;
+var dynamicProps;
+var component;
+*/
+
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -52,8 +62,9 @@ class Sidebar extends Component {
     return JSONloader.challenges[this.state.lessonNumber].name;
   }
 
-  description = ()  => {
-    return Parser(JSONloader.challenges[this.state.lessonNumber].description);
+  description = () => {    
+    var str = JSONloader.challenges[this.state.lessonNumber].description;
+    return Parser(str);
   }
 
   render() {
@@ -75,8 +86,9 @@ class Sidebar extends Component {
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
                     {this.description()}
-                    <GlossaryBlock term="Linear Regression" id={0}/>
-                    <GlossaryBlock term="Supervised Learning" id={1}/>
+                    {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
+                      <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
+                    ))}
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
@@ -101,8 +113,10 @@ class Sidebar extends Component {
                   <div className="text">
                     {/*<div dangerouslySetInnerHTML={{__html: JSONloader.description[this.state.lessonNumber].description}}></div>*/}
                     {this.description()}
-                    <GlossaryBlock term="Linear Regression" id={0}/>
-                    <GlossaryBlock term="Supervised Learning" id={1}/>
+                    <h3>Definitions:</h3>
+                    {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
+                      <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
+                    ))}
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>

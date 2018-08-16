@@ -11,6 +11,10 @@
           "test": "assert()"
         }
       ],
+      "definitions": [
+        "Supervised Learning,1",
+        "Linear Regression,1"
+      ],
       "codeblocks": false,
       "hints": [
 
@@ -32,7 +36,7 @@
       "name": "What are the different types of machine learning?",
       "section": "regression",
       "number": 3, 
-      "description": "There are 3 different types of machine learning. Supervised learning, unsupervised learning, and reinforcement learning.",
+      "description": "There are 3 different types of machine learning. [Glossary,Supervised Learning,1], unsupervised learning, and reinforcement learning.",
       "tests": [
         {
 
