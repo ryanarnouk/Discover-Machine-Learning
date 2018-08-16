@@ -16,7 +16,7 @@ export function signInAction({ email, password }, history){
       localStorage.setItem('user', res.data.token);
       localStorage.setItem('user_name', res.data.user.name);
       // do not know whether to use history.push or window.location
-      //history.push('/dashboard');
+      history.push('/challenges/regression/1');
       //window.location.href = "/profile";
       console.log('worked!');
     }).catch((error) => {
