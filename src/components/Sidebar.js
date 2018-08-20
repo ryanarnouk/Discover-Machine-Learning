@@ -17,16 +17,6 @@ const customStyles = {
   }
 };
 
-/*
-var componentList = {
-  Glossary: GlossaryBlock
-}
-
-var GlossaryComponent;
-var dynamicProps;
-var component;
-*/
-
 class Sidebar extends Component {
   constructor(props) {
     super(props);
