@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { signOutAction } from '../actions';
-import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap_white.css';
 import '../styles/App.css';
-import Media from 'react-media';
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -14,11 +12,15 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import Help from '@material-ui/icons/Help';
 
 const styles = {
   root: {
@@ -31,6 +33,12 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
 };
 
 class ProfileNavbar extends Component {
@@ -38,6 +46,12 @@ class ProfileNavbar extends Component {
     anchorEl: null,
     menu: false
   };
+
+  toggleDrawer = (open) => () => {
+    this.setState({
+      menu: open
+    });
+  }
 
   handleChange = (event, checked) => {
     this.setState({ auth: checked });
@@ -55,14 +69,27 @@ class ProfileNavbar extends Component {
     const { classes } = this.props;
     const { anchorEl, menu } = this.state;
     const open = Boolean(anchorEl);
-    console.log(menu);
+
+    const sideList = (
+      <div className={classes.list}>
+        <ListItem button>
+          <ListItemText primary="Challenges" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <Help />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItem>
+      </div>
+    );
 
     return ( 
       <div className={classes.root}>
         <AppBar position="static" style={{backgroundColor: '#424242'}}>
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon onClick={() => this.setState({ menu: true })}/>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
+              <MenuIcon/>
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.flex}></Typography>
             <div>
@@ -94,6 +121,16 @@ class ProfileNavbar extends Component {
             </div>
           </Toolbar>
         </AppBar>
+        <Drawer open={this.state.menu} onClose={this.toggleDrawer(false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+            {sideList}
+          </div>
+        </Drawer>
       </div>
     );
   }
