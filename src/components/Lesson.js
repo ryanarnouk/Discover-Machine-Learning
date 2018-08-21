@@ -5,7 +5,6 @@ import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
 import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
-import '../styles/NoScroll.css'
 
 const toolbox = `
   <xml>
@@ -88,7 +87,7 @@ class Lesson extends Component {
                 }
               </div>
             ) : (
-              <div>
+              <div style={{overflowY: 'hidden'}}>
                 <ProfileNavbar/>
                 <div style={{display: 'flex'}}>
                   <Sidebar route={this.props.match} blockly={Blockly}/>
