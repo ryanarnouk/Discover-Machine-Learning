@@ -30,6 +30,10 @@
           "text": "second part"
         }
       ],
+      "definitions": [
+        "Supervised Learning,1",
+        "Linear Regression,1"
+      ],
       "codeblocks": false
     }, 
     {
@@ -42,6 +46,10 @@
 
         }
       ],
+      "definitions": [
+        "Supervised Learning,1",
+        "Linear Regression,1"
+      ],
       "codeblocks": false
     },
     {
@@ -53,6 +61,10 @@
         {
       
         }
+      ],
+      "definitions": [
+        "Supervised Learning,1",
+        "Linear Regression,1"
       ],
       "codeblocks": true
     }

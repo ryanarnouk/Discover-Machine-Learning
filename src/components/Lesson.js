@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
 import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
+import '../styles/NoScroll.css'
 
 const toolbox = `
   <xml>
@@ -71,6 +72,7 @@ class Lesson extends Component {
           {matches => 
             matches ? (
               <div>
+                <ProfileNavbar />
                 <Sidebar route={this.props.match} blockly={Blockly}/>
                 {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                   <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
@@ -78,7 +80,6 @@ class Lesson extends Component {
                   </div>
                 ) : (
                   <div>
-                    <ProfileNavbar />
                     <p>this challenge does not require codeblocks 
                       We can put text here or anything relevant to the information on the sidebar
                     </p>
@@ -87,21 +88,23 @@ class Lesson extends Component {
                 }
               </div>
             ) : (
-              <div style={{display: 'flex'}}>
-                <Sidebar route={this.props.match} blockly={Blockly}/>
-                {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
-                  <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
-                    <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
-                  </div>
-                ) : (
-                  <div style={{marginLeft: '30%'}}>
-                    <ProfileNavbar/>
-                    <p>this challenge does not require codeblocks 
-                      We can put text here or anything relevant to the information on the sidebar
-                    </p>
-                  </div>
-                )
-                }
+              <div>
+                <ProfileNavbar/>
+                <div style={{display: 'flex'}}>
+                  <Sidebar route={this.props.match} blockly={Blockly}/>
+                  {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
+                    <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
+                      <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
+                    </div>
+                  ) : (
+                    <div style={{marginLeft: '30%'}}>
+                      <p>this challenge does not require codeblocks 
+                        We can put text here or anything relevant to the information on the sidebar
+                      </p>
+                    </div>
+                  )
+                  }
+                </div>
               </div>
             )
           }

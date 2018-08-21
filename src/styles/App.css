@@ -96,9 +96,9 @@
 }
 
 .challenge {
-  margin-top: 90px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 100px;
 }
 
 .name {
@@ -164,36 +164,6 @@
   /*vendor prefixes*/
   -moz-transition: background-color .30s ease-in-out;
   -webkit-transition: background-color .30s ease-in-out;
-}
-
-.logout {
-  text-decoration: none;
-  border: none;
-  padding: 13px;
-  background-color: #26337F;
-  cursor: pointer;
-  color: white;
-  transition: background-color .30s ease-in-out;
-  /*vendor prefixes*/
-  -moz-transition: background-color .30s ease-in-out;
-  -webkit-transition: background-color .30s ease-in-out;
-  transition: color .30s ease-in-out;
-  /*vendor prefixes*/
-  -moz-transition: color .30s ease-in-out;
-  -webkit-transition: color .30s ease-in-out;
-}
-
-.logout:hover {
-  background-color: grey;
-  color: black;
-  transition: background-color .30s ease-in-out;
-  /*vendor prefixes*/
-  -moz-transition: background-color .30s ease-in-out;
-  -webkit-transition: background-color .30s ease-in-out;
-  transition:color .30s ease-in-out;
-  /*vendor prefixes*/
-  -moz-transition: color .30s ease-in-out;
-  -webkit-transition: color .30s ease-in-out;
 }
 
 .glossaryblock {

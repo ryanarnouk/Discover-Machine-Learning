@@ -69,9 +69,6 @@ class Sidebar extends Component {
           {matches => 
             matches ? (
               <div className="sidebartop">
-                <div>
-                  <Map/>
-                </div>
                 <div className="challenge">
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
@@ -95,9 +92,6 @@ class Sidebar extends Component {
               </div>
             ) : (
               <div className="sidebar">
-                <div>
-                  <Map/>
-                </div>
                 <div className="challenge">
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
