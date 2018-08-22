@@ -15,6 +15,7 @@ import Login from './Login';
 import LearnMore from './LearnMore';
 import About from './About';
 import Profile from './Profile';
+import Challenges from './Challenges';
 
 import requireAuth from './RequireAuth';
 import noRequireAuth from './NoRequireAuth';
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path="/learnmore" component={noRequireAuth(LearnMore)} />
             <Route path="/about" component={noRequireAuth(About)} />
             <Route path="/profile" component={requireAuth(Profile)} />
+            <Route path="/challenges" component={noRequireAuth(Challenges)} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
