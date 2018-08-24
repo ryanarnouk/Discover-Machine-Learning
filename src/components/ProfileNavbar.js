@@ -72,10 +72,10 @@ class ProfileNavbar extends Component {
 
     const sideList = (
       <div className={classes.list}>
-        <ListItem button>
+        <ListItem button component={props => <Link to="/challenges" {...props}/>}>
           <ListItemText primary="Challenges" />
         </ListItem>
-        <ListItem button>
+        <ListItem button component={props => <Link to="/about" {...props}/>}>
           <ListItemIcon>
             <Help />
           </ListItemIcon>
