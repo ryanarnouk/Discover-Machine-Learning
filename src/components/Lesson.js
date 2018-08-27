@@ -66,7 +66,7 @@ class Lesson extends Component {
     console.log(JSONloader.challenges[this.state.lessonNumber].codeblocks)
 
     return (
-      <div>
+      <div style={{fontFamily: 'roboto'}}>
         <Media query="(max-width: 600px)">
           {matches => 
             matches ? (

@@ -9,7 +9,7 @@ import Navbar from './Navbar';
 class Home extends Component {
   render() { 
     return ( 
-      <div>
+      <div className="font">
         <Navbar/>
         <div className="home"> 
           <div>
