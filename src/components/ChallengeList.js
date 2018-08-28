@@ -3,18 +3,19 @@ import ArrowRight from '@material-ui/icons/ArrowRight';
 import ArrowDown from '@material-ui/icons/ArrowDropDown';
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import Circle from '@material-ui/icons/FiberManualRecord';
+import LessonJSON from '../seed/challenges/regression/lesson.json';
 
 class SubList extends Component {
   render() {
     return (
-      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}}>
         {this.props.done ? (
-          <CheckCircle />
+          <CheckCircle/>
         ) : (
-          <Circle />
+          <CheckCircle style={{backgroundColor: 'black', borderRadius: 90, width: 20, height: 20}}/>
         )}
         <li style={{padding: 5}}>{this.props.text}</li>
-      </div>
+      </div> 
     );
   }
 }
@@ -33,7 +34,14 @@ class ChallengeList extends Component {
     }
   }
 
-  render() { 
+  render() {
+    LessonJSON.challenges.map((a) => {
+      console.log(a.name);
+    })
+    const listItems = LessonJSON.challenges.map((a) => {
+      <li><SubList text={a.name} done={true}/></li>
+    })
+
     return ( 
       <div>
         <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer'}} onClick={this.handleClick}>
@@ -47,12 +55,11 @@ class ChallengeList extends Component {
         <div>
           {this.state.open ? (
             <ul style={{listStyleType: 'none', padding: 0, fontSize: 18}}>
-              <SubList text="Challenge 11" done={true}/>
-              <SubList text="Challenge 11" done={false}/>
-              <SubList text="Challenge 11" done={true}/>
-              <SubList text="Challenge 11" done={false}/>
-              <SubList text="Challenge 11" done={true}/>
-              <SubList text="Challenge 11" done={false}/>
+              {LessonJSON.challenges.map((a) => {
+                return [
+                  <SubList text={a.name} done={true}/>
+                ]
+              })}
             </ul>
           ) : false}
         </div>
