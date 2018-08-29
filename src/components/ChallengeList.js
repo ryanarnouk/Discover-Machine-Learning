@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import ArrowRight from '@material-ui/icons/ArrowRight';
 import ArrowDown from '@material-ui/icons/ArrowDropDown';
 import CheckCircle from '@material-ui/icons/CheckCircle';
-import Circle from '@material-ui/icons/FiberManualRecord';
-import LessonJSON from '../seed/challenges/regression/lesson.json';
+//import Circle from '@material-ui/icons/FiberManualRecord';
+import Regression from '../seed/challenges/regression/lesson.json';
+import IntroToProgramming from '../seed/challenges/introcoding/lesson.json';
+import Classification from '../seed/challenges/classification/lesson.json';
+import Reinforcement from '../seed/challenges/reinforcementlearning/lesson.json';
+import DeepLearning from '../seed/challenges/deeplearning/lesson.json';
 
 class SubList extends Component {
   render() {
@@ -35,13 +39,6 @@ class ChallengeList extends Component {
   }
 
   render() {
-    LessonJSON.challenges.map((a) => {
-      console.log(a.name);
-    })
-    const listItems = LessonJSON.challenges.map((a) => {
-      <li><SubList text={a.name} done={true}/></li>
-    })
-
     return ( 
       <div>
         <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer'}} onClick={this.handleClick}>
@@ -50,16 +47,36 @@ class ChallengeList extends Component {
           ): (
             <ArrowRight />
           )}
-          <li style={{fontFamily: 'roboto', fontSize: 20}}>{this.props.text}</li>
+          <li style={{fontFamily: 'roboto', fontSize: 20}} id={this.props.id}>{this.props.text}</li>
         </div>
         <div>
           {this.state.open ? (
             <ul style={{listStyleType: 'none', padding: 0, fontSize: 18}}>
-              {LessonJSON.challenges.map((a) => {
+              {this.props.id === 0 ? IntroToProgramming.challenges.map((a) => {
                 return [
                   <SubList text={a.name} done={true}/>
                 ]
-              })}
+              }): false}
+              {this.props.id === 1 ? Regression.challenges.map((a) => {
+                return [
+                  <SubList text={a.name} done={true}/>
+                ]
+              }): false}
+              {this.props.id === 2 ? Classification.challenges.map((a) => {
+                return [
+                  <SubList text={a.name} done={true}/>
+                ]
+              }): false}
+              {this.props.id === 3 ? DeepLearning.challenges.map((a) => {
+                return [
+                  <SubList text={a.name} done={true}/>
+                ]
+              }): false}
+              {this.props.id === 4 ? Reinforcement.challenges.map((a) => {
+                return [
+                  <SubList text={a.name} done={true}/>
+                ]
+              }): false}
             </ul>
           ) : false}
         </div>

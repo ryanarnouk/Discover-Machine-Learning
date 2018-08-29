@@ -12,11 +12,11 @@ class Challenges extends Component {
         <h2 style={{fontFamily: 'roboto'}}>Challenges</h2>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <ul className="list">
-            <ChallengeList text="Intro to Programming"/>
-            <ChallengeList text="Linear Regression"/>
-            <ChallengeList text="Classification"/>
-            <ChallengeList text="Deep Learning"/>
-            <ChallengeList text="Reinforcement Learning"/>
+            <ChallengeList text="Intro to Programming" id={0}/>
+            <ChallengeList text="Linear Regression" id={1}/>
+            <ChallengeList text="Classification" id={2}/>
+            <ChallengeList text="Deep Learning" id={3}/>
+            <ChallengeList text="Reinforcement Learning" id={4}/>
           </ul>
         </div>
       </div>
