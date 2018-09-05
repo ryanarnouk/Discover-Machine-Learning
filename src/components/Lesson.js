@@ -8,12 +8,12 @@ import ProfileNavbar from './ProfileNavbar'
 
 const toolbox = `
   <xml>
-      <block type="controls_if"></block>
-      <block type="controls_whileUntil"></block>
-      <block type="importfunction"></block>
-      <block type="printfunction"></block>
-      <block type="applyfunction"></block>
-    </xml
+    <block type="controls_if"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="importfunction"></block>
+    <block type="printfunction"></block>
+    <block type="applyfunction"></block>
+  </xml
   `
 
 class Lesson extends Component {
