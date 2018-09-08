@@ -5,6 +5,8 @@ import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
 import GlossaryBlock from './GlossaryBlock';
 import Media from "react-media";
+import CheckCircle from '@material-ui/icons/CheckCircle';
+import FontAwesome from 'react-fontawesome';
 
 const customStyles = {
   content : {
@@ -13,7 +15,10 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    height: '50%',
+    width: '40vw',
+    textAlign: 'center'
   }
 };
 
@@ -24,6 +29,7 @@ class Sidebar extends Component {
     this.state = {
       modalOpen: false,
       lessonNumber: this.props.route.params.id - 1,
+      done: false // change this value later to reflect if challenge is passed or not
     }
 
     this.openModal = this.openModal.bind(this);
@@ -34,10 +40,12 @@ class Sidebar extends Component {
   openModal() {
     this.setState({modalOpen: true});
     // need to figure out how to save user code that uses blockly
+    /*
     console.log(this.props.blockly);
     localStorage.setItem('hi', 'hi this is a test');
     console.log(localStorage.getItem('hi'))
     console.log(this.props.blockly.Xml.workspaceToDom(this.props.blockly));
+    */
   }
 
   afterOpenModal() {
@@ -85,7 +93,21 @@ class Sidebar extends Component {
                       onRequestClose={this.closeModal}
                       style={customStyles}
                       contentLabel="Check"
-                    />
+                    > 
+                      {this.state.done ? (
+                        <div>
+                          <FontAwesome name="check-circle" style={{color: '#0E8EFF'}} size={70}/>
+                          <h1>Great Job</h1>
+                          <button className="continuebutton ">Continue</button>
+                        </div>
+                      ) : (
+                        <div>
+                          <FontAwesome name="times-circle" style={{color: '#7F0001'}} size={70}/>
+                          <h1>Try Again</h1>
+                          <button className="incorrectcontinuebutton">Continue</button>
+                        </div>
+                      )}
+                    </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
                 </div>
@@ -110,7 +132,21 @@ class Sidebar extends Component {
                       onRequestClose={this.closeModal}
                       style={customStyles}
                       contentLabel="Check"
-                    />
+                    > 
+                      {this.state.done ? (
+                        <div>
+                          <FontAwesome name="check-circle" style={{color: '#0E8EFF'}} size={70}/>
+                          <h1>Great Job</h1>
+                          <button className="continuebutton ">Continue</button>
+                        </div>
+                      ) : (
+                        <div>
+                          <FontAwesome name="times-circle" style={{color: '#7F0001'}} size={70}/>
+                          <h1>Try Again</h1>
+                          <button className="incorrectcontinuebutton">Continue</button>
+                        </div>
+                      )}
+                    </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
                 </div>
