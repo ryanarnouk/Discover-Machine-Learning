@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const config = require('./config');
+require('dotenv').config()
 
 var port = process.env.PORT || 3001; 
 
@@ -35,8 +36,10 @@ app.use('/api', authCheckMiddleware);
 //routes 
 const authRoutes = require('./routes/auth');
 const apiRoutes = require('./routes/api');
+const notHotdog = require('./routes/notHotdog');
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
+app.use('/nothotdog', notHotdog)
 
 // start the server
 app.listen(port, () => {
