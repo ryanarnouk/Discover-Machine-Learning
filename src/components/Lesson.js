@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import JSONloader from './JSONloader'
 import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
+import NotHotdog from './NotHotdog';
 
 const toolbox = `
   <xml>
@@ -96,11 +97,7 @@ class Lesson extends Component {
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
                     </div>
                   ) : (
-                    <div style={{marginLeft: '30%'}}>
-                      <p>this challenge does not require codeblocks 
-                        We can put text here or anything relevant to the information on the sidebar
-                      </p>
-                    </div>
+                    <NotHotdog />
                   )
                   }
                 </div>
