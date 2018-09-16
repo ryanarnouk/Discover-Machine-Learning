@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/App.css';
 import FontAwesome from 'react-fontawesome';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -56,8 +56,8 @@ class Navbar extends Component {
   }
 }
 
-Navbar.PropTypes = {
-  classes: PropTypes.object.isRequired,
+Navbar.propTypes = {
+  classes: propTypes.object.isRequired,
 };
  
 export default withStyles(styles)(Navbar);
