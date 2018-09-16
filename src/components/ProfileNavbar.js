@@ -115,7 +115,7 @@ class ProfileNavbar extends Component {
                 open={open}
                 onClose={this.handleClose}
               >
-                <MenuItem component={props => <Link to="/profile" {...props}/>}>Profile</MenuItem>
+                <MenuItem component={props => <Link to="/profile" onClick={this.forceUpdate} {...props}/>}>Profile</MenuItem>
                 <MenuItem onClick={() => signOutAction()}>Logout</MenuItem>
               </Menu>
             </div>

@@ -25,7 +25,7 @@ class Profile extends Component {
         <ProfileNavbar />
         <div style={{textAlign: 'center'}}> 
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <h1 className="profilepic">{localStorage.getItem('user_name').charAt(0).toUpperCase()}</h1>
+            <h1 className="profilepic">{/*localStorage.getItem('user_name').charAt(0).toUpperCase()*/}</h1>
           </div>
           <h1 className="name">{localStorage.getItem('user_name')}</h1>
         </div>

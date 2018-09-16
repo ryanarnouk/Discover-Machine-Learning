@@ -38,13 +38,13 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={noRequireAuth(Home)} />
-            <Route path="/challenges/:section/:id" component={noRequireAuth(Lesson)} />
+            <Route path="/challenges/:section/:id" component={Lesson} />
             <Route path="/signup" component={noRequireAuth(Signup)} />
             <Route path="/login" component={noRequireAuth(Login)} />
-            <Route path="/learnmore" component={noRequireAuth(LearnMore)} />
-            <Route path="/about" component={noRequireAuth(About)} />
+            <Route path="/learnmore" component={LearnMore} />
+            <Route path="/about" component={About} />
             <Route path="/profile" component={requireAuth(Profile)} />
-            <Route path="/challenges" component={noRequireAuth(Challenges)} />
+            <Route path="/challenges" component={Challenges} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
