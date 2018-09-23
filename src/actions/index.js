@@ -3,7 +3,7 @@ import axios from 'axios';
 export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticaed_user';
 export const AUTHENTICATION_ERROR = 'authentication_error';
-export const MESSAGE = 'message';
+
 
 export function signInAction({ email, password }, history){
   return (dispatch) => {
@@ -26,7 +26,8 @@ export function signInAction({ email, password }, history){
         type: AUTHENTICATION_ERROR,
         payload: 'Invalid email or password'
       })
-      console.log(error);
+      window.location.reload();
+      localStorage.setItem('message', 'Invalid email or password')
     });
   }
 }
