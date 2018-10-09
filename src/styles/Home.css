@@ -5,7 +5,7 @@ body, html {
 }
 
 .home {
-  background: url('../img/homepage-background.jpg');
+  background-color: #217F24;
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -75,6 +75,7 @@ body, html {
 
 .introduction {
   text-align: center;
+  background-color: #00527F;
 }
 
 .startlearningbutton {
@@ -82,15 +83,9 @@ body, html {
 }
 
 .testimonies {
-  background: url('../img/homepage-background.jpg');
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   color:  white;
@@ -100,8 +95,101 @@ body, html {
   align-items: center;
   justify-content: center;
   display: flex;
+  background-color: #7F0017;
+  color: white;
 }
 
 .font {
   font-family: 'Roboto';
 }
+
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 80%;
+  color: #333;
+  background-color: #500F7F;
+}
+
+.variable-width .slick-slide p {
+  height: 100px;
+  color: #fff;
+  margin: 5px;
+  line-height: 100px;
+  text-align: center;
+}
+.center .slick-center h3 {
+  color: #e67e22;
+  opacity: 1;
+  transform: scale(1.08);
+}
+.center h3 {
+  opacity: 0.8;
+  transition: all 300ms ease;
+}
+.content {
+  padding: 20px;
+  margin: auto;
+  width: 90%;
+}
+.slick-slide .image {
+  padding: 10px;
+}
+.slick-slide img {
+  border: 5px solid #fff;
+  display: block;
+  margin: auto;
+}
+.slick-slide img.slick-loading {
+  border: 0;
+}
+.slick-slider {
+  margin: 30px auto 50px;
+}
+.slick-dots {
+  margin-left: 0;
+}
+.slick-thumb {
+  bottom: -45px;
+}
+.slick-thumb li {
+  width: 60px;
+  height: 45px;
+}
+.slick-thumb li img {
+  filter: grayscale(100%);
+}
+.slick-thumb li.slick-active img {
+  filter: grayscale(0%);
+}
+@media (max-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+  .center {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  .center .slick-center h3 {
+    color: #e67e22;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .center h3 {
+    opacity: 0.8;
+    transform: scale(0.95);
+    transition: all 300ms ease;
+  }
+}
+.slick-vertical .slick-slide {
+  height: 180px;
+}
+
+/* .slick-prev {
+  z-index: 100;
+  left: 20px !important;
+}
+.slick-next {
+  z-index: 100;
+  right: 20px !important;
+} */

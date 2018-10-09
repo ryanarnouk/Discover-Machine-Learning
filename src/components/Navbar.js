@@ -42,7 +42,7 @@ class Navbar extends Component {
     const { classes } = this.props;
     return ( 
       <div className={classes.root}>
-        <AppBar position="static" style={{backgroundColor: 'white', position: 'fixed'}}>
+        <AppBar position="static" style={{position: 'fixed'}}>
           <Toolbar>
             <Typography variant="title" className={classes.flex}>
               Machine Learning Introduction
