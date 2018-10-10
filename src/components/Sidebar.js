@@ -7,6 +7,7 @@ import GlossaryBlock from './GlossaryBlock';
 import Media from "react-media";
 import CheckCircle from '@material-ui/icons/CheckCircle';
 import FontAwesome from 'react-fontawesome';
+import Console from './Console';
 
 const customStyles = {
   content : {
@@ -84,6 +85,7 @@ class Sidebar extends Component {
                     {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
                       <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
                     ))}
+                    <Console text="Your code will output here..."/>
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
@@ -123,6 +125,7 @@ class Sidebar extends Component {
                     {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
                       <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
                     ))}
+                    <Console text="Your code will output here..."/>
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
