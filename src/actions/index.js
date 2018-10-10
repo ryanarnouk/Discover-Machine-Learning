@@ -7,7 +7,7 @@ export const AUTHENTICATION_ERROR = 'authentication_error';
 
 export function signInAction({ email, password }, history){
   return (dispatch) => {
-    axios.post('http://localhost:3001/auth/login', `email=${email}&password=${password}`, {
+    axios.post('/auth/login', `email=${email}&password=${password}`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -34,7 +34,7 @@ export function signInAction({ email, password }, history){
 
 export function SignUpAction({ name, email, password }, history) {
   return (dispatch) => {
-    axios.post('http://localhost:3001/auth/signup', `name=${name}&email=${email}&password=${password}`, {
+    axios.post('/auth/signup', `name=${name}&email=${email}&password=${password}`, {
       'Content-Type': 'application/x-www-form-urlencoded'
     }).then((res) => {
       window.location.href="/login";
