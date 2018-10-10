@@ -27,7 +27,7 @@ class SubList extends Component {
 
 class ChallengeList extends Component {
   state = {
-    open: false
+    open: true
   };
 
   handleClick = () => {

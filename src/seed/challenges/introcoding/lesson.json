@@ -1,8 +1,8 @@
 {
   "challenges": [
     {
-      "name": "test",
-      "section": "classification",
+      "name": "Intro to Coding",
+      "section": "introcoding",
       "number": 1,
       "description": "test",
       "tests": [
@@ -18,7 +18,7 @@
     }, 
     {
       "name": "test",
-      "section": "classification",
+      "section": "introcoding",
       "number": 2,
       "description": [
         "test"
