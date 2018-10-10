@@ -12,7 +12,7 @@ import DeepLearning from '../seed/challenges/deeplearning/lesson.json';
 class SubList extends Component {
   render() {
     return (
-      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}}>
+      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}} onClick={() => window.open(`http://localhost:3000/challenges/${this.props.data.section}/${this.props.data.number}`)}>
         {this.props.done ? (
           <CheckCircle/>
         ) : (
@@ -54,27 +54,27 @@ class ChallengeList extends Component {
             <ul style={{listStyleType: 'none', padding: 0, fontSize: 18}}>
               {this.props.id === 0 ? IntroToProgramming.challenges.map((a) => {
                 return [
-                  <SubList text={a.name} done={true}/>
+                  <SubList text={a.name} done={true} data={a}/>
                 ]
               }): false}
               {this.props.id === 1 ? Regression.challenges.map((a) => {
                 return [
-                  <SubList text={a.name} done={true}/>
+                  <SubList text={a.name} done={true} data={a}/>
                 ]
               }): false}
               {this.props.id === 2 ? Classification.challenges.map((a) => {
                 return [
-                  <SubList text={a.name} done={true}/>
+                  <SubList text={a.name} done={true} data={a}/>
                 ]
               }): false}
               {this.props.id === 3 ? DeepLearning.challenges.map((a) => {
                 return [
-                  <SubList text={a.name} done={true}/>
+                  <SubList text={a.name} done={true} data={a}/>
                 ]
               }): false}
               {this.props.id === 4 ? Reinforcement.challenges.map((a) => {
                 return [
-                  <SubList text={a.name} done={true}/>
+                  <SubList text={a.name} done={true} data={a}/>
                 ]
               }): false}
             </ul>
