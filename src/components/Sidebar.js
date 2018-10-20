@@ -30,7 +30,8 @@ class Sidebar extends Component {
     this.state = {
       modalOpen: false,
       lessonNumber: this.props.route.params.id - 1,
-      done: false // change this value later to reflect if challenge is passed or not
+      done: false, // change this value later to reflect if challenge is passed or not
+      consoletext: "Your code will output here..."
     }
 
     this.openModal = this.openModal.bind(this);
@@ -40,6 +41,7 @@ class Sidebar extends Component {
  
   openModal() {
     this.setState({modalOpen: true});
+    this.setState({consoletext: "You just clicked the check button"}) // temporary to work with the console
     // need to figure out how to save user code that uses blockly
     /*
     console.log(this.props.blockly);
@@ -85,7 +87,7 @@ class Sidebar extends Component {
                     {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
                       <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
                     ))}
-                    <Console text="Your code will output here..."/>
+                    <Console text={this.state.consoletext}/>
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
@@ -125,7 +127,7 @@ class Sidebar extends Component {
                     {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
                       <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
                     ))}
-                    <Console text="Your code will output here..."/>
+                    <Console text={this.state.consoletext}/>
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
