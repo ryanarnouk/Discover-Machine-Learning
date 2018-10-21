@@ -42,13 +42,7 @@ class Sidebar extends Component {
   openModal() {
     this.setState({modalOpen: true});
     this.setState({consoletext: "You just clicked the check button"}) // temporary to work with the console
-    // need to figure out how to save user code that uses blockly
-    /*
-    console.log(this.props.blockly);
-    localStorage.setItem('hi', 'hi this is a test');
-    console.log(localStorage.getItem('hi'))
-    console.log(this.props.blockly.Xml.workspaceToDom(this.props.blockly));
-    */
+    this.save()
   }
 
   afterOpenModal() {
@@ -68,10 +62,27 @@ class Sidebar extends Component {
     return Parser(str);
   }
 
+  save = () => {
+    var xml = this.props.blockly.Xml.workspaceToDom(this.props.blockly.mainWorkspace);
+    localStorage.setItem('workspace', this.props.blockly.Xml.domToText(xml));
+    this.props.blockly.mainWorkspace.clear();
+  }
+
+  load = () => {
+    var xml = this.props.blockly.Xml.textToDom(localStorage.getItem('workspace'));
+    this.props.blockly.Xml.domToWorkspace(xml, this.props.blockly.mainWorkspace); 
+  }
+
+  hint = () => {
+    this.load(); // need to fix so that you do not need to click the hint button for the work to show up
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
     const a = this.props.route.params.section;
+
+    console.log(this.props.blockly);
 
     console.log(this.description());
     return (
@@ -102,7 +113,7 @@ class Sidebar extends Component {
                         <div>
                           <FontAwesome name="check-circle" style={{color: '#0E8EFF'}} size={70}/>
                           <h1>Great Job</h1>
-                          <button className="continuebutton ">Continue</button>
+                          <button className="continuebutton">Continue</button>
                         </div>
                       ) : (
                         <div>

@@ -13,7 +13,7 @@
       ],
       "definitions": [
         "Supervised Learning,1",
-        "Linear Regression,1"
+        "Linear Regression,0"
       ],
       "codeblocks": false,
       "hints": [
@@ -32,7 +32,7 @@
       ],
       "definitions": [
         "Supervised Learning,1",
-        "Linear Regression,1"
+        "Linear Regression,0"
       ],
       "codeblocks": false
     }, 
@@ -48,7 +48,7 @@
       ],
       "definitions": [
         "Supervised Learning,1",
-        "Linear Regression,1"
+        "Linear Regression,0"
       ],
       "codeblocks": false
     },
@@ -64,7 +64,7 @@
       ],
       "definitions": [
         "Supervised Learning,1",
-        "Linear Regression,1"
+        "Linear Regression,0"
       ],
       "codeblocks": true
     }
