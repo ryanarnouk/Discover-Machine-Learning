@@ -67,6 +67,58 @@
         "Linear Regression,0"
       ],
       "codeblocks": true
+    },
+    {
+      "name": "Set up X and Y data",
+      "section": "regression",
+      "number": 5, 
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on.",
+      "tests": [
+        {
+
+        }
+      ], 
+      "codeblocks": true 
+    }, 
+    {
+      "name": "Split the Train and Test size",
+      "section": "regression",
+      "number": 6, 
+      "description": "Whenever we make a machine learning model, we need to split the data into a training set and a testing set <br/> This means, we feed the computer the training data so it learns from it and then we test how good the computer can recognize whatever we find.",
+      "tests": [
+        {
+      
+        }
+      ],
+      "codeblocks": true
+    },
+    {
+      "name": "Fit the Algorithm",
+      "number": 7,
+      "description": "Fit the algorithm",
+      "tests": [
+        {
+
+        }
+      ],
+      "codeblocks": true
+    },
+    {
+      "name": "Check Accuracy",
+      "number": 8,
+      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function set it up to see if it we good a good accuracy and make sure that you set it to regression.",
+      "tests": [
+        {
+
+        }
+      ], 
+      "codeblocks": true
+    },
+    {
+      "name": "Conclusion",
+      "number": 9, 
+      "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
+      "codeblocks": false
     }
   ] 
 }

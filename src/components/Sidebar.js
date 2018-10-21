@@ -77,6 +77,15 @@ class Sidebar extends Component {
     this.load(); // need to fix so that you do not need to click the hint button for the work to show up
   }
 
+  glossary = () => {
+    // if the current challenge has definitions in json return it, if not don't do anything
+    if(JSONloader.challenges[this.state.lessonNumber].hasOwnProperty('definitions')) {
+      return JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
+        <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/> 
+      )) 
+    }
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
@@ -95,9 +104,7 @@ class Sidebar extends Component {
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
                     {this.description()}
-                    {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
-                      <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
-                    ))}
+                    {this.glossary()}
                     <Console text={this.state.consoletext}/>
                   </div>
                   <div className="buttons">
@@ -135,9 +142,7 @@ class Sidebar extends Component {
                     {/*<div dangerouslySetInnerHTML={{__html: JSONloader.description[this.state.lessonNumber].description}}></div>*/}
                     {this.description()}
                     <h3>Definitions:</h3>
-                    {JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
-                      <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/>
-                    ))}
+                    {this.glossary()}
                     <Console text={this.state.consoletext}/>
                   </div>
                   <div className="buttons">
