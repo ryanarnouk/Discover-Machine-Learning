@@ -109,6 +109,29 @@
   color:rgb(235, 231, 231);
 }
 
+.run {
+  margin-bottom: 5%;
+  cursor: pointer;
+  color: white; 
+  font-size: 21px;
+  font-family: 'Roboto';
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px; 
+}
+
+.run:focus {
+  outline: 0;
+}
+
+.run:hover {
+  opacity: 0.7;
+  transition: opacity .30s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+}
+
 .check {
   background-color: #007F21;
   border: none; 
@@ -118,6 +141,7 @@
   color: white;
   font-size: 20px;
   cursor: pointer;
+  font-family: 'Roboto';
 }
 
 .hint {
@@ -129,6 +153,7 @@
   color: white;
   font-size: 20px;
   cursor: pointer;
+  font-family: 'Roboto';
 }
 
 .check,.hint:focus{

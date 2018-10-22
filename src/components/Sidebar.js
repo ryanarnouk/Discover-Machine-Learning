@@ -152,9 +152,9 @@ class Sidebar extends Component {
                     <h3>Definitions:</h3>
                     {this.glossary()}
                     <Console text={this.state.consoletext}/>
+                    <button onClick={this.run} className="run">Run Code</button>
                   </div>
                   <div className="buttons">
-                    <button onClick={this.run}>Run</button>
                     <button className="check" onClick={this.openModal}>Check</button>
                     <Modal 
                       isOpen={this.state.modalOpen}
