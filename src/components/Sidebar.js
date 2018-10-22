@@ -86,6 +86,14 @@ class Sidebar extends Component {
     }
   }
 
+  run = () => {
+    var code = this.props.blockly.JavaScript.workspaceToCode(this.props.blockly.getMainWorkspace());
+    this.setState({consoletext: code});
+    if(code === "") {
+      this.setState({consoletext: "Nothing To Return"})
+    }
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
@@ -146,6 +154,7 @@ class Sidebar extends Component {
                     <Console text={this.state.consoletext}/>
                   </div>
                   <div className="buttons">
+                    <button onClick={this.run}>Run</button>
                     <button className="check" onClick={this.openModal}>Check</button>
                     <Modal 
                       isOpen={this.state.modalOpen}

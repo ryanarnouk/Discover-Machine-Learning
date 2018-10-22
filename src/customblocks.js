@@ -14,6 +14,7 @@ Blockly.Blocks['importfunction'] = {
 };
 
 // console.log print function 
+// generate block
 Blockly.Blocks['printfunction'] = {
     init: function() {
         this.appendDummyInput()
@@ -25,6 +26,13 @@ Blockly.Blocks['printfunction'] = {
     this.setTooltip("");
     this.setHelpUrl("");
     }
+};
+
+// block logic
+Blockly.JavaScript['printfunction'] = function(block) {
+    var text_variable = block.getFieldValue('variable');
+    // TODO: Assemble JavaScript into code variable
+    return text_variable;
 };
 
 // apply function applies a specific algorithm such as KNN or SVM
