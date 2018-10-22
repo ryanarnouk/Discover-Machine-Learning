@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-import Map from './Map';
 import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
 import GlossaryBlock from './GlossaryBlock';
@@ -113,7 +112,12 @@ class Sidebar extends Component {
                   <div className="text">
                     {this.description()}
                     {this.glossary()}
-                    <Console text={this.state.consoletext}/>
+                    {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
+                      <div>
+                        <Console text={this.state.consoletext}/>
+                        <button onClick={this.run} className="run">Run Code</button>
+                      </div>
+                      ) : false}
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
@@ -151,8 +155,12 @@ class Sidebar extends Component {
                     {this.description()}
                     <h3>Definitions:</h3>
                     {this.glossary()}
-                    <Console text={this.state.consoletext}/>
-                    <button onClick={this.run} className="run">Run Code</button>
+                    {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
+                      <div>
+                        <Console text={this.state.consoletext}/>
+                        <button onClick={this.run} className="run">Run Code</button>
+                      </div>
+                      ) : false}
                   </div>
                   <div className="buttons">
                     <button className="check" onClick={this.openModal}>Check</button>
