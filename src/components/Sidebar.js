@@ -41,7 +41,9 @@ class Sidebar extends Component {
   openModal() {
     this.setState({modalOpen: true});
     this.setState({consoletext: "You just clicked the check button"}) // temporary to work with the console
-    this.save()
+    this.save();
+
+    this.check() //call the check function to make see if the user passed the challenge or not
   }
 
   afterOpenModal() {
@@ -93,14 +95,17 @@ class Sidebar extends Component {
     }
   }
 
+  check = () => {
+    // check if the user got the required code to pass the challenge
+    // later we would load the test from the json file and run the code
+    // for now we will jus try to get the blocks and figure out how we can run the code in javascript
+    console.log(this.props.blockly.mainWorkspace);
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
     const a = this.props.route.params.section;
-
-    console.log(this.props.blockly);
-
-    console.log(this.description());
     return (
       <div>
         <Media query="(max-width: 600px)">

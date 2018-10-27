@@ -109,7 +109,7 @@
       "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function set it up to see if it we good a good accuracy and make sure that you set it to regression.",
       "tests": [
         {
-
+          "test": ""
         }
       ], 
       "codeblocks": true

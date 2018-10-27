@@ -7,12 +7,10 @@ import machineLearningIntroduction from '../reducers';
 import thunkMiddleware from 'redux-thunk';
 import api from '../middleware/api';
 import { AUTHENTICATED } from '../actions/index';
-import Home from './Home';
 import NoMatch from './NoMatch';
 import Lesson from './Lesson';
 import Signup from './Signup';
 import Login from './Login';
-import LearnMore from './LearnMore';
 import About from './About';
 import Profile from './Profile';
 import Challenges from './Challenges';
@@ -37,11 +35,11 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/" component={noRequireAuth(Home)} />
+            <Route exact path="/" component={noRequireAuth(() => {window.location.href="/landing-page/index.html"})} />
             <Route path="/challenges/:section/:id" component={Lesson} />
             <Route path="/signup" component={noRequireAuth(Signup)} />
             <Route path="/login" component={noRequireAuth(Login)} />
-            <Route path="/learnmore" component={LearnMore} />
+            <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
             <Route path="/profile" component={requireAuth(Profile)} />
             <Route path="/challenges" component={Challenges} />
