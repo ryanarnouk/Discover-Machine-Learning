@@ -98,8 +98,8 @@ class Sidebar extends Component {
   check = () => {
     // check if the user got the required code to pass the challenge
     // later we would load the test from the json file and run the code
-    // for now we will jus try to get the blocks and figure out how we can run the code in javascript
-    console.log(this.props.blockly.mainWorkspace);
+    // for now we will just try to get the blocks and figure out how we can run the code in javascript
+    console.log(this.props.blockly.mainWorkspace.getAllBlocks())         
   }
 
   render() {
