@@ -14,6 +14,8 @@ const toolbox = `
     <block type="importfunction"></block>
     <block type="printfunction"></block>
     <block type="applyfunction"></block>
+    <block type="variablefunction"></block>
+    <block type="ifgreaterthanblock"></block>
   </xml
   `
 
