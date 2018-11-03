@@ -16,6 +16,9 @@ const toolbox = `
     <block type="applyfunction"></block>
     <block type="variablefunction"></block>
     <block type="ifgreaterthanblock"></block>
+    <block type="functionblock"></block>
+    <block type="argumentblock"></block>
+    <block type="callfunctionblock"></block>
   </xml
   `
 

@@ -34,7 +34,7 @@
         "Supervised Learning,1",
         "Linear Regression,0"
       ],
-      "codeblocks": false
+      "codeblocks": true
     }, 
     {
       "name": "Print variable",
@@ -50,7 +50,7 @@
         "Supervised Learning,1",
         "Linear Regression,0"
       ],
-      "codeblocks": false
+      "codeblocks": true
     },
     {
       "name": "Functions",
