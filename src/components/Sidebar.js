@@ -30,7 +30,7 @@ class Sidebar extends Component {
       modalOpen: false,
       lessonNumber: this.props.route.params.id - 1,
       done: false, // change this value later to reflect if challenge is passed or not
-      consoletext: "Your code will output here..."
+      consoletext: "Your code will output here...",
     }
 
     this.openModal = this.openModal.bind(this);
@@ -65,15 +65,17 @@ class Sidebar extends Component {
 
   save = () => {
     var xml = this.props.blockly.Xml.workspaceToDom(this.props.blockly.mainWorkspace);
-    localStorage.setItem('workspace', this.props.blockly.Xml.domToText(xml));
+    localStorage.setItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, this.props.blockly.Xml.domToText(xml));
     this.props.blockly.mainWorkspace.clear();
+    console.log(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${JSONloader.challenges[this.state.lessonNumber]}`));
+    console.log(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`);
   }
 
   load = () => {
-    var xml = this.props.blockly.Xml.textToDom(localStorage.getItem('workspace'));
+    var xml = this.props.blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`));
     this.props.blockly.Xml.domToWorkspace(xml, this.props.blockly.mainWorkspace); 
   }
-
+  
   hint = () => {
     this.load(); // need to fix so that you do not need to click the hint button for the work to show up
   }
@@ -99,7 +101,7 @@ class Sidebar extends Component {
     // check if the user got the required code to pass the challenge
     // later we would load the test from the json file and run the code
     // for now we will just try to get the blocks and figure out how we can run the code in javascript
-    console.log(this.props.blockly.mainWorkspace.getAllBlocks())         
+    console.log(this.props.blockly.mainWorkspace.getAllBlocks());        
   }
 
   render() {
