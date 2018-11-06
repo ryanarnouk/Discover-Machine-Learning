@@ -70,11 +70,6 @@ class Sidebar extends Component {
     console.log(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${JSONloader.challenges[this.state.lessonNumber]}`));
     console.log(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`);
   }
-
-  load = () => {
-    var xml = this.props.blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`));
-    this.props.blockly.Xml.domToWorkspace(xml, this.props.blockly.mainWorkspace); 
-  }
   
   hint = () => {
     this.load(); // need to fix so that you do not need to click the hint button for the work to show up

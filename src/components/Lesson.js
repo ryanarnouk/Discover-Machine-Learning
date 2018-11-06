@@ -60,11 +60,20 @@ class Lesson extends Component {
       this.blockly();
     }
     document.title = "Ryan A - " + JSONloader.challenges[this.state.lessonNumber].name;
+
+    if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
+      this.load();
+    }
   }
 
   componentDidUpdate() {
     window.removeEventListener('resize', this.blockly, false)
   } 
+
+  load = () => {
+    var xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`));
+    Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
+  }
 
   render() { 
     //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
