@@ -73,12 +73,12 @@ Blockly.Blocks['ifgreaterthanblock'] = {
 
 Blockly.Blocks['functionblock'] = {
     init: function() {
-        this.appendValueInput("NAME")
+        this.appendValueInput("function")
             .setCheck(null)
             .appendField("function")
             .appendField(new Blockly.FieldTextInput("name"), "functionname");
         this.appendDummyInput();
-        this.appendStatementInput("NAME")
+        this.appendStatementInput("statement")
             .setCheck(null);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -139,3 +139,12 @@ Blockly.JavaScript['callfunctionblock'] = function(block) {
     var code = '...;\n';
     return code;
   };
+
+Blockly.JavaScript['functionblock'] = function(block) {
+    var text_functionname = block.getFieldValue('functionname');
+    var value_function = Blockly.JavaScript.valueToCode(block, 'function', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_statement = Blockly.JavaScript.statementToCode(block, 'statement');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+};
