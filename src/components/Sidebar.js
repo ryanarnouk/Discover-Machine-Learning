@@ -72,7 +72,7 @@ class Sidebar extends Component {
   }
   
   hint = () => {
-    this.load(); // need to fix so that you do not need to click the hint button for the work to show up
+
   }
 
   glossary = () => {

@@ -261,3 +261,7 @@
   -webkit-transition: background-color .20s ease-in-out;  
   background-color: #4A0001;
 }
+
+.ReactModal__Overlay {
+  z-index: 1000;
+}
