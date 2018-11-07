@@ -59,11 +59,14 @@ class Lesson extends Component {
     if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
       this.blockly();
     }
-    document.title = "Ryan A - " + JSONloader.challenges[this.state.lessonNumber].name;
+    document.title = "Discover Machine Learning - " + JSONloader.challenges[this.state.lessonNumber].name;
 
     if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
       this.load();
     }
+
+    console.log(Blockly.mainWorkspace.getAllBlocks());
+    console.log(Blockly.mainWorkspace.getAllBlocks()[0].type);
   }
 
   componentDidUpdate() {
