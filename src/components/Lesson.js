@@ -132,7 +132,7 @@ class Lesson extends Component {
                 <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
                 {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                   <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
-                    <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
+                    <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                   </div>
                 ) : (
                   <div>
@@ -150,7 +150,7 @@ class Lesson extends Component {
                   <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
                   {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                     <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
-                      <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
+                      <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                     </div>
                   ) : (
                     <NotHotdog />
