@@ -21,7 +21,7 @@ class Signup extends Component {
         <div className="signup">
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>
-          <form onSubmit={ handleSubmit(this.submit) }>
+          <form onSubmit={ handleSubmit(this.submit) } style={{fontFamily: 'Rubik'}}>
             <Field type="input" placeholder="Username" className="email" component="input" name="name" onChange={this.nameChange}/><br />
             <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
             <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />

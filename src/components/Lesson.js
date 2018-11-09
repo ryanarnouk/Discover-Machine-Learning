@@ -78,6 +78,45 @@ class Lesson extends Component {
     Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
   }
 
+  check(event) {
+    // check if the user got the required code to pass the challenge
+    // later we would load the test from the json file and run the code
+    // for now we will just try to get the blocks and figure out how we can run the code in javascript
+
+    // this should be in lesson and not sidebar because it needs access to the blocks
+
+    // functions that are going to be used in JSON
+    function component(a) {
+      // in each function we need to do whatever the specific test wants
+      // for example, in this one we want to compare each too make sure that import function is there
+      console.log(Blockly.mainWorkspace.getAllBlocks()) // get the blocks  
+    }
+
+    function args(a, b) {
+      //get the argument and make sure it is equal to the second argument
+      console.log(a);
+    }
+
+    function values(a) {
+      // for this one if it called we want to see what is returned so we take once argument of what should be returned and then compare to what is returned to the console in the end
+      console.log(a);
+
+      // we also need to make sure that the user gets the final output well and not just by putting a print function. We could do this by adding different tests or more, or make sure that they are using the proper components with the component function
+    }
+
+    function nestedcomponents(a) {
+      // we can make sure that there are proper components inside functions and if statements using the nestedcomponents function
+      console.log(a);
+
+      // more work needs to be done on this one and how it would relate to component.
+    }
+
+    //evalute functions from string (figure out a better alternative than eval)
+    eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test)
+
+    console.log(Blockly.mainWorkspace.getAllBlocks())
+  }
+
   render() { 
     //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
       
@@ -90,7 +129,7 @@ class Lesson extends Component {
             matches ? (
               <div>
                 <ProfileNavbar />
-                <Sidebar route={this.props.match} blockly={Blockly}/>
+                <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
                 {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                   <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
                     <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>
@@ -108,7 +147,7 @@ class Lesson extends Component {
               <div style={{overflowY: 'hidden'}}>
                 <ProfileNavbar/>
                 <div style={{display: 'flex'}}>
-                  <Sidebar route={this.props.match} blockly={Blockly}/>
+                  <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
                   {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                     <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}}></div>

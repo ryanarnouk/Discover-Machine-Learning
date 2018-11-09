@@ -44,7 +44,7 @@ class Sidebar extends Component {
     this.setState({consoletext: "You just clicked the check button"}) // temporary to work with the console
     this.save();
 
-    this.check() //call the check function to make see if the user passed the challenge or not
+    this.props.checkClick();
   }
 
   afterOpenModal() {
@@ -67,7 +67,6 @@ class Sidebar extends Component {
   save = () => {
     var xml = this.props.blockly.Xml.workspaceToDom(this.props.blockly.mainWorkspace);
     localStorage.setItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, this.props.blockly.Xml.domToText(xml));
-    this.props.blockly.mainWorkspace.clear();
     console.log(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${JSONloader.challenges[this.state.lessonNumber]}`));
     console.log(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`);
   }
@@ -91,13 +90,6 @@ class Sidebar extends Component {
     if(code === "") {
       this.setState({consoletext: "Nothing To Return"})
     }
-  }
-
-  check = () => {
-    // check if the user got the required code to pass the challenge
-    // later we would load the test from the json file and run the code
-    // for now we will just try to get the blocks and figure out how we can run the code in javascript
-    console.log(this.props.blockly.mainWorkspace.getAllBlocks());        
   }
 
   render() {

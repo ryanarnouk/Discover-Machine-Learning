@@ -8,7 +8,7 @@
       "tests": [
         {
           "text": "set value to 20",
-          "test": "assert()"
+          "test": ""
         }
       ],
       "definitions": [
@@ -59,7 +59,8 @@
       "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. We can use linear regression to predict prices. PUT IMAGE Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parameters. For example, making a house price predictor you can plot a line through data that represents square feet and the actual price. That way we can input square feet and get a prediction on the price. Linear regression is supervised learning because the data is labeled.</p></div>",
       "tests": [
         {
-      
+          "text": "import data",
+          "test": "component('import'); args(1, 'Linear Regression');"
         }
       ],
       "definitions": [
