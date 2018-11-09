@@ -17,7 +17,7 @@ class Signup extends Component {
   render() { 
     const { handleSubmit } = this.props;
     return ( 
-      <div className="signupscreen"> 
+      <div className="signupscreen" style={{fontFamily: 'Rubik'}}> 
         <div className="signup">
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>

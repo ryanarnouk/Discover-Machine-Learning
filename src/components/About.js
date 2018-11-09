@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class About extends Component {
   render() { 
     return (
-      <div style={{fontSize: 16, fontFamily: 'roboto'}}>
+      <div style={{fontSize: 16, fontFamily: 'Rubik'}}>
         <ProfileNavbar style={{position: 'fixed'}}/>
         <div style={{justifyContent: 'center', alignItems: 'center', display: 'flex', height: '80vh'}}>
           <div style={{textAlign: 'center', width: '40vw'}}>

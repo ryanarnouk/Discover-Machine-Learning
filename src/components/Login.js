@@ -34,7 +34,7 @@ class Login extends Component {
     const { handleSubmit } = this.props; 
 
     return ( 
-      <div className="loginscreen">
+      <div className="loginscreen" style={{fontFamily: 'Rubik'}}>
         <div className="login">
           {this.state.errorPopup ? (
             <div style={{backgroundColor: '#7F1614', padding: 16, display: 'flex'}}>

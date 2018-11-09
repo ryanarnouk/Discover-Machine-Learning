@@ -4,8 +4,8 @@ import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
 import GlossaryBlock from './GlossaryBlock';
 import Media from "react-media";
-import CheckCircle from '@material-ui/icons/CheckCircle';
-import FontAwesome from 'react-fontawesome';
+import Check from '@material-ui/icons/Check';
+import Close from '@material-ui/icons/Close'
 import Console from './Console';
 
 const customStyles = {
@@ -16,9 +16,10 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    height: '50%',
+    height: '40%',
     width: '40vw',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Rubik'
   }
 };
 
@@ -132,15 +133,16 @@ class Sidebar extends Component {
                     > 
                       {this.state.done ? (
                         <div>
-                          <FontAwesome name="check-circle" style={{color: '#0E8EFF'}} size={70}/>
+                          <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
                           <h1>Great Job</h1>
-                          <button className="continuebutton">Continue</button>
+                          <button className="continuebutton ">Continue</button>
                         </div>
                       ) : (
                         <div>
-                          <FontAwesome name="times-circle" style={{color: '#7F0001'}} size={70}/>
+                          <Close style={{color: '#7F0001', width: 90, height: 90}}/>
                           <h1>Try Again</h1>
                           <button className="incorrectcontinuebutton">Continue</button>
+                          <button className="hintbutton">Hint</button>
                         </div>
                       )}
                     </Modal>
@@ -155,7 +157,7 @@ class Sidebar extends Component {
                   <div className="text">
                     {/*<div dangerouslySetInnerHTML={{__html: JSONloader.description[this.state.lessonNumber].description}}></div>*/}
                     {this.description()}
-                    <h3>Definitions:</h3>
+                    <h3 style={{fontFamily: 'Rubik'}}>Definitions:</h3>
                     {this.glossary()}
                     {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                       <div>
@@ -175,15 +177,16 @@ class Sidebar extends Component {
                     > 
                       {this.state.done ? (
                         <div>
-                          <FontAwesome name="check-circle" style={{color: '#0E8EFF'}} size={70}/>
+                          <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
                           <h1>Great Job</h1>
                           <button className="continuebutton ">Continue</button>
                         </div>
                       ) : (
                         <div>
-                          <FontAwesome name="times-circle" style={{color: '#7F0001'}} size={70}/>
+                          <Close style={{color: '#7F0001', width: 90, height: 90}}/>
                           <h1>Try Again</h1>
                           <button className="incorrectcontinuebutton">Continue</button>
+                          <button className="hintbutton">Hint</button>
                         </div>
                       )}
                     </Modal>

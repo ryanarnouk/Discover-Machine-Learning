@@ -66,7 +66,7 @@ class Lesson extends Component {
     }
 
     console.log(Blockly.mainWorkspace.getAllBlocks());
-    console.log(Blockly.mainWorkspace.getAllBlocks()[0].type);
+    //console.log(Blockly.mainWorkspace.getAllBlocks()[0].type);
   }
 
   componentDidUpdate() {

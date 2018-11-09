@@ -7,9 +7,9 @@ class Challenges extends Component {
   state = {  }
   render() { 
     return ( 
-      <div className="outer">
+      <div className="outer" style={{fontFamily: 'Rubik'}}>
         <ProfileNavbar />
-        <h2 style={{fontFamily: 'roboto'}}>Challenges</h2>
+        <h2 style={{fontFamily: 'Rubik'}}>Challenges</h2>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <ul className="list">
             <ChallengeList text="Intro to Programming" id={0}/>
