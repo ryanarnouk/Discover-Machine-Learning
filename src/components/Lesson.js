@@ -89,7 +89,15 @@ class Lesson extends Component {
     function component(a) {
       // in each function we need to do whatever the specific test wants
       // for example, in this one we want to compare each too make sure that import function is there
-      console.log(Blockly.mainWorkspace.getAllBlocks()) // get the blocks  
+
+      // Right here I want to iterate through the function and see if any of the types equal the type that we want 
+      for(var i = 0; i <= Blockly.mainWorkspace.getAllBlocks().length; i++) {
+        if(Blockly.mainWorkspace.getAllBlocks()[i].type === a.trim()) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     }
 
     function args(a, b) {
@@ -112,9 +120,8 @@ class Lesson extends Component {
     }
 
     //evalute functions from string (figure out a better alternative than eval)
-    eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test)
-
-    console.log(Blockly.mainWorkspace.getAllBlocks())
+    //eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test)
+    console.log(component('importfunction'));
   }
 
   render() { 
