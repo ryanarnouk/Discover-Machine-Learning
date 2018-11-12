@@ -7,6 +7,21 @@ import Media from "react-media";
 import Check from '@material-ui/icons/Check';
 import Close from '@material-ui/icons/Close'
 import Console from './Console';
+import Ajv from 'ajv';
+import JSONschema from '../seed/Schema/JSONschema.json'
+
+//validate json
+// first thing we want to do is validate the JSON that is going to come through here
+const ajv = Ajv({allErrors: true});
+const valid = ajv.validate(JSONschema, JSONloader);
+if(valid) {
+  console.log('JSON file looks good');
+} else {
+  console.log('JSON file has problems')
+  console.log(ajv.errors.map((a) => a.message));
+  console.log(ajv.errors);
+}
+
 
 const customStyles = {
   content : {

@@ -60,7 +60,7 @@
       "tests": [
         {
           "text": "import data",
-          "test": "component('import'); args(1, 'Linear Regression');"
+          "test": "component('importfunction'); args(1, 'Linear Regression');"
         }
       ],
       "definitions": [
