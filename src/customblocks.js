@@ -1,3 +1,5 @@
+/* eslint-disable */
+// disable linting on this file in specific
 import Blockly from 'node-blockly/browser'
 
 // import function 

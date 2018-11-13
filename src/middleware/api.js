@@ -53,7 +53,8 @@ export default store => next => action => {
       }),
     error => next({
       error: error.message || 'There was an error.',
-      type: errorType
+      type: errorType,
+      request: requestType
     })
   )
 }
