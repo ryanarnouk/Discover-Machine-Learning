@@ -101,8 +101,14 @@ class Lesson extends Component {
     }
 
     function args(a, b) {
-      //get the argument and make sure it is equal to the second argument
-      console.log(a);
+      // get all the arguments and individual parts of the components
+      for(var x in Blockly.mainWorkspace.getAllBlocks()) {
+        for(var y in Blockly.mainWorkspace.getAllBlocks()[x].inputList) {
+          for(var v in Blockly.mainWorkspace.getAllBlocks()[x].inputList[y].fieldRow) {
+            console.log(Blockly.mainWorkspace.getAllBlocks()[x].inputList[y].fieldRow[v].text_)
+          }
+        }
+      }
     }
 
     function values(a) {
@@ -122,6 +128,7 @@ class Lesson extends Component {
     //evalute functions from string (figure out a better alternative than eval)
     //eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test)
     console.log(component('importfunction'));
+    args();
   }
 
   render() { 

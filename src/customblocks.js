@@ -124,15 +124,6 @@ Blockly.JavaScript['printfunction'] = function(block) {
     // TODO: Assemble JavaScript into code variable
     return text_variable;
 };
-
-Blockly.JavaScript['functionblock'] = function(block) {
-    var text_functionname = block.getFieldValue('functionname');
-    var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-    var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
-    return code;
-};
   
 Blockly.JavaScript['callfunctionblock'] = function(block) {
     var text_function_name = block.getFieldValue('function name');
