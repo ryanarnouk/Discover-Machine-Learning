@@ -16,7 +16,7 @@
     "joi": "^13.3.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.3",
-    "node-blockly": "^1.0.34",
+    "node-blockly": "^1.0.35",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
