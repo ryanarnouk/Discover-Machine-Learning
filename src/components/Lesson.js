@@ -52,7 +52,7 @@ class Lesson extends Component {
     var workspacePlayground = Blockly.inject(this.blocklyDiv, {toolbox: toolbox})
     window.addEventListener('resize', this.onresize, false);
     this.onresize();
-    Blockly.svgResize(workspacePlayground)
+    Blockly.svgResize(workspacePlayground);
   }
 
   componentDidMount() { 

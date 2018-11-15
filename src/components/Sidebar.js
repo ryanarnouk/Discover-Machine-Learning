@@ -93,8 +93,8 @@ class Sidebar extends Component {
   glossary = () => {
     // if the current challenge has definitions in json return it, if not don't do anything
     if(JSONloader.challenges[this.state.lessonNumber].hasOwnProperty('definitions')) {
-      return JSONloader.challenges[this.state.lessonNumber].definitions.map(a => (
-        <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]}/> 
+      return JSONloader.challenges[this.state.lessonNumber].definitions.map((a, i) => (
+        <GlossaryBlock term={a.split(',')[0]} id={a.split(',')[1]} key={i}/> 
       )) 
     }
   }
