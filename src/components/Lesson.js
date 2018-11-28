@@ -6,21 +6,9 @@ import JSONloader from './JSONloader'
 import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
 import NotHotdog from './NotHotdog';
+import toolbox from './blocklytoolbox'
 
-const toolbox = `
-  <xml>
-    <block type="controls_if"></block>
-    <block type="controls_whileUntil"></block>
-    <block type="importfunction"></block>
-    <block type="printfunction"></block>
-    <block type="applyfunction"></block>
-    <block type="variablefunction"></block>
-    <block type="ifgreaterthanblock"></block>
-    <block type="functionblock"></block>
-    <block type="argumentblock"></block>
-    <block type="callfunctionblock"></block>
-  </xml
-  `
+
 
 class Lesson extends Component {
   constructor(props) {
@@ -66,7 +54,7 @@ class Lesson extends Component {
     }
 
     console.log(Blockly.mainWorkspace.getAllBlocks());
-    //console.log(Blockly.mainWorkspace.getAllBlocks()[0].type);
+    //console.log(Blockly.mainWorkspace.get   AllBlocks()[0].type);
   }
 
   componentDidUpdate() {
@@ -79,56 +67,46 @@ class Lesson extends Component {
   }
 
   check(event) {
-    // check if the user got the required code to pass the challenge
-    // later we would load the test from the json file and run the code
-    // for now we will just try to get the blocks and figure out how we can run the code in javascript
+    // currently the idea for running tests is to write code generators for all the blocks then check the outputs rather than using a ton of functions that get all the blocks in the workspace
 
-    // this should be in lesson and not sidebar because it needs access to the blocks
+    // In the code generator we can run all the functions that are called and simply return all the values submitted. say there is a function return the values of it and then right here right tests to make sure that values are good taken from json for each challenge (assert code)
 
-    // functions that are going to be used in JSON
-    function component(a) {
-      // in each function we need to do whatever the specific test wants
-      // for example, in this one we want to compare each too make sure that import function is there
 
-      // Right here I want to iterate through the function and see if any of the types equal the type that we want 
-      for(var i = 0; i <= Blockly.mainWorkspace.getAllBlocks().length; i++) {
-        if(Blockly.mainWorkspace.getAllBlocks()[i].type === a.trim()) {
-          return true;
+    // run the code for the blocks her   e
+    var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
+    console.log(code);   
+    
+    // FUNCTIONS
+
+    // figure out if I should put all those functions and stuff in the custom blocks file
+
+    // make sure print function prints correct 
+    function printfunction (a) {
+      if(code === a) {
+        return true;
+      } else {
+        return false; 
+      }
+    }
+
+    function importfunction (b) {
+      // get working on making the import function seperate from the print function 
+      console.log(code);
+      if(code[1] === 'import') {
+        if(code[0] === b) {
+          return true; 
         } else {
-          return false;
+          return false; 
         }
       }
     }
 
-    function args(a, b) {
-      // get all the arguments and individual parts of the components
-      for(var x in Blockly.mainWorkspace.getAllBlocks()) {
-        for(var y in Blockly.mainWorkspace.getAllBlocks()[x].inputList) {
-          for(var v in Blockly.mainWorkspace.getAllBlocks()[x].inputList[y].fieldRow) {
-            console.log(Blockly.mainWorkspace.getAllBlocks()[x].inputList[y].fieldRow[v].text_)
-          }
-        }
-      }
-    }
-
-    function values(a) {
-      // for this one if it called we want to see what is returned so we take once argument of what should be returned and then compare to what is returned to the console in the end
-      console.log(a);
-
-      // we also need to make sure that the user gets the final output well and not just by putting a print function. We could do this by adding different tests or more, or make sure that they are using the proper components with the component function
-    }
-
-    function nestedcomponents(a) {
-      // we can make sure that there are proper components inside functions and if statements using the nestedcomponents function
-      console.log(a);
-
-      // more work needs to be done on this one and how it would relate to component.
+    function setxydata (a, b) {
+      return code;
     }
 
     //evalute functions from string (figure out a better alternative than eval)
-    //eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test)
-    console.log(component('importfunction'));
-    args();
+    console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
   }
 
   render() { 

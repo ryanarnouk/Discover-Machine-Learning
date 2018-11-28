@@ -7,10 +7,11 @@ Blockly.Blocks['importfunction'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("import")
-            .appendField(new Blockly.FieldTextInput("file name"), "NAME");
+            .appendField(new Blockly.FieldTextInput("file name"), "filename");
+        this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(30);
-    this.setTooltip("import ");
+        this.setColour(230);
+    this.setTooltip("");
     this.setHelpUrl("");
     }
 };
@@ -116,6 +117,22 @@ Blockly.Blocks['callfunctionblock'] = {
     }
 };
 
+Blockly.Blocks['setdata'] = {
+    init: function() {
+      this.appendValueInput("setdata")
+          .setCheck(null)
+          .appendField("set data")
+          .appendField(new Blockly.FieldTextInput("X value"), "xvalue")
+          .appendField(new Blockly.FieldTextInput("Y value"), "yvalue");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(165);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
+
 // CODE TO RUN ALL THE BLOCKS
 
 // block logic
@@ -124,13 +141,19 @@ Blockly.JavaScript['printfunction'] = function(block) {
     // TODO: Assemble JavaScript into code variable
     return text_variable;
 };
+
+Blockly.JavaScript['importfunction'] = function(block) {
+    var text_filename = block.getFieldValue('filename');
+    // TODO: Assemble JavaScript into code variable.
+    return [text_filename, block];
+};
   
 Blockly.JavaScript['callfunctionblock'] = function(block) {
     var text_function_name = block.getFieldValue('function name');
     var text_arguments = block.getFieldValue('arguments');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
-    return code;
+    // here we can return the values and then when testing make sure that they are the proper values
+    return text_function_name + text_arguments;
   };
 
 Blockly.JavaScript['functionblock'] = function(block) {
@@ -141,3 +164,11 @@ Blockly.JavaScript['functionblock'] = function(block) {
     var code = '...;\n';
     return code;
 };
+
+Blockly.JavaScript['setdata'] = function(block) {
+    var text_xvalue = block.getFieldValue('xvalue');
+    var text_yvalue = block.getFieldValue('yvalue');
+    var value_setdata = Blockly.JavaScript.valueToCode(block, 'setdata', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    return [text_xvalue, text_yvalue];
+  }

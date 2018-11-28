@@ -56,11 +56,11 @@
       "name": "Intro to Linear Regression",
       "section": "regression",
       "number": 4, 
-      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. We can use linear regression to predict prices. PUT IMAGE Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parameters. For example, making a house price predictor you can plot a line through data that represents square feet and the actual price. That way we can input square feet and get a prediction on the price. Linear regression is supervised learning because the data is labeled.</p></div>",
+      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. We can use linear regression to predict prices. PUT IMAGE Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parameters. For example, making a house price predictor you can plot a line through data that represents square feet and the actual price. That way we can input square feet and get a prediction on the price. Linear regression is supervised learning because the data is labeled. First thing we want to do is add an import function WORK ON IMPORT FUNCTION INSTRUCTIONS AND ADD IMAGES</p></div>",
       "tests": [
         {
           "text": "import data",
-          "test": "component('importfunction'); args(1, 'Linear Regression');"
+          "test": "importfunction('yoo')"
         }
       ],
       "definitions": [
@@ -76,7 +76,8 @@
       "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on.",
       "tests": [
         {
-
+          "text": "set the plots of data", 
+          "test": "setxydata(a, b)"
         }
       ], 
       "codeblocks": true 
@@ -88,7 +89,7 @@
       "description": "Whenever we make a machine learning model, we need to split the data into a training set and a testing set <br/> This means, we feed the computer the training data so it learns from it and then we test how good the computer can recognize whatever we find.",
       "tests": [
         {
-      
+          
         }
       ],
       "codeblocks": true
