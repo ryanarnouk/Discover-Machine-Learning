@@ -36,7 +36,7 @@ Blockly.Blocks['applyfunction'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("apply")
-            .appendField(new Blockly.FieldDropdown([["K Nearest Neighbors","select"], ["Linear Regression","linearregression"], ["Support Vector Machine","svm"]]), "selectmodel");
+            .appendField(new Blockly.FieldDropdown([["K Nearest Neighbors","knearest"], ["Linear Regression","linearregression"], ["Support Vector Machine","svm"]]), "selectmodel");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(345);
@@ -49,9 +49,9 @@ Blockly.Blocks['variablefunction'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("variable")
-            .appendField(new Blockly.FieldTextInput(""), "variablename")
+            .appendField(new Blockly.FieldTextInput("variable"), "variablename")
             .appendField("equals")
-            .appendField(new Blockly.FieldTextInput(""), "equal");
+            .appendField(new Blockly.FieldTextInput("default"), "equal");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(345);
@@ -68,6 +68,20 @@ Blockly.Blocks['ifgreaterthanblock'] = {
             .appendField(new Blockly.FieldDropdown([["is less than","is less than"], ["is greater than","is greater than"], ["is equal too","is equal too"]]), "dropdown")
             .appendField(new Blockly.FieldNumber(0), "number");
         this.setOutput(true, null);
+        this.setColour(75);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['ifgreaterthanblock'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldTextInput(""), "variablename")
+            .appendField(new Blockly.FieldDropdown([["is less than","is less than"], ["is greater than","is greater  than"], ["is equal too","is equal too"]]), "dropdown")
+            .appendField(new Blockly.FieldNumber(0), "number");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour(75);
     this.setTooltip("");
     this.setHelpUrl("");
@@ -145,7 +159,7 @@ Blockly.JavaScript['printfunction'] = function(block) {
 Blockly.JavaScript['importfunction'] = function(block) {
     var text_filename = block.getFieldValue('filename');
     // TODO: Assemble JavaScript into code variable.
-    return [text_filename, block];
+    return `${text_filename},${block}`;
 };
   
 Blockly.JavaScript['callfunctionblock'] = function(block) {
@@ -153,7 +167,7 @@ Blockly.JavaScript['callfunctionblock'] = function(block) {
     var text_arguments = block.getFieldValue('arguments');
     // TODO: Assemble JavaScript into code variable.
     // here we can return the values and then when testing make sure that they are the proper values
-    return text_function_name + text_arguments;
+    return `${text_function_name},${text_arguments}`;
   };
 
 Blockly.JavaScript['functionblock'] = function(block) {
@@ -161,8 +175,7 @@ Blockly.JavaScript['functionblock'] = function(block) {
     var value_function = Blockly.JavaScript.valueToCode(block, 'function', Blockly.JavaScript.ORDER_ATOMIC);
     var statements_statement = Blockly.JavaScript.statementToCode(block, 'statement');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
-    return code;
+    return `${text_functionname},${value_function},${statements_statement}`;
 };
 
 Blockly.JavaScript['setdata'] = function(block) {
@@ -171,4 +184,34 @@ Blockly.JavaScript['setdata'] = function(block) {
     var value_setdata = Blockly.JavaScript.valueToCode(block, 'setdata', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     return [text_xvalue, text_yvalue];
-  }
+}
+
+Blockly.JavaScript['applyfunction'] = function(block) {
+    var dropdown_selectmodel = block.getFieldValue('selectmodel');
+    // TODO: Assemble JavaScript into code variable.
+    return dropdown_selectmodel;
+};
+
+Blockly.JavaScript['variablefunction'] = function(block) {
+    var text_variablename = block.getFieldValue('variablename');
+    var text_equal = block.getFieldValue('equal');
+    // TODO: Assemble JavaScript into code variable.
+
+    // FIGURE OUT HOW TO OUTPUT AS ARRAY AND CONTINUE WITH REST OF BLOCKS
+    return text_variablename + ',' + text_equal;
+};
+
+Blockly.JavaScript['ifgreaterthanblock'] = function(block) {
+    var text_variablename = block.getFieldValue('variablename');
+    var dropdown_dropdown = block.getFieldValue('dropdown');
+    var number_number = block.getFieldValue('number');
+    // TODO: Assemble JavaScript into code variable.
+    return `${text_variablename},${dropdown_dropdown},${number_number}`;
+};
+
+Blockly.JavaScript['argumentblock'] = function(block) {
+    var text_argumentblock = block.getFieldValue('argumentblock');
+    // TODO: Assemble JavaScript into code variable.
+    // TODO: Change ORDER_NONE to the correct strength.
+    return text_argumentblock;
+  };

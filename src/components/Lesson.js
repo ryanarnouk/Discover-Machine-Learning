@@ -72,8 +72,9 @@ class Lesson extends Component {
     // In the code generator we can run all the functions that are called and simply return all the values submitted. say there is a function return the values of it and then right here right tests to make sure that values are good taken from json for each challenge (assert code)
 
 
-    // run the code for the blocks her   e
+    // run the code for the blocks here
     var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
+    code = code.split(','); //split if it has spaces(for array)
     console.log(code);   
     
     // FUNCTIONS
