@@ -10,7 +10,6 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="importfunction"></block>
   <block type="printfunction"></block>
   <block type="applyfunction"></block>
-  <block type="variablefunction"></block>
   <block type="functionblock"></block>
   <block type="callfunctionblock"></block>
   <block type="setdata"></block>
@@ -24,6 +23,8 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="controls_whileUntil"></block>
   <block type="ifgreaterthanblock"></block>
   <block type="functionblock"></block>
+  <block type="variablefunction"></block>
+  <block type="printfunction"></block>
   <block type="argumentblock"></block>
   <block type="callfunctionblock"></block>
 </xml

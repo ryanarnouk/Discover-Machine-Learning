@@ -27,7 +27,8 @@
       "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and make a variable <code>x</code> and set it too 3.",
       "tests": [
         {
-          "text": "second part"
+          "text": "add a variable x and set it too 3",
+          "test": "assert.equal(code[0], 'x'); assert.equal(code[1], 3)"
         }
       ],
       "definitions": [

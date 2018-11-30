@@ -7,8 +7,7 @@ import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
 import NotHotdog from './NotHotdog';
 import toolbox from './blocklytoolbox'
-
-
+var assert = require('assert');
 
 class Lesson extends Component {
   constructor(props) {
@@ -77,11 +76,7 @@ class Lesson extends Component {
     code = code.split(','); //split if it has spaces(for array)
     console.log(code);   
     
-    // FUNCTIONS
-
-    // figure out if I should put all those functions and stuff in the custom blocks file
-
-    // make sure print function prints correct 
+    // custom functions that will not use assert
     function printfunction (a) {
       if(code === a) {
         return true;
@@ -105,8 +100,18 @@ class Lesson extends Component {
     function setxydata (a, b) {
       return code;
     }
+     
+    function variablefunction(a, b) {
+      if(code[0] === a && code[1] === a) {
+        return true;
+      }
+    }
 
-    //evalute functions from string (figure out a better alternative than eval)
+    // figure out how to use assert for tests
+
+    console.log(assert('x', 'yo this is a test'));
+    console.log(assert.strictEqual('x', 'x'));
+
     console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
   }
 
