@@ -26,7 +26,7 @@ class Signup extends Component {
             <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
             <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />
             <input type="submit" value="Sign Up" className="submit"/> 
-            <p style={{fontSize: 13}}>By creating an account you agree to our <Link to="#" style={{color: 'dodgerblue'}}>Terms & Privacy</Link></p>
+            <p style={{fontSize: 13}}>By creating an account you agree to our <Link to="/privacypolicy" style={{color: 'dodgerblue'}}>Terms & Privacy</Link></p>
           </form>
           <div>
             <h2>Or sign up with:</h2>
@@ -41,7 +41,7 @@ class Signup extends Component {
           </div>
           <div>
             <p><Link to="/challenges/regression/1" onClick={this.forceUpdate}>Continue as a guest</Link></p>
-            <p style={{fontSize: 13}}>Continueing as a guest will not save your progress and it is recommended that you sign up for an account to save your progress</p>
+            <p style={{fontSize: 13}}>Continuing as a guest will not save your progress and it is recommended that you sign up for an account to save your progress</p>
           </div>
         </div>
       </div>
