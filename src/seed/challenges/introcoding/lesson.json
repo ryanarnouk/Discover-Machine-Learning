@@ -28,7 +28,7 @@
       "tests": [
         {
           "text": "add a variable x and set it too 3",
-          "test": "assert.equal(code[0], 'x'); assert.equal(code[1], 3)"
+          "test": "assert(code[0], 'x'); assert(code[1], 3); assert(code[2], 'variablefunction');"
         }
       ],
       "definitions": [
@@ -44,7 +44,8 @@
       "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as the variable. Use the print function and print <code>x</code>, and you will then see the output in the console.",
       "tests": [
         {
-
+          "text": "print a string",
+          "test": "assert(code[1], 'printfunction')"
         }
       ],
       "definitions": [
@@ -60,7 +61,8 @@
       "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code> and inside it, make a variable y and set it to some text. Then print the variable inside of the function.",
       "tests": [
         {
-      
+          "text": "make a function put a variable and print it",
+          "test": "assert()"
         }
       ],
       "definitions": [

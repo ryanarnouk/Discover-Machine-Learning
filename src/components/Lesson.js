@@ -75,42 +75,16 @@ class Lesson extends Component {
     var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     code = code.split(','); //split if it has spaces(for array)
     console.log(code);   
-    
-    // custom functions that will not use assert
-    function printfunction (a) {
-      if(code === a) {
+
+    // make tests work with multiple blockly components
+
+    function assert(a, b) {
+      if(a == b) {
         return true;
       } else {
-        return false; 
+        return false;
       }
     }
-
-    function importfunction (b) {
-      // get working on making the import function seperate from the print function 
-      console.log(code);
-      if(code[1] === 'import') {
-        if(code[0] === b) {
-          return true; 
-        } else {
-          return false; 
-        }
-      }
-    }
-
-    function setxydata (a, b) {
-      return code;
-    }
-     
-    function variablefunction(a, b) {
-      if(code[0] === a && code[1] === a) {
-        return true;
-      }
-    }
-
-    // figure out how to use assert for tests
-
-    console.log(assert('x', 'yo this is a test'));
-    console.log(assert.strictEqual('x', 'x'));
 
     console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
   }
