@@ -198,7 +198,7 @@ Blockly.JavaScript['variablefunction'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
 
     // FIGURE OUT HOW TO OUTPUT AS ARRAY AND CONTINUE WITH REST OF BLOCKS
-    return text_variablename + ',' + text_equal + ',' + block;
+    return text_variablename + ',' + text_equal + ',' + 'variablefunction';
 };
 
 Blockly.JavaScript['ifgreaterthanblock'] = function(block) {

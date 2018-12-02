@@ -15,6 +15,7 @@ class Lesson extends Component {
 
     this.state = {
       lessonNumber: this.props.match.params.id - 1,
+      challengestate: false
     }
     this.blockly = this.blockly.bind(this);
   }
@@ -65,35 +66,8 @@ class Lesson extends Component {
     Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
   }
 
-  check(event) {
-    // currently the idea for running tests is to write code generators for all the blocks then check the outputs rather than using a ton of functions that get all the blocks in the workspace
-
-    // In the code generator we can run all the functions that are called and simply return all the values submitted. say there is a function return the values of it and then right here right tests to make sure that values are good taken from json for each challenge (assert code)
-
-
-    // run the code for the blocks here
-    var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
-    code = code.split(','); //split if it has spaces(for array)
-    console.log(code);   
-
-    // make tests work with multiple blockly components
-
-    function assert(a, b) {
-      if(a == b) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
-  }
-
   render() { 
     //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
-      
-    console.log(JSONloader.challenges[this.state.lessonNumber].codeblocks)
-
     return (
       <div style={{fontFamily: 'roboto'}}>
         <Media query="(max-width: 600px)">
@@ -101,7 +75,7 @@ class Lesson extends Component {
             matches ? (
               <div>
                 <ProfileNavbar />
-                <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
+                <Sidebar route={this.props.match} blockly={Blockly}/>
                 {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                   <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
                     <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
@@ -119,7 +93,7 @@ class Lesson extends Component {
               <div style={{overflowY: 'hidden'}}>
                 <ProfileNavbar/>
                 <div style={{display: 'flex'}}>
-                  <Sidebar route={this.props.match} blockly={Blockly} checkClick={this.check.bind(this)}/>
+                  <Sidebar route={this.props.match} blockly={Blockly}/>
                   {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                     <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>

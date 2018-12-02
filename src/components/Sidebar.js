@@ -45,8 +45,8 @@ class Sidebar extends Component {
     this.state = {
       modalOpen: false,
       lessonNumber: this.props.route.params.id - 1,
-      done: false, // change this value later to reflect if challenge is passed or not
       consoletext: "Your code will output here...",
+      challengestate: false
     }
 
     this.openModal = this.openModal.bind(this);
@@ -56,10 +56,8 @@ class Sidebar extends Component {
  
   openModal() {
     this.setState({modalOpen: true});
-    this.setState({consoletext: "You just clicked the check button"}) // temporary to work with the console
     this.save();
-
-    this.props.checkClick();
+    this.check();
   }
 
   afterOpenModal() {
@@ -107,6 +105,35 @@ class Sidebar extends Component {
     }
   }
 
+  check = (event) => {
+    // currently the idea for running tests is to write code generators for all the blocks then check the outputs rather than using a ton of functions that get all the blocks in the workspace
+
+    // In the code generator we can run all the functions that are called and simply return all the values submitted. say there is a function return the values of it and then right here right tests to make sure that values are good taken from json for each challenge (assert code)
+
+
+    // run the code for the blocks here
+    var code = this.props.blockly.JavaScript.workspaceToCode(this.props.blockly.getMainWorkspace());
+    code = code.split(','); //split if it has spaces(for array)
+    console.log(code);   
+
+    // make tests work with multiple blockly components
+    // there is a problem with this code that returns the test as true when it should be false
+    var self = this;
+    function assert(a, b) {
+      if(a == b) {
+        self.setState({challengestate: true});
+        return true;
+      } else {
+        if(self.state.challengestate === true) {
+          self.setState({challengestate: false});
+        }
+        return false;
+      }
+    }
+    
+    console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
@@ -138,7 +165,7 @@ class Sidebar extends Component {
                       style={customStyles}
                       contentLabel="Check"
                     > 
-                      {this.state.done ? (
+                      {this.state.challengestate ? (
                         <div>
                           <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
                           <h1>Great Job</h1>
@@ -182,7 +209,7 @@ class Sidebar extends Component {
                       style={customStyles}
                       contentLabel="Check"
                     > 
-                      {this.state.done ? (
+                      {this.state.challengestate ? (
                         <div>
                           <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
                           <h1>Great Job</h1>
