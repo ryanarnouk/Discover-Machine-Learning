@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Challenges.css'
 import ProfileNavbar from './ProfileNavbar';
 import ChallengeList from './ChallengeList';
+import GoogleAds from './GoogleAds'
 
 class Challenges extends Component {
   state = {  }
@@ -19,6 +20,7 @@ class Challenges extends Component {
             <ChallengeList text="Reinforcement Learning" id={4}/>
           </ul>
         </div>
+        <GoogleAds />
       </div>
     );
   }
