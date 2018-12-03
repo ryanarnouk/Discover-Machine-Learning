@@ -55,9 +55,9 @@ class Sidebar extends Component {
   }
  
   openModal() {
+    this.setState({challengestate:this.check()});
     this.setState({modalOpen: true});
     this.save();
-    this.check();
   }
 
   afterOpenModal() {
@@ -119,23 +119,32 @@ class Sidebar extends Component {
     // make tests work with multiple blockly components
     // there is a problem with this code that returns the test as true when it should be false
     var self = this;
+    var arrayofbool = [];
     function assert(a, b) {
       if(a == b) {
-        self.setState({challengestate: true});
-        return true;
+        arrayofbool.push(true);
       } else {
         if(self.state.challengestate === true) {
-          self.setState({challengestate: false});
+          arrayofbool.push(false);
         }
-        return false;
+        arrayofbool.push(false);
       }
     }
-    
-    console.log(eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test));
+
+    eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test);
+    console.log(arrayofbool)
+
+    function checktrue(value) {
+      return value === true;
+    }
+
+    return arrayofbool.every(checktrue);
   }
 
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
+
+    console.log(this.state.challengestate);
 
     const a = this.props.route.params.section;
     return (

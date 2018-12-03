@@ -53,7 +53,7 @@ class Lesson extends Component {
       this.load();
     }
 
-    console.log(Blockly.mainWorkspace.getAllBlocks());
+    //console.log(Blockly.mainWorkspace.getAllBlocks());
     //console.log(Blockly.mainWorkspace.get   AllBlocks()[0].type);
   }
 

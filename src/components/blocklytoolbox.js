@@ -35,6 +35,4 @@ if(window.location.pathname.split('/')[2] === 'regression'){
 
 }
 
-console.log(toolbox);
-
 export default toolbox;
