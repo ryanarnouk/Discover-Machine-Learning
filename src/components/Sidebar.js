@@ -85,7 +85,7 @@ class Sidebar extends Component {
   }
   
   hint = () => {
-
+    
   }
 
   glossary = () => {
@@ -141,6 +141,10 @@ class Sidebar extends Component {
     return arrayofbool.every(checktrue);
   }
 
+  continue = () => {
+    window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
@@ -176,17 +180,17 @@ class Sidebar extends Component {
                     > 
                       {this.state.challengestate ? (
                         <div>
-                          <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
-                          <h1>Great Job</h1>
-                          <button className="continuebutton ">Continue</button>
-                        </div>
-                      ) : (
-                        <div>
-                          <Close style={{color: '#7F0001', width: 90, height: 90}}/>
-                          <h1>Try Again</h1>
-                          <button className="incorrectcontinuebutton">Continue</button>
-                          <button className="hintbutton">Hint</button>
-                        </div>
+                        <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
+                        <h1>Great Job</h1>
+                        <button className="continuebutton" onClick={this.continue}>Continue</button>
+                      </div>
+                    ) : (
+                      <div>
+                        <Close style={{color: '#7F0001', width: 90, height: 90}}/>
+                        <h1>Try Again</h1>
+                        <button className="incorrectcontinuebutton" onClick={this.closeModal}>Continue</button>
+                        <button className="hintbutton">Hint</button>
+                      </div>
                       )}
                     </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
@@ -222,13 +226,13 @@ class Sidebar extends Component {
                         <div>
                           <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
                           <h1>Great Job</h1>
-                          <button className="continuebutton ">Continue</button>
+                          <button className="continuebutton" onClick={this.continue}>Continue</button>
                         </div>
                       ) : (
                         <div>
                           <Close style={{color: '#7F0001', width: 90, height: 90}}/>
                           <h1>Try Again</h1>
-                          <button className="incorrectcontinuebutton">Continue</button>
+                          <button className="incorrectcontinuebutton" onClick={this.closeModal}>Continue</button>
                           <button className="hintbutton">Hint</button>
                         </div>
                       )}

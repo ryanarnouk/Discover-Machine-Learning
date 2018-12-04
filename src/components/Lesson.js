@@ -7,7 +7,6 @@ import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
 import NotHotdog from './NotHotdog';
 import toolbox from './blocklytoolbox'
-var assert = require('assert');
 
 class Lesson extends Component {
   constructor(props) {

@@ -153,7 +153,7 @@ Blockly.Blocks['setdata'] = {
 Blockly.JavaScript['printfunction'] = function(block) {
     var text_variable = block.getFieldValue('variable');
     // TODO: Assemble JavaScript into code variable
-    return text_variable;
+    return text_variable + ',' + 'printfunction';
 };
 
 Blockly.JavaScript['importfunction'] = function(block) {
@@ -175,7 +175,11 @@ Blockly.JavaScript['functionblock'] = function(block) {
     var value_function = Blockly.JavaScript.valueToCode(block, 'function', Blockly.JavaScript.ORDER_ATOMIC);
     var statements_statement = Blockly.JavaScript.statementToCode(block, 'statement');
     // TODO: Assemble JavaScript into code variable.
-    return `${text_functionname},${value_function},${statements_statement}`;
+    if(value_function !== "") {
+        return `${text_functionname},${value_function},${statements_statement}`;
+    } else {
+        return `${text_functionname},${statements_statement}`
+    }
 };
 
 Blockly.JavaScript['setdata'] = function(block) {

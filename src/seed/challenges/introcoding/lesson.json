@@ -58,7 +58,7 @@
       "name": "Functions",
       "section": "introcoding",
       "number": 4, 
-      "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code> and inside it, make a variable y and set it to some text. Then print the variable inside of the function.",
+      "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code> and inside it, make a variable y and set it to some text. Then print the variable inside of the function. THIS CAN BE SPLIT INTO SEPERATE SECTIONS FOR USABILITY",
       "tests": [
         {
           "text": "make a function put a variable and print it",
@@ -75,7 +75,7 @@
       "name": "Call the function",
       "section": "introcoding",
       "number": 5, 
-      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try calling it twice and see the output come twice in the console.",
+      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try calling it and see the print function return a value.",
       "tests": [
         {
 
