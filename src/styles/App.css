@@ -293,3 +293,11 @@
 .ReactModal__Overlay {
   z-index: 1000;
 }
+
+code {
+  background-color: #424242;
+  color: white;
+  border-radius: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+}

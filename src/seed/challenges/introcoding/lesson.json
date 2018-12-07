@@ -21,7 +21,7 @@
       ]
     }, 
     {
-      "name": "Add a variable",
+      "name": "Add a Variable",
       "section": "introcoding",
       "number": 2,
       "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and make a variable <code>x</code> and set it too 3.",
@@ -35,7 +35,11 @@
         "Supervised Learning,1",
         "Linear Regression,0"
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "First try adding a <block>variable<block> block set it to <code>x</code>",
+        "Make sure that you set the variable to <code>3</code>"
+      ]
     }, 
     {
       "name": "Print variable",
@@ -62,7 +66,7 @@
       "tests": [
         {
           "text": "make a function put a variable and print it",
-          "test": "assert()"
+          "test": "assert() //RIGHT SOME TESTS FOR THIS THING"
         }
       ],
       "definitions": [

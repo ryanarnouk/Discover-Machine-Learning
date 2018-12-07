@@ -14,6 +14,7 @@ import Login from './Login';
 import About from './About';
 import Profile from './Profile';
 import Challenges from './Challenges';
+import Hint from './Hint';
 
 import requireAuth from './RequireAuth';
 import noRequireAuth from './NoRequireAuth';
@@ -45,6 +46,7 @@ class App extends Component {
             <Route path="/challenges" component={Challenges} />
             <Route path="/privacypolicy" component={noRequireAuth(() => {window.location.href="/landing-page/privacypolicy.html"})} />
             <Route path="/faq" component={noRequireAuth(() => {window.location.href="/landing-page/faq.html"})} />
+            <Route path="/hint/:section/:id" component={Hint} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
