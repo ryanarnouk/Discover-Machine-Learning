@@ -294,7 +294,7 @@
   z-index: 1000;
 }
 
-code {
+.codeblock {
   background-color: #424242;
   color: white;
   border-radius: 5px;
