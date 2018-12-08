@@ -301,3 +301,9 @@ code {
   padding-left: 4px;
   padding-right: 4px;
 }
+
+.bugreporttext {
+  padding: 5px;
+  width: 87%;
+  font-family: 'Rubik';
+}

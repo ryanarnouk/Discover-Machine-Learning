@@ -15,6 +15,7 @@ import About from './About';
 import Profile from './Profile';
 import Challenges from './Challenges';
 import Hint from './Hint';
+import BugReport from './BugReport'
 
 import requireAuth from './RequireAuth';
 import noRequireAuth from './NoRequireAuth';
@@ -47,6 +48,7 @@ class App extends Component {
             <Route path="/privacypolicy" component={noRequireAuth(() => {window.location.href="/landing-page/privacypolicy.html"})} />
             <Route path="/faq" component={noRequireAuth(() => {window.location.href="/landing-page/faq.html"})} />
             <Route path="/hint/:section/:id" component={Hint} />
+            <Route path="/bugreport" component={BugReport} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

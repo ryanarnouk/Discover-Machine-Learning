@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import JSONloader from './JSONloader';
 import Parser from 'html-react-parser';
 import ProfileNavbar from './ProfileNavbar';
+import { Link } from 'react-router-dom';
 
 class Hint extends Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class Hint extends Component {
         <div style={{fontFamily: 'Rubik'}}>
           <ProfileNavbar />
           <h1 style={{textAlign: "center"}}>{Parser(JSONloader.challenges[this.state.lessonNumber].name)} - Hints</h1>
-
           <div style={{margin: 20}}>
             {JSONloader.challenges[this.state.lessonNumber].hints.map((a, i) => {
               return (<div>
@@ -29,6 +29,7 @@ class Hint extends Component {
                 <p>{Parser(a)}</p>
               </div>)
             })}
+            <p style={{textAlign: 'center'}}>Found a bug? Submit bug reports <Link to="/bugreport" style={{color: 'dodgerblue'}}>here</Link></p>
           </div>
         </div>
       );
