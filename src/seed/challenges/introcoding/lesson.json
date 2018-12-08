@@ -45,7 +45,7 @@
       "name": "Print variable",
       "section": "introcoding",
       "number": 3, 
-      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as the variable. Use the print function and print <code>x</code>, and you will then see the output in the console.",
+      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as the variable. Use the print function and print <code>x</code>, and you will then see the output in the console. // TESTS ARE WRITTEN RIGHT NOW TO PRINT A STRING TO THE CONSOLE INSTEAD OF PRINT A VARIABLE NEED TO FIX ",
       "tests": [
         {
           "text": "print a string",
@@ -66,7 +66,7 @@
       "tests": [
         {
           "text": "make a function put a variable and print it",
-          "test": "assert() //RIGHT SOME TESTS FOR THIS THING"
+          "test": "assert(code[0], 'z'); assert(code[6], 'functionblock'); assert(code[1], 'y'); lengthfunc(code[2], 0); assert(code[3], 'variablefunction'); lengthfunc(code[4], 0); assert(code[5], 'printfunction');"
         }
       ],
       "definitions": [

@@ -159,7 +159,7 @@ Blockly.JavaScript['printfunction'] = function(block) {
 Blockly.JavaScript['importfunction'] = function(block) {
     var text_filename = block.getFieldValue('filename');
     // TODO: Assemble JavaScript into code variable.
-    return `${text_filename},${block}`;
+    return `${text_filename},${block},importfunction`;
 };
   
 Blockly.JavaScript['callfunctionblock'] = function(block) {
@@ -167,7 +167,7 @@ Blockly.JavaScript['callfunctionblock'] = function(block) {
     var text_arguments = block.getFieldValue('arguments');
     // TODO: Assemble JavaScript into code variable.
     // here we can return the values and then when testing make sure that they are the proper values
-    return `${text_function_name},${text_arguments}`;
+    return `${text_function_name},${text_arguments},callfunctionblock,`;
   };
 
 Blockly.JavaScript['functionblock'] = function(block) {
@@ -176,9 +176,9 @@ Blockly.JavaScript['functionblock'] = function(block) {
     var statements_statement = Blockly.JavaScript.statementToCode(block, 'statement');
     // TODO: Assemble JavaScript into code variable.
     if(value_function !== "") {
-        return `${text_functionname},${value_function},${statements_statement}`;
+        return `${text_functionname},${value_function},${statements_statement},functionblock,`;
     } else {
-        return `${text_functionname},${statements_statement}`
+        return `${text_functionname},${statements_statement},functionblock,`
     }
 };
 
@@ -187,13 +187,13 @@ Blockly.JavaScript['setdata'] = function(block) {
     var text_yvalue = block.getFieldValue('yvalue');
     var value_setdata = Blockly.JavaScript.valueToCode(block, 'setdata', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    return [text_xvalue, text_yvalue];
+    return `${text_xvalue},${text_yvalue},${text_yvalue},setdata`;
 }
 
 Blockly.JavaScript['applyfunction'] = function(block) {
     var dropdown_selectmodel = block.getFieldValue('selectmodel');
     // TODO: Assemble JavaScript into code variable.
-    return dropdown_selectmodel;
+    return `${dropdown_selectmodel},applyfunction,`;
 };
 
 Blockly.JavaScript['variablefunction'] = function(block) {
@@ -202,7 +202,7 @@ Blockly.JavaScript['variablefunction'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
 
     // FIGURE OUT HOW TO OUTPUT AS ARRAY AND CONTINUE WITH REST OF BLOCKS
-    return text_variablename + ',' + text_equal + ',' + 'variablefunction';
+    return text_variablename + ',' + text_equal + ',' + 'variablefunction' + ',';
 };
 
 Blockly.JavaScript['ifgreaterthanblock'] = function(block) {
@@ -210,12 +210,12 @@ Blockly.JavaScript['ifgreaterthanblock'] = function(block) {
     var dropdown_dropdown = block.getFieldValue('dropdown');
     var number_number = block.getFieldValue('number');
     // TODO: Assemble JavaScript into code variable.
-    return `${text_variablename},${dropdown_dropdown},${number_number}`;
+    return `${text_variablename},${dropdown_dropdown},${number_number},`;
 };
 
 Blockly.JavaScript['argumentblock'] = function(block) {
     var text_argumentblock = block.getFieldValue('argumentblock');
     // TODO: Assemble JavaScript into code variable.
     // TODO: Change ORDER_NONE to the correct strength.
-    return text_argumentblock;
+    return `${text_argumentblock},argumentblock,`;
 };
