@@ -22,13 +22,21 @@ class ChallengeBlock extends Component {
 }
 
 class Profile extends Component {
+  profilepicture = () => {
+    if(localStorage.getItem('user_name') !== null) {
+      return (
+        <h1 className="profilepic">{localStorage.getItem('user_name').charAt(0).toUpperCase()}</h1>
+      )
+    }
+  }
+
   render() {
     return ( 
       <div className="main" style={{color: 'black', fontFamily: 'Rubik'}}>
         <ProfileNavbar />
         <div style={{textAlign: 'center'}}> 
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <h1 className="profilepic">{localStorage.getItem('user_name').charAt(0).toUpperCase()}</h1>
+            {this.profilepicture()}
           </div>
           <h1 className="name">{localStorage.getItem('user_name')}</h1>
         </div>

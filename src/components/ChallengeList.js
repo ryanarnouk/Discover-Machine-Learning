@@ -54,27 +54,27 @@ class ChallengeList extends Component {
             <ul style={{listStyleType: 'none', padding: 0, fontSize: 18}}>
               {this.props.id === 0 ? Introcoding.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete introcoding ${i}`)} data={a}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete introcoding ${i}`)} data={a} key={i}/>
                 ]
               }): false}
               {this.props.id === 1 ? Regression.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete regression ${i}`)} data={a}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete regression ${i}`)} data={a} key={i}/>
                 ]
               }): false}
               {this.props.id === 2 ? Classification.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete classification ${i}`)} data={a}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete classification ${i}`)} data={a} key={i}/>
                 ]
               }): false}
               {this.props.id === 3 ? DeepLearning.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete deeplearning ${i}`)} data={a}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete deeplearning ${i}`)} data={a} key={i}/>
                 ]
               }): false}
               {this.props.id === 4 ? Reinforcement.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcement ${i}`)} data={a}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcement ${i}`)} data={a} key={i}/>
                 ]
               }): false}
             </ul>
