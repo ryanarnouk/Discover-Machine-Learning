@@ -38,7 +38,7 @@ class Profile extends Component {
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             {this.profilepicture()}
           </div>
-          <h1 className="name">{localStorage.getItem('user_name')}</h1>
+          <h1 className="name" style={{color: 'black'}}>{localStorage.getItem('user_name')}</h1>
         </div>
         <Challenges />
       </div>  

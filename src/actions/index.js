@@ -49,7 +49,11 @@ export function SignUpAction({ name, email, password }, history) {
 // try to make this use history
 export function signOutAction(history) {
   console.log('signOutFunction');
-  localStorage.clear();
+  // trying to fix bug that clears all of localstorage
+  localStorage.removeItem('user');
+  localStorage.removeItem('user_name')
+  //   localStorage.clear();
+  // only remove the user localstorage if logged out. Need to write code if someone else logs in with different data on server to clear previous user localstorage
   window.location.href = '/';
   return {
     type: UNAUTHENTICATED
