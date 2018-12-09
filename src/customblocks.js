@@ -217,5 +217,5 @@ Blockly.JavaScript['argumentblock'] = function(block) {
     var text_argumentblock = block.getFieldValue('argumentblock');
     // TODO: Assemble JavaScript into code variable.
     // TODO: Change ORDER_NONE to the correct strength.
-    return `${text_argumentblock},argumentblock,`;
+    return `${text_argumentblock},argumentblock`;
 };

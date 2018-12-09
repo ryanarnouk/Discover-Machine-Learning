@@ -79,26 +79,29 @@
       "name": "Call the function",
       "section": "introcoding",
       "number": 5, 
-      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try calling it and see the print function return a value. // TRY TO GET CODE FROM PREVIOUS CHALLENGE FOR THIS ONE",
+      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try calling it and see the print function return a value.",
       "tests": [
         {
           "text": "call the function z",
-          "test": "assert(code[2], 'callfunctionblock'); assert(code[0], 'z')"
+          "test": "assert(code[0], 'z'); assert(code[6], 'functionblock'); assert(code[1], 'y'); lengthfunc(code[2], 0); assert(code[3], 'variablefunction'); lengthfunc(code[4], 0); assert(code[5], 'printfunction'); assert(code[9], 'callfunctionblock'); assert(code[7], 'z')"
         }
       ], 
-      "codeblocks": true 
+      "codeblocks": true,
+      "previouscode": true
     }, 
     {
       "name": "Add arguments to function",
       "section": "introcoding",
       "number": 6, 
-      "description": "You can add arguments to functions, when you call the function next to the name you can add variables that you can then use in your code and assign it to a value when you call the function. Add an argument next to the function name, use it when you call print inside the function. // GET PREVIOUS CODE FROM LAST CHALLENGES",
+      "description": "You can add arguments to functions, when you call the function next to the name you can add variables that you can then use in your code and assign it to a value when you call the function. Add an argument next to the function name, use it when you call print inside the function.",
       "tests": [
         {
-      
+          "text": "add an argument to the function",
+          "test": ""
         }
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "previouscode": true
     },
     {
       "name": "Use the argument",
@@ -110,7 +113,8 @@
           "test": "assert(code[2], 'callfunctionblock'); assert(code[0], 'z'); doesnotequal(code[1], 'arguments'); lengthfunc(code[1], 0);"
         }
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "previouscode": true
     },
     {
       "name": "If statements",

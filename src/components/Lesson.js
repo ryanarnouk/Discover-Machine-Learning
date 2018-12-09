@@ -63,6 +63,14 @@ class Lesson extends Component {
   load = () => {
     var xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`));
     Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
+
+    if(JSONloader.challenges[this.state.lessonNumber].previouscode === true) {
+      console.log(this.state.lessonNumber)
+      if(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`) === null) {
+        var xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber - 1}`));
+        Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
+      }
+    }
   }
 
   render() { 
