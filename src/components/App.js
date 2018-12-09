@@ -44,7 +44,7 @@ class App extends Component {
             <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
             <Route path="/profile" component={requireAuth(Profile)} />
-            <Route path="/challenges" component={Challenges} />
+            <Route path="/challenges" component={() => <Challenges profilenavbar={true}/>} />
             <Route path="/privacypolicy" component={noRequireAuth(() => {window.location.href="/landing-page/privacypolicy.html"})} />
             <Route path="/faq" component={noRequireAuth(() => {window.location.href="/landing-page/faq.html"})} />
             <Route path="/hint/:section/:id" component={Hint} />

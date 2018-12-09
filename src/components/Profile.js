@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/Profile.css';
 import ProfileNavbar from './ProfileNavbar';
+import Challenges from './Challenges';
 
 class ChallengeBlock extends Component {
   render() {
@@ -8,9 +9,11 @@ class ChallengeBlock extends Component {
       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <div className="challengeblock">
           <hr />
-          <div style={{color: 'white', display: 'flex'}}>
-            <p>This is a challenge test</p>
-            <p style={{marginLeft: '65%'}}>September 20, 2018</p>
+          <div style={{display: 'flex'}}>
+            <p>{this.props.challengename}</p>
+            <div style={{display: 'inline-block', position: 'absolute', right: 210}}>
+              <p>{this.props.section}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -19,27 +22,17 @@ class ChallengeBlock extends Component {
 }
 
 class Profile extends Component {
-  render() { 
+  render() {
     return ( 
-      <div className="main">
+      <div className="main" style={{color: 'black', fontFamily: 'Rubik'}}>
         <ProfileNavbar />
         <div style={{textAlign: 'center'}}> 
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <h1 className="profilepic">{/*localStorage.getItem('user_name').charAt(0).toUpperCase()*/}</h1>
+            <h1 className="profilepic">{localStorage.getItem('user_name').charAt(0).toUpperCase()}</h1>
           </div>
           <h1 className="name">{localStorage.getItem('user_name')}</h1>
         </div>
-        <div style={{marginTop: 20}}>
-          <div style={{color: 'white', display: 'flex', textAlign: 'center'}}>
-            <h2>Challenge Name</h2>
-            <h2 style={{marginLeft: '65%'}}>Date</h2>
-          </div>
-          <ChallengeBlock />
-          <ChallengeBlock />
-          <ChallengeBlock />
-          <ChallengeBlock />
-          <ChallengeBlock />
-        </div>
+        <Challenges />
       </div>  
     );
   }

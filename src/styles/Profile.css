@@ -8,6 +8,7 @@ body {
 
 .name {
   margin: 0;
+  color: black;
 }
 
 .profilepic {
@@ -23,6 +24,7 @@ body {
 .challengeblock {
   width: 80%;
   margin: 0;
+  color: black;
 }
 
 hr {

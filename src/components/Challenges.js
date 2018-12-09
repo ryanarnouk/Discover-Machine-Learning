@@ -9,7 +9,9 @@ class Challenges extends Component {
   render() { 
     return ( 
       <div className="outer" style={{fontFamily: 'Rubik'}}>
-        <ProfileNavbar />
+        {this.props.profilenavbar ? (
+          <ProfileNavbar />
+        ) : false}
         <h2 style={{fontFamily: 'Rubik'}}>Challenges</h2>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           <ul className="list">

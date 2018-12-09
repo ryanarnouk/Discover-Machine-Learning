@@ -62,6 +62,7 @@ class Sidebar extends Component {
     // save users progress to localstorage
     if(this.check() === true) {
       localStorage.setItem(`challengecomplete ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, true)
+      // need to save the values to server if the user is signed in
     }
   }
 
