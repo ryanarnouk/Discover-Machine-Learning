@@ -77,7 +77,7 @@
       "tests": [
         {
           "text": "set the plots of data", 
-          "test": "setxydata(a, b)"
+          "test": ""
         }
       ], 
       "codeblocks": true 

@@ -58,6 +58,11 @@ class Sidebar extends Component {
     this.setState({challengestate:this.check()});
     this.setState({modalOpen: true});
     this.save();
+
+    // save users progress to localstorage
+    if(this.check() === true) {
+      localStorage.setItem(`challengecomplete ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, true)
+    }
   }
 
   afterOpenModal() {
