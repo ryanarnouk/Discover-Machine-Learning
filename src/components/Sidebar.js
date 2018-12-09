@@ -170,6 +170,10 @@ class Sidebar extends Component {
     window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
   }
 
+  hint = () => {
+    window.open(`/hint/${this.props.route.params.section}/${this.props.route.params.id}`)
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
