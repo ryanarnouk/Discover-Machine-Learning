@@ -40,7 +40,7 @@ class Signup extends Component {
             <p>Already have an account? <Link to="/login">Login</Link></p>
           </div>
           <div>
-            <p><Link to="/challenges/regression/1" onClick={this.forceUpdate}>Continue as a guest</Link></p>
+            <p><Link to="/challenges/introcoding/1" onClick={this.forceUpdate}>Continue as a guest</Link></p>
             <p style={{fontSize: 13}}>Continuing as a guest will not save your progress and it is recommended that you sign up for an account to save your progress</p>
           </div>
         </div>
