@@ -141,10 +141,12 @@ class Sidebar extends Component {
     }
 
     function lengthfunc(a, b) {
-      if(a.length === 0) {
-        arrayofbool.push(false);
-      } else {
-        arrayofbool.push(true);
+      if(a || b) {
+        if(a.length === 0) {
+          arrayofbool.push(false);
+        } else {
+          arrayofbool.push(true);
+        }
       }
     }
 
