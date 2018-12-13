@@ -7,6 +7,22 @@
     {
       "name": "Supervised Learning",
       "definition": "Supervised learning is dope"
+    },
+    {
+      "name": "Computer Programming",
+      "definition": "Computer Programming is this idea that computers can be told what to do. A computer alone can not do anything unless it is programmed to do something. That is the whole point of programming."
+    },
+    {
+      "name": "Variables",
+      "definition": "In computer programming, variables are used to store information that can be later referenced. "
+    },
+    {
+      "name": "Print Function",
+      "definition": "A print function in computer programming can print a variable, text, etc to the console to return a value."
+    },
+    {
+      "name": "Functions",
+      "definition": "A function is a section of a program that preforms a specific task. It can be a procedure or routine that can be called. The code can be reusable."
     }
   ]
 }

@@ -176,6 +176,17 @@ class Sidebar extends Component {
     window.open(`/hint/${this.props.route.params.section}/${this.props.route.params.id}`)
   }
 
+  definitions = () => {
+    if(JSONloader.challenges[this.state.lessonNumber].hasOwnProperty('definitions')) {
+      return (
+        <div>
+          <h3 style={{fontFamily: 'Rubik'}}>Definitions:</h3>
+          <div style={{marginBottom: '7%'}}>{this.glossary()}</div>
+        </div>
+      );
+    }
+  }
+
   render() {
     console.log(`${this.props.route.params.section} section. Challenge number ${this.props.route.params.id}`);
 
@@ -192,7 +203,7 @@ class Sidebar extends Component {
                   <h2 className="name">{this.name(a)}</h2>
                   <div className="text">
                     {this.description()}
-                    {this.glossary()}
+                    <div style={{marginBottom: '7%'}}>{this.glossary()}</div>
                     {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                       <div>
                         <Console text={this.state.consoletext}/>
@@ -235,8 +246,7 @@ class Sidebar extends Component {
                   <div className="text">
                     {/*<div dangerouslySetInnerHTML={{__html: JSONloader.description[this.state.lessonNumber].description}}></div>*/}
                     {this.description()}
-                    <h3 style={{fontFamily: 'Rubik'}}>Definitions:</h3>
-                    {this.glossary()}
+                    {this.definitions()}
                     {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                       <div>
                         <Console text={this.state.consoletext}/>

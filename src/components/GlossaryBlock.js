@@ -6,9 +6,10 @@ import '../styles/App.css'
 
 const customStyles = {
   content : {
-    backgroundColor: '#4CA1FF',
+    backgroundColor: '#E0E0E0',
     textAlign: 'center',
-    overlay: {zIndex: 1000}
+    overlay: {zIndex: 1000},
+    border: 0
   }
 };
 
@@ -54,9 +55,9 @@ class GlossaryBlock extends Component {
           contentLabel="Glossary"
         >
 
-          <h2 ref={subtitle => this.subtitle = subtitle}>{Glossary.definitions[this.props.id].name}</h2>
+          <h2 style={{fontFamily: 'Rubik'}} ref={subtitle => this.subtitle = subtitle}>{Glossary.definitions[this.props.id].name}</h2>
           <div>
-            <p>
+            <p style={{fontFamily: 'Rubik'}}>
               {Parser(Glossary.definitions[this.props.id].definition)}
             </p>
           </div>

@@ -84,7 +84,7 @@ class Lesson extends Component {
                 <ProfileNavbar />
                 <Sidebar route={this.props.match} blockly={Blockly}/>
                 {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
-                  <div id="editor" className="editortop" ref={ref => {this.editor = ref}}>
+                  <div id="editor" className="editortop" ref={ref => {this.editor = ref}} style={{width: '100%'}}>
                     <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                   </div>
                 ) : (
@@ -102,7 +102,7 @@ class Lesson extends Component {
                 <div style={{display: 'flex'}}>
                   <Sidebar route={this.props.match} blockly={Blockly}/>
                   {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
-                    <div id="editor" className="editor" ref={ref => {this.editor = ref}}>
+                    <div id="editor" className="editor" ref={ref => {this.editor = ref}} style={{width: '100%'}}>
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                     </div>
                   ) : (

@@ -12,8 +12,7 @@
         }
       ],
       "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
+        "Computer Programming,2"
       ],
       "codeblocks": false,
       "hints": [
@@ -24,7 +23,7 @@
       "name": "Add a Variable",
       "section": "introcoding",
       "number": 2,
-      "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and make a variable. Name it <code>x</code> and set it too 3. <img src='/img/variableblock.png'/>",
+      "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and make a variable. Name it <code>x</code> and set it too 3.",
       "tests": [
         {
           "text": "add a variable x and set it too 3",
@@ -32,8 +31,7 @@
         }
       ],
       "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
+        "Variables,3"
       ],
       "codeblocks": true,
       "hints": [
@@ -45,7 +43,7 @@
       "name": "Print variable",
       "section": "introcoding",
       "number": 3, 
-      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as variables. Use the print function and print <code>x</code>, and you will then see the output of the variable in the console. <img src='/img/printvariable.png'/>",
+      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as variables. Use the print function and print <code>x</code>, and you will then see the output of the variable in the console.",
       "tests": [
         {
           "text": "print the variable x",
@@ -53,17 +51,20 @@
         }
       ],
       "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
+        "Print Function,4"
       ],
       "codeblocks": true,
-      "previouscode": true
+      "previouscode": true,
+      "hints": [
+        "Use a print function to output the variable x",
+        "<img src='/img/printvariable.png' />"
+      ]
     },
     {
       "name": "Functions",
       "section": "introcoding",
       "number": 4, 
-      "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code> <img src='/img/functionblock.png' />. Inside it, make a variable y and set it to some text. Then print the variable inside of the function. <img src='/img/insidefunction.png' />",
+      "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code>. Inside it, make a variable y and set it to some text. Then print the variable inside of the function.",
       "tests": [
         {
           "text": "make a function put a variable and print it",
@@ -71,16 +72,21 @@
         }
       ],
       "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
+        "Functions,5"
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "Use a function and call it z",
+        "Inside the function make a variable set it to y and put some text",
+        "Print the variable",
+        "<img src='/img/functionblocks.png' />"
+      ]
     },
     {
       "name": "Call the function",
       "section": "introcoding",
       "number": 5, 
-      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try using a <code>call function</code> and call it to see the print function return a value. <img src='/img/callfunction.png' />",
+      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try using a <code>call function</code> and call it to see the print function return a value. ",
       "tests": [
         {
           "text": "call the function z",
@@ -88,7 +94,11 @@
         }
       ], 
       "codeblocks": true,
-      "previouscode": true
+      "previouscode": true,
+      "hints": [
+        "Use the call function block to call the function z",
+        "<img src='/img/callfunction.png' />"
+      ]
     }, 
     {
       "name": "Add arguments to function",
