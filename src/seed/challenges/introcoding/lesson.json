@@ -142,7 +142,14 @@
       "name": "Else Statements",
       "number": 9, 
       "description": "If the if statement returns false, then you can also execute whatever code you want with an <code>else</code> statement. Add it to the end of an if statement and return text. Now, if the condition returns false, that text would get returned in the console.",
-      "codeblocks": false
+      "codeblocks": true
+    },
+    {
+      "name": "Conclusion",
+      "number": 10, 
+      "description": "Now that we have finished learning about the fundamentals of coding and how it is used we can start learning about machine learning in the next section.",
+      "codeblocks": false,
+      "codeblockarea": "<h1>Interested in Programming?</h1><p>There are many resources out on the internet to help you learn how to code</p><p>Here are some of my personal favorites:</p><ul><li><a href='http://freecodecamp.org' target='_blank'>freeCodeCamp</a></li><li><a href='http://udacity.com' target='_blank'>Udacity</a></li></ul> <p>There are many more great resources to learn how to code in programming languages that interest you</p>"
     }
   ] 
 }

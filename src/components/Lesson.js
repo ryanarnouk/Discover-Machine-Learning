@@ -7,6 +7,7 @@ import Media from 'react-media';
 import ProfileNavbar from './ProfileNavbar'
 import NotHotdog from './NotHotdog';
 import toolbox from './blocklytoolbox'
+import Parser from 'html-react-parser'
 
 class Lesson extends Component {
   constructor(props) {
@@ -106,7 +107,7 @@ class Lesson extends Component {
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                     </div>
                   ) : (
-                    <NotHotdog />
+                    <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
                   )
                   }
                 </div>
