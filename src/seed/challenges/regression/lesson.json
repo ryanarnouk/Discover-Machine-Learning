@@ -4,58 +4,66 @@
       "name": "Intro to Machine Learning",
       "section": "regression",
       "number": 1,
-      "description": "<p>Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning. Machine learning is this idea that computers learn based on data. Data is all around us, companies collect many data, then using it they can use algorithms based on math to make a machine predict things based on that data. Computers do not need to be programmed to do things, but instead could be fed data that they could learn with and get better with over time as more people use the service. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning.</p>",
+      "description": "<p>Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning.</p>",
+      "tests": [
+
+      ],
+      "definitions": [
+        "Machine Learning,6"
+      ],
+      "codeblocks": false,
+      "codeblockarea": "<p>hi</p>"
+    }, 
+    {
+      "name": "Intro Continued...",
+      "section": "regression",
+      "number": 2,
+      "description": "Machine learning is this idea that computers learn based on data. Data is information, whether that is information about images, house prices, medical information, etc. Data is all around us, and it can be used for Machine Learning.  Algorithms based on math are used to make a machine predict things based on that information. Data is fed into the computer and the computer learns from the data and it gets better the more data is fed into the algorithm. Before machine learning, computers to be explicitly programmed to do specific things. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning. ",
+      "tests": [
+        
+      ],
+      "definitions": [
+        "Machine Learning,5"
+      ],
+      "codeblocks": false
+    }, 
+    {
+      "name": "Machine Learning Examples",
+      "section": "regression",
+      "number": 3, 
+      "description": "Let's say we want to program a computer to detect license plates. Before machine learning, we would have to program each part of the license plate. For example, the plate is white, it has six characters, it has curves on 4 corners. As you can see, this can be very inconvenient especially since there are so many different type of license plates. Instead, we can use an algorithm and give the computer images of licenses so that it can learn what a licence plate looks like.",
       "tests": [
         {
-          "text": "set value to 20",
-          "test": ""
+
         }
       ],
       "definitions": [
+        "Machine Learning,6"
+      ],
+      "codeblocks": false,
+      "codeblockarea": "<img src='/img/licenseplaterecognition.jpg' style='width:333px;'/><img src='/img/licenseplates.png' style='width: 350px;'/>"
+    },
+    {
+      "name": "Types of Machine Learning",
+      "section": "regression",
+      "number": 4, 
+      "description": "There are 3 different types of machine learning. Supervised learning, unsupervised learning, and reinforcement learning. In this lesson, we are going to focus on supervised learning using linear regression an algorithm we can then use to predict house prices.",
+      "tests": [
+        
+      ],
+      "definitions": [
         "Supervised Learning,1",
+        "Unsupervisd Learning,7",
+        "Reinforcement Learning,8",
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "hints": [
-
-      ]
-    }, 
-    {
-      "name": "How does machine learning work?",
-      "section": "regression",
-      "number": 2,
-      "description": "Wonder how that not-hotdog predictor works? It works by taking thousands of images of hotdogs and a mathematical algorithm that lets the computer learn what a hotdog looks like. This way, it can detect if there is a hotdog in the image based on the images fed to it. It took ______ images to train the predictor and it can get better the more it is used as more images are fed into the algorithm. Traditionally, if we wanted to build something to recognize a hotdog we would have to put the details of a hotdog and tell the computer every little detail, such as the colours, the shapes, etc. With machine learning the computer can learn from images instead of telling it exactly what a hotdog looks like. Similar to how us humans learn from our surroundings. In this course we learn more about these algorithms and make our own!",
-      "tests": [
-        {
-          "text": "second part"
-        }
-      ],
-      "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
-      ],
-      "codeblocks": false
-    }, 
-    {
-      "name": "What are the different types of machine learning?",
-      "section": "regression",
-      "number": 3, 
-      "description": "There are 3 different types of machine learning. Supervised Learning, Unsupervised Learning, and reinforcement learning.",
-      "tests": [
-        {
-
-        }
-      ],
-      "definitions": [
-        "Supervised Learning,1",
-        "Linear Regression,0"
-      ],
-      "codeblocks": false
+      "codeblockarea": "<h2>Supervised Learning:</h3><p>In supervised Learning, both input and output data is provided. Inputs and output data are labelled for classification.</p><h2>Unsupervised Learning</h2><p>Unlike supervised learning, unsupervised learning has unlabeled data. That means that the algorithm is presented with uncategorised data that is unlabel and the algorithm needs to come up with patterns found in the data to classify them with each other. Unsupervised learning is can be unpredictable.</p><h2>Reinforcement Learning</h2><p>Reinforcement learning has no data. Instead, it is a type of programming that trains algorithms with rewards and punishments. A reinforcement learning algorithm learns by interacting with its environment and it recieves awards for good moves and gets penalties for preforming a bad move. The algorithm can learn completely by itself.</p>"
     },
     {
       "name": "Intro to Linear Regression",
       "section": "regression",
-      "number": 4, 
+      "number": 5, 
       "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. We can use linear regression to predict prices. PUT IMAGE Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parameters. For example, making a house price predictor you can plot a line through data that represents square feet and the actual price. That way we can input square feet and get a prediction on the price. Linear regression is supervised learning because the data is labeled. First thing we want to do is add an import function WORK ON IMPORT FUNCTION INSTRUCTIONS AND ADD IMAGES</p></div>",
       "tests": [
         {
@@ -72,7 +80,7 @@
     {
       "name": "Set up X and Y data",
       "section": "regression",
-      "number": 5, 
+      "number": 6, 
       "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on.",
       "tests": [
         {
@@ -85,7 +93,7 @@
     {
       "name": "Split the Train and Test size",
       "section": "regression",
-      "number": 6, 
+      "number": 7, 
       "description": "Whenever we make a machine learning model, we need to split the data into a training set and a testing set <br/> This means, we feed the computer the training data so it learns from it and then we test how good the computer can recognize whatever we find.",
       "tests": [
         {
@@ -96,7 +104,7 @@
     },
     {
       "name": "Fit the Algorithm",
-      "number": 7,
+      "number": 8,
       "description": "Fit the algorithm",
       "tests": [
         {
@@ -107,7 +115,7 @@
     },
     {
       "name": "Check Accuracy",
-      "number": 8,
+      "number": 9,
       "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function set it up to see if it we good a good accuracy and make sure that you set it to regression.",
       "tests": [
         {
@@ -118,7 +126,7 @@
     },
     {
       "name": "Conclusion",
-      "number": 9, 
+      "number": 10, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
       "codeblocks": false
     }

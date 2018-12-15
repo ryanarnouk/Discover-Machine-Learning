@@ -23,6 +23,18 @@
     {
       "name": "Functions",
       "definition": "A function is a section of a program that preforms a specific task. It can be a procedure or routine that can be called. The code can be reusable."
+    },
+    {
+      "name": "Machine Learning",
+      "definition": "Machine learning stuff"
+    },
+    {
+      "name": "Unsupervised Learning",
+      "definition": "Unsupervised Learning stuff"
+    },
+    {
+      "name": "Reinforcement Learning",
+      "definition": "Reinforcement Learning stuff"
     }
   ]
 }

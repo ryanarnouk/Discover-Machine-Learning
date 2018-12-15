@@ -137,7 +137,7 @@ class Sidebar extends Component {
           arrayofbool.push(false);
         }
         arrayofbool.push(false);
-      }
+      }  
     }
 
     function lengthfunc(a, b) {
