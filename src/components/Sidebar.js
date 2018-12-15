@@ -9,6 +9,7 @@ import Close from '@material-ui/icons/Close'
 import Console from './Console';
 import Ajv from 'ajv';
 import JSONschema from '../seed/Schema/JSONschema.json'
+import FontAwesome from 'react-fontawesome';
 
 //validate json
 // first thing we want to do is validate the JSON that is going to come through here
@@ -280,6 +281,7 @@ class Sidebar extends Component {
                     </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
+                  <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/>
                 </div>
               </div>
             )

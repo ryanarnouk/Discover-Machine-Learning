@@ -159,7 +159,7 @@ Blockly.JavaScript['printfunction'] = function(block) {
 Blockly.JavaScript['importfunction'] = function(block) {
     var text_filename = block.getFieldValue('filename');
     // TODO: Assemble JavaScript into code variable.
-    return `${text_filename},${block},importfunction`;
+    return `${text_filename},importfunction`;
 };
   
 Blockly.JavaScript['callfunctionblock'] = function(block) {
