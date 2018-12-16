@@ -64,7 +64,7 @@
       "name": "Intro to Linear Regression",
       "section": "regression",
       "number": 5, 
-      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. Linear Regression is a supervised learning algorithm. We can use linear regression to predict prices. put an image of linear regression. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
+      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. Linear Regression is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
       "tests": [
       
       ],

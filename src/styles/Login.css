@@ -1,5 +1,7 @@
 .loginscreen {
-  background-color: #1565C0;
+  background: url('/img/loginbackground.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -10,8 +12,13 @@
 
 .login {
   text-align: center;
-  padding: 20px;
-  width: 30%;
+  padding: 50px;
+}
+
+@media only screen and (min-width: 600px) {
+  .login {
+    width: 30%;
+  }
 }
 
 .email, .password {
