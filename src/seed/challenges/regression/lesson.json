@@ -107,10 +107,11 @@
       "name": "Split the Train and Test size",
       "section": "regression",
       "number": 8, 
-      "description": "Whenever we make a machine learning model, we need to split the data into a training set and a testing set <br/> This means, we feed the computer the training data so it learns from it and then we test how good the computer can recognize whatever we find.",
+      "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
       "tests": [
         {
-          
+          "text": "use the set testing data too 20%",
+          "test": "assert(code[0], 20); assert(code[1], 'testingdata');"
         }
       ],
       "codeblocks": true

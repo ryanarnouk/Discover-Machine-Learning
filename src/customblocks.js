@@ -133,19 +133,33 @@ Blockly.Blocks['callfunctionblock'] = {
 
 Blockly.Blocks['setdata'] = {
     init: function() {
-      this.appendValueInput("setdata")
-          .setCheck(null)
-          .appendField("set data")
-          .appendField(new Blockly.FieldTextInput("X value"), "xvalue")
-          .appendField(new Blockly.FieldTextInput("Y value"), "yvalue");
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(165);
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.appendValueInput("setdata")
+            .setCheck(null)
+            .appendField("set data")
+            .appendField(new Blockly.FieldTextInput("X value"), "xvalue")
+            .appendField(new Blockly.FieldTextInput("Y value"), "yvalue");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(165);
+    this.setTooltip("");
+    this.setHelpUrl("");
     }
-  };
+};
+
+Blockly.Blocks['testingdata'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("set testing data")
+            .appendField(new Blockly.FieldNumber(0, 0, 100), "testingdata");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(45);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
   
+
 
 // CODE TO RUN ALL THE BLOCKS
 
@@ -218,4 +232,10 @@ Blockly.JavaScript['argumentblock'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     // TODO: Change ORDER_NONE to the correct strength.
     return `${text_argumentblock},argumentblock`;
+};
+
+Blockly.JavaScript['testingdata'] = function(block) {
+    var number_testingdata = block.getFieldValue('testingdata');
+    // TODO: Assemble JavaScript into code variable.
+    return `${number_testingdata},testingdata`;
 };
