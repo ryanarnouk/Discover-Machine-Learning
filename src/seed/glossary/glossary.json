@@ -35,6 +35,10 @@
     {
       "name": "Reinforcement Learning",
       "definition": "Reinforcement Learning stuff"
+    }, 
+    {
+      "name": "Classification",
+      "definition": "Classifaction dopeness"
     }
   ]
 }

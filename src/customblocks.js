@@ -158,9 +158,20 @@ Blockly.Blocks['testingdata'] = {
     this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['accuracyfunction'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("accuracy")
+            .appendField(new Blockly.FieldDropdown([["K Nearest Neighbors","knearest"], ["Linear Regression","linearregression"], ["Support Vector Machine","svm"]]), "selectmodel");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(345);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
   
-
-
 // CODE TO RUN ALL THE BLOCKS
 
 // block logic
@@ -238,4 +249,10 @@ Blockly.JavaScript['testingdata'] = function(block) {
     var number_testingdata = block.getFieldValue('testingdata');
     // TODO: Assemble JavaScript into code variable.
     return `${number_testingdata},testingdata`;
+};
+
+Blockly.JavaScript['accuracyfunction'] = function(block) {
+    var dropdown_selectmodel = block.getFieldValue('selectmodel');
+    // TODO: Assemble JavaScript into code variable.
+    return `${dropdown_selectmodel},accuracyfunction,`;
 };

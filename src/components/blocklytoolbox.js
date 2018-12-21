@@ -14,6 +14,7 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="callfunctionblock"></block>
   <block type="setdata"></block>
   <block type="testingdata"></block>
+  <block type="accuracyfunction"></block>
   </xml`
 } else if(window.location.pathname.split('/')[2] === 'classification') {
 

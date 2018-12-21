@@ -94,7 +94,7 @@
       "name": "Set up X and Y data",
       "section": "regression",
       "number": 7, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on.",
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y).",
       "tests": [
         {
           "text": "set the plots of data", 
@@ -117,12 +117,13 @@
       "codeblocks": true
     },
     {
-      "name": "Fit the Algorithm",
+      "name": "Apply the Algorithm",
       "number": 9,
-      "description": "Fit the algorithm",
+      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
       "tests": [
         {
-
+          "text": "fit the algorithm and use linear regression",
+          "test": "assert(code[0], 'linearregression'); assert(code[1], 'applyfunction');"
         }
       ],
       "codeblocks": true
@@ -130,10 +131,11 @@
     {
       "name": "Check Accuracy",
       "number": 10,
-      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function set it up to see if it we good a good accuracy and make sure that you set it to regression.",
+      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
       "tests": [
         {
-          "test": ""
+          "text": "check the accuracy of the linear regression algorithm",
+          "test": "assert(code[0], 'linearregression'); assert(code[1], 'accuracyfunction');"
         }
       ], 
       "codeblocks": true

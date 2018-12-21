@@ -1,39 +1,90 @@
 {
   "challenges": [
     {
-      "name": "Intro to classification",
+      "name": "Intro to Classification",
       "section": "classification",
-      "number": 1,
-      "description": "This is the the classification section",
+      "number": 5, 
+      "description": "<div><p>The first algorithm we are going to take a look at is Classification. Classification is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
       "tests": [
-        {
-          "text": "set value to 20",
-          "test": "assert()"
-        }
-      ],
-      "codeblocks": false,
-      "hints": [
-        
+      
       ],
       "definitions": [
-     
-      ]
-    }, 
-    {
-      "name": "Lesson 2",
-      "section": "classification",
-      "number": 2,
-      "description": [
-        "this is the second lesson of the classification part of the introduction to machine learning",
-        "<img src={require('../img/regression/linearregressionexample.png')} alt='test'>",
-        "this is more text to go in after the image"
+        "Classification,9"
       ],
+      "codeblocks": false,
+      "codeblockarea": "<p>This is a placeholder find some image that is good for classification here</p><img src='' style='width: 90%'/>"
+    },
+    {
+      "name": "Import Classification",
+      "section": "classification",
+      "number": 6, 
+      "description": "Now lest start implementing our classification algorithm. Let's start by importing the algorithm. Do this by using the import statement and typing <code>classification</code><h1>FIGURE OUT WHAT ALGORITHM TO USE FOR THE CLASSIFICATION</h1>",
       "tests": [
         {
-          "text": "second part"
+          "text": "use the import function to import linear regression",
+          "test": "assert(code[0], 'classification'); assert(code[1], 'importfunction')"
+        }
+      ],
+      "definitions": [
+        "Linear Regression,0"
+      ],
+      "codeblocks": true
+    },
+    {
+      "name": "Set up X and Y data",
+      "section": "classification",
+      "number": 7, 
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. UPDATE FROM GOOGLE DOCS",
+      "tests": [
+        {
+          "text": "set the plots of data", 
+          "test": ""
+        }
+      ], 
+      "codeblocks": true 
+    }, 
+    {
+      "name": "Split the Train and Test size",
+      "section": "classification",
+      "number": 8, 
+      "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
+      "tests": [
+        {
+          "text": "use the set testing data too 20%",
+          "test": "assert(code[0], 20); assert(code[1], 'testingdata');"
         }
       ],
       "codeblocks": true
+    },
+    {
+      "name": "Apply the Algorithm",
+      "number": 9,
+      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
+      "tests": [
+        {
+          "text": "fit the algorithm and use linear regression",
+          "test": "assert(code[0], 'linearregression'); assert(code[1], 'applyfunction');"
+        }
+      ],
+      "codeblocks": true
+    },
+    {
+      "name": "Check Accuracy",
+      "number": 10,
+      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
+      "tests": [
+        {
+          "text": "check the accuracy of the linear regression algorithm",
+          "test": "assert(code[0], 'linearregression'); assert(code[1], 'accuracyfunction');"
+        }
+      ], 
+      "codeblocks": true
+    },
+    {
+      "name": "Conclusion",
+      "number": 11, 
+      "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
+      "codeblocks": false
     }
   ] 
 }
