@@ -3,7 +3,7 @@
     {
       "name": "Intro to Classification",
       "section": "classification",
-      "number": 5, 
+      "number": 1,
       "description": "<div><p>The first algorithm we are going to take a look at is Classification. Classification is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
       "tests": [
       
@@ -17,8 +17,8 @@
     {
       "name": "Import Classification",
       "section": "classification",
-      "number": 6, 
-      "description": "Now lest start implementing our classification algorithm. Let's start by importing the algorithm. Do this by using the import statement and typing <code>classification</code><h1>FIGURE OUT WHAT ALGORITHM TO USE FOR THE CLASSIFICATION</h1>",
+      "number": 2, 
+      "description": "Now let's start implementing our classification algorithm. Let's start by importing the algorithm. Do this by using the import statement and typing <code>classification</code><h3>FIGURE OUT WHAT ALGORITHM TO USE FOR THE CLASSIFICATION</h3>",
       "tests": [
         {
           "text": "use the import function to import linear regression",
@@ -33,7 +33,7 @@
     {
       "name": "Set up X and Y data",
       "section": "classification",
-      "number": 7, 
+      "number": 3, 
       "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. UPDATE FROM GOOGLE DOCS",
       "tests": [
         {
@@ -46,7 +46,7 @@
     {
       "name": "Split the Train and Test size",
       "section": "classification",
-      "number": 8, 
+      "number": 4, 
       "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
       "tests": [
         {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Apply the Algorithm",
-      "number": 9,
+      "number": 5,
       "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
       "tests": [
         {
@@ -70,7 +70,7 @@
     },
     {
       "name": "Check Accuracy",
-      "number": 10,
+      "number": 6,
       "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
       "tests": [
         {
@@ -82,9 +82,9 @@
     },
     {
       "name": "Conclusion",
-      "number": 11, 
+      "number": 7, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
-      "codeblocks": false
+      "codeblockss": false
     }
   ] 
 }

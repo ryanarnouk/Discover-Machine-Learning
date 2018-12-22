@@ -90,10 +90,6 @@ class Sidebar extends Component {
     console.log(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${JSONloader.challenges[this.state.lessonNumber]}`));
     console.log(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`);
   }
-  
-  hint = () => {
-    
-  }
 
   glossary = () => {
     // if the current challenge has definitions in json return it, if not don't do anything
