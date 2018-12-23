@@ -34,7 +34,7 @@
       "name": "Set up X and Y data",
       "section": "classification",
       "number": 3, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. UPDATE FROM GOOGLE DOCS",
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y).",
       "tests": [
         {
           "text": "set the plots of data", 
