@@ -133,8 +133,7 @@ Blockly.Blocks['callfunctionblock'] = {
 
 Blockly.Blocks['setdata'] = {
     init: function() {
-        this.appendValueInput("setdata")
-            .setCheck(null)
+        this.appendDummyInput()
             .appendField("set data")
             .appendField(new Blockly.FieldTextInput("X value"), "xvalue")
             .appendField(new Blockly.FieldTextInput("Y value"), "yvalue");
@@ -145,6 +144,7 @@ Blockly.Blocks['setdata'] = {
     this.setHelpUrl("");
     }
 };
+
 
 Blockly.Blocks['testingdata'] = {
     init: function() {
@@ -255,4 +255,10 @@ Blockly.JavaScript['accuracyfunction'] = function(block) {
     var dropdown_selectmodel = block.getFieldValue('selectmodel');
     // TODO: Assemble JavaScript into code variable.
     return `${dropdown_selectmodel},accuracyfunction,`;
+};
+
+Blockly.JavaScript['setdata'] = function(block) {
+    var text_xvalue = block.getFieldValue('xvalue');
+    var text_yvalue = block.getFieldValue('yvalue');
+    return `${text_xvalue},${text_yvalue},setdata`
 };

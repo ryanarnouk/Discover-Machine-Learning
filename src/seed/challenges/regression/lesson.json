@@ -94,11 +94,11 @@
       "name": "Set up X and Y data",
       "section": "regression",
       "number": 7, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y).",
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on (the class). Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y). That way we can train our computer to recognize a pattern between the cost of the house and the square feet of the house. <br /><br /> Use the <code>set data</code> function to set the <code>X</code> value to <strong>square feet</strong> and the Y value to the <strong>cost</strong>. ",
       "tests": [
         {
-          "text": "set the plots of data", 
-          "test": ""
+          "text": "set up the x and y data plots", 
+          "test": "assert(code[0], 'square feet'); assert(code[1], 'cost'); assert(code[2], 'setdata');"
         }
       ], 
       "codeblocks": true 

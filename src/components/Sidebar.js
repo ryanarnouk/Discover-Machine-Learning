@@ -127,7 +127,8 @@ class Sidebar extends Component {
     var self = this;
     var arrayofbool = [];
     function assert(a, b) {
-      if(a == b) {
+      // use toUpperCase so it is case insensitive
+      if(a.toUpperCase() == b.toUpperCase()) {
         arrayofbool.push(true);
       } else {
         if(self.state.challengestate === true) {
