@@ -58,7 +58,9 @@ class Sidebar extends Component {
   openModal() {
     this.setState({challengestate:this.check()});
     this.setState({modalOpen: true});
-    this.save();
+    if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
+      this.save();
+    }
 
     // save users progress to localstorage
     if(this.check() === true) {
@@ -109,14 +111,18 @@ class Sidebar extends Component {
   }
 
   check = (event) => {
-    var code = this.props.blockly.JavaScript.workspaceToCode(this.props.blockly.getMainWorkspace());
-    code = code.split(',') //split if it has spaces(for array)
-    // trim all the values to insure no spaces in each value
-    for (var i = 0; i < code.length; i++) {
-      code[i] = code[i].trim()
-    }
+    if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
+      var code = this.props.blockly.JavaScript.workspaceToCode(this.props.blockly.getMainWorkspace());
+      code = code.split(',') //split if it has spaces(for array)
+      // trim all the values to insure no spaces in each value
+      for (var i = 0; i < code.length; i++) {
+        code[i] = code[i].trim()
+      }
 
-    console.log(code);   
+      console.log(code);  
+    } else {
+      return true;
+    }
     
     this.setState({consoletext: code[0]});
     if(code === "") {
@@ -210,7 +216,7 @@ class Sidebar extends Component {
                       ) : false}
                   </div>
                   <div className="buttons">
-                    <button className="check" onClick={this.openModal}>Check</button>
+                  <button className="check" onClick={this.openModal}>{JSONloader.challenges[this.state.lessonNumber].codeblocks ? 'Check' : 'Next'}</button>
                     <Modal 
                       isOpen={this.state.modalOpen}
                       onAfterOpen={this.afterOpenModal}
@@ -253,7 +259,7 @@ class Sidebar extends Component {
                       ) : false}
                   </div>
                   <div className="buttons">
-                    <button className="check" onClick={this.openModal}>Check</button>
+                    <button className="check" onClick={this.openModal}>{JSONloader.challenges[this.state.lessonNumber].codeblocks ? 'Check' : 'Next'}</button>
                     <Modal 
                       isOpen={this.state.modalOpen}
                       onAfterOpen={this.afterOpenModal}
@@ -276,7 +282,7 @@ class Sidebar extends Component {
                         </div>
                       )}
                     </Modal>
-                    <button className="hint" onClick={this.hint}>Hint</button>
+                    {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <button className="hint" onClick={this.hint}>Hint</button>: false}
                   </div>
                   <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/>
                 </div>
