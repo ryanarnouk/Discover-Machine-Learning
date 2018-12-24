@@ -22,8 +22,7 @@
           "number",
           "description",
           "tests",
-          "codeblocks",
-          "hints"
+          "codeblocks"
         ],
         "properties": {
           "name": {
@@ -131,6 +130,11 @@
             "$id": "#/properties/challenges/items/properties/hints",
             "type": "array",
             "title": "The Hints Schema"
+          },
+          "codeblockarea": {
+            "$id": "#/properties/challenges/items/properties/codeblockarea",
+            "type": "string",
+            "title": "Code Block Area"
           }
         }
       }

@@ -30,25 +30,39 @@
       "codeblockarea": "<h2>Flower Data: </h2><img src='/img/irisflowerdata.png' style='width: 50%;'/><img src='/img/irisflower.png' style='width: 50%;'/><p>Above we have data on the flower. The size of the sepal and the petal, and then we have the type of flower it is. We can then train the computer to make connections between all this data to predict what type of flower it is. We can then predict the accuracy of our classifier by splitting some testing data from the dataset.<img src='/img/irisclassifier.png' style='width: 100%;'/><p>Above is a classifier, each one is using a different algorithm. That can tell you how using a different algorithm can change a lot about a classifier."
     },
     {
-      "name": "Classification Example",
+      "name": "Types of Algorithms",
       "section": "classification",
       "number": 3, 
-      "description": "Now let's start implementing our classification algorithm. Let's start by importing the algorithm. Do this by using the import statement and typing <code>classification</code><h3>FIGURE OUT WHAT ALGORITHM TO USE FOR THE CLASSIFICATION</h3>",
+      "description": "There are many different types of algorithms for classification, each good for a specific problem. For example, some of the most used algorithms include support vector machines (which we talked about last lesson), K-Nearest Neighbors that can group data points together based on a number around a point, and neural networks which we would talk about in more detail in the next chapter. In this chapter we will focus on CHOOSE ALGO",
       "tests": [
-        {
-          "text": "use the import function to import linear regression",
-          "test": "assert(code[0], 'classification'); assert(code[1], 'importfunction')"
-        }
+        
       ],
       "definitions": [
         "Linear Regression,0"
+      ],
+      "codeblocks": false,
+      "codeblockarea": "<p>Placeholder</p>"
+    },
+    {
+      "name": "Import Algorithm",
+      "section": "classification",
+      "number": 4, 
+      "description": "Now that we know what algorithm we want to use, we need to import it. Using the import function import __CHOOSE WHAT ALGORITHM TO IMPORT__.",
+      "tests": [
+        {
+          "text": "import support vector machine algorithm",
+          "test": "assert(code[0], 'svm'); assert(code[1], 'importfunction');"
+        }
+      ], 
+      "definitions": [
+
       ],
       "codeblocks": true
     },
     {
       "name": "Set up X and Y data",
       "section": "classification",
-      "number": 4, 
+      "number": 5, 
       "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y).",
       "tests": [
         {
@@ -61,7 +75,7 @@
     {
       "name": "Split the Train and Test size",
       "section": "classification",
-      "number": 5, 
+      "number": 6, 
       "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
       "tests": [
         {
@@ -73,7 +87,7 @@
     },
     {
       "name": "Apply the Algorithm",
-      "number": 6,
+      "number": 7,
       "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
       "tests": [
         {
@@ -85,7 +99,7 @@
     },
     {
       "name": "Check Accuracy",
-      "number": 7,
+      "number": 8,
       "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
       "tests": [
         {
@@ -97,7 +111,7 @@
     },
     {
       "name": "Conclusion",
-      "number": 8, 
+      "number": 9, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
       "codeblocks": false
     }
