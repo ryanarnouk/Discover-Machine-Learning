@@ -14,7 +14,7 @@ class Hint extends Component {
   }
 
   render() {
-    if(JSONloader.challenges[this.state.lessonNumber].hints === undefined || JSONloader.challenges[this.state.lessonNumber].hints.length == 0) {
+    if(JSONloader.challenges[this.state.lessonNumber].hints === undefined || JSONloader.challenges[this.state.lessonNumber].hints.length === 0) {
       return (<h1 style={{fontFamily: 'Rubik', textAlign: 'center'}}>No hints for this challenge</h1>)
     } else {
       return (  
