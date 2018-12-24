@@ -4,7 +4,7 @@
       "name": "Intro to Classification",
       "section": "classification",
       "number": 1,
-      "description": "<div><p>The first algorithm we are going to take a look at is Classification. Classification is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
+      "description": "Every day, as humans we classify things based on shared qualities and characteristics. We don’t even think about it when we do it. Like humans, computers can do the same thing based on the data we give it. <br/> Classification is when we identify what category some data can belong to based on training data we give the computer. That training data gives the computer labels of example pieces of data so when we have a classifier it can recognize what category that could be in. Then with our testing data, we can see how good our classifier is at predicting the category of a given piece of data.",
       "tests": [
       
       ],
@@ -15,7 +15,22 @@
       "codeblockarea": "<p>This is a placeholder find some image that is good for classification here</p><img src='' style='width: 90%'/>"
     },
     {
-      "name": "Import Classification",
+      "name": "Classification Example",
+      "section": "classification",
+      "number": 2, 
+      "description": "In order to make a classifier there are many different types of algorithms you can use. Each algorithm is good for a specific task. One of these algorithms <code>Support Vector Machine (SVM)</code> can be used detect what type of flower a given flower is based on things like how wide and long the pedals of the flower are, etc.",
+      "tests": [
+
+      ],
+      "definitions": [
+        "Classification,0",
+        "Support Vector Machine,9"
+      ],
+      "codeblocks": false,
+      "codeblockarea": "<h2>Flower Data: </h2><img src='/img/irisflowerdata.png' style='width: 50%;'/><img src='/img/irisflower.png' style='width: 50%;'/><p>Above we have data on the flower. The size of the sepal and the petal, and then we have the type of flower it is. We can then train the computer to make connections between all this data to predict what type of flower it is. We can then predict the accuracy of our classifier by splitting some testing data from the dataset.<img src='/img/irisclassifier.png' style='width: 100%;'/><p>Above is a classifier, each one is using a different algorithm. That can tell you how using a different algorithm can change a lot about a classifier."
+    },
+    {
+      "name": "Classification Example",
       "section": "classification",
       "number": 2, 
       "description": "Now let's start implementing our classification algorithm. Let's start by importing the algorithm. Do this by using the import statement and typing <code>classification</code><h3>FIGURE OUT WHAT ALGORITHM TO USE FOR THE CLASSIFICATION</h3>",

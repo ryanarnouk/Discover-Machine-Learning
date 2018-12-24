@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
+body {
+  min-height: 100vh;
+}
+
 .block {
   background-color: black;
   background-size: 200; 

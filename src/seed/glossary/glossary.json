@@ -39,6 +39,10 @@
     {
       "name": "Classification",
       "definition": "Classifaction dopeness"
+    },
+    {
+      "name": "Support Vector Machine",
+      "definition": "Support Vector Machines"
     }
   ]
 }
