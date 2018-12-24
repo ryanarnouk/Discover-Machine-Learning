@@ -12,10 +12,10 @@ class About extends Component {
             Developed by Ryan Arnouk | 2018<br/>
             Discover Machine Learning is an app that uses block components to teach machine learning.<br/>
             <div style={{marginTop: 20}}>
-              Version: 0.1<br />
-              Last Updated: 2018-08-26
+              Version: 0.8<br />
             </div>
             <p>For more information check out the <Link to="/learnmore">learn more section</Link></p>
+            <p>Read more about our privacy policy and terms of service <Link to="/privacypolicy">here</Link></p>
             <p>Copyright {new Date().getFullYear()} All rights reserved Ryan Arnouk</p>
           </div>
         </div>
