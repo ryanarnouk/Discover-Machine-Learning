@@ -10,6 +10,7 @@ import Console from './Console';
 import Ajv from 'ajv';
 import JSONschema from '../seed/Schema/JSONschema.json'
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router-dom';
 
 //validate json
 // first thing we want to do is validate the JSON that is going to come through here
@@ -47,7 +48,8 @@ class Sidebar extends Component {
       modalOpen: false,
       lessonNumber: this.props.route.params.id - 1,
       consoletext: "Your code will output here...",
-      challengestate: false
+      challengestate: false,
+      congratulations: false
     }
 
     this.openModal = this.openModal.bind(this);
@@ -173,7 +175,16 @@ class Sidebar extends Component {
   }
 
   continue = () => {
-    window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
+    // if it is the last lesson it needs to redirect to new page that congratulates them and then lets them go to next chapter.
+    var x = []
+    for (var a in JSONloader.challenges) {
+      x.push(JSONloader.challenges[a].number)
+    }
+    if(this.state.lessonNumber + 1 === x[x.length-1]) {
+      this.setState({congratulations: true});
+    } else {
+      window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
+    }
   }
 
   hint = () => {
@@ -241,6 +252,22 @@ class Sidebar extends Component {
                     </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
+                  {this.state.congratulations ? 
+                  <Modal 
+                      isOpen={this.state.modalOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={[customStyles, {height: '1000px'}]}
+                      contentLabel="Check"
+                    > 
+                      <div style={{fontFamily: 'Rubik', textAlign: 'center'}}>
+                        <h1>Congratulations</h1>
+                        <p>You have successfully completed the chapter!</p>
+                        <img src='/img/party.png'/>
+                        <p><Link to="#">Continue onto the next lesson</Link></p>
+                      </div>
+                    </Modal>
+                     : null}
                 </div>
               </div>
             ) : (
@@ -285,6 +312,22 @@ class Sidebar extends Component {
                     {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <button className="hint" onClick={this.hint}>Hint</button>: false}
                   </div>
                   <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/>
+                  {this.state.congratulations ? 
+                  <Modal 
+                      isOpen={this.state.modalOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={[customStyles, {height: '1000px'}]}
+                      contentLabel="Check"
+                    > 
+                      <div style={{fontFamily: 'Rubik', textAlign: 'center'}}>
+                        <h1>Congratulations</h1>
+                        <p>You have successfully completed the chapter!</p>
+                        <img src='/img/party.png'/>
+                        <p><Link to="#">Continue onto the next lesson</Link></p>
+                      </div>
+                    </Modal>
+                     : null}
                 </div>
               </div>
             )

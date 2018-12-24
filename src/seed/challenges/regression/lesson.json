@@ -144,7 +144,8 @@
       "name": "Conclusion",
       "number": 11, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
-      "codeblocks": false
+      "codeblocks": false,
+      "codeblockarea": "<p>placeholder</p>"
     }
   ] 
 }
