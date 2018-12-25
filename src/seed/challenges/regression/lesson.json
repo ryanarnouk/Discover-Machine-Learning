@@ -119,7 +119,7 @@
     {
       "name": "Apply the Algorithm",
       "number": 9,
-      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
+      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>linear regression</code>",
       "tests": [
         {
           "text": "fit the algorithm and use linear regression",

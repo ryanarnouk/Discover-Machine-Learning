@@ -33,7 +33,7 @@
       "name": "Types of Algorithms",
       "section": "classification",
       "number": 3, 
-      "description": "There are many different types of algorithms for classification, each good for a specific problem. For example, some of the most used algorithms include support vector machines (which we talked about last lesson), K-Nearest Neighbors that can group data points together based on a number around a point, and neural networks which we would talk about in more detail in the next chapter. In this chapter we will focus on CHOOSE ALGO",
+      "description": "There are many different types of algorithms for classification, each good for a specific problem. For example, some of the most used algorithms include support vector machines (which we talked about last lesson), K-Nearest Neighbors that can group data points together based on a number around a point, and neural networks which we would talk about in more detail in the next chapter. In this chapter we will focus on Support Vector Machines.",
       "tests": [
         
       ],
@@ -44,14 +44,28 @@
       "codeblockarea": "<p>Placeholder</p>"
     },
     {
-      "name": "Import Algorithm",
+      "name": "Support Vector Machines",
       "section": "classification",
       "number": 4, 
-      "description": "Now that we know what algorithm we want to use, we need to import it. Using the import function import __CHOOSE WHAT ALGORITHM TO IMPORT__.",
+      "description": "In this chapter we are going to focus on <strong>support vector machines</strong>. Support vector machines work by plotting a line between data points. It plots this line by plotting 3 seperate lines each one going to a data point. The distance between these points and the main line are called the margin. Maximizing the distance between the nearest datapoint on either class will help us get the right line.",
+      "tests": [
+        
+      ],
+      "definitions": [
+        "Linear Regression,0"
+      ],
+      "codeblocks": false,
+      "codeblockarea": "<img src='/img/supportvectormachine.png' /><p>Above you can see a support vector machine in action. It finds the optimal line to seperate two data plots based on the maximum margin between the nearest data points on either side. This could be data on iris flowers and how big they are or anything that SVM might be optimal for."
+    },
+    {
+      "name": "Import Algorithm",
+      "section": "classification",
+      "number": 5, 
+      "description": "Now that we know what algorithm we want to use, we need to import it. Using the import function import SVM (support vector machine)",
       "tests": [
         {
           "text": "import support vector machine algorithm",
-          "test": "assert(code[0], 'svm'); assert(code[1], 'importfunction');"
+          "test": "or(code[0], 'svm', 'support vector machine'); assert(code[1], 'importfunction');"
         }
       ], 
       "definitions": [
@@ -62,12 +76,12 @@
     {
       "name": "Set up X and Y data",
       "section": "classification",
-      "number": 5, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on. Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y).",
+      "number": 6, 
+      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the flower and the y plot is going to be the actual type of flower that we will train our model on. Basically we split our data into two parts: information about the flower and then the type of flower. <br /> Set the x value to <code>flower</code> and set the y value to <code>species</code>",
       "tests": [
         {
           "text": "set the plots of data", 
-          "test": ""
+          "test": "assert(code[0], 'flower'); assert(code[1], 'species'); assert(code[2], 'setdata');"
         }
       ], 
       "codeblocks": true 
@@ -75,8 +89,8 @@
     {
       "name": "Split the Train and Test size",
       "section": "classification",
-      "number": 6, 
-      "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
+      "number": 7, 
+      "description": "Now we want to split our data for training and testing. For now let’s take 20% of the dataset and use it for testing the algorithm to make sure we did good. Use the <code>set testing data` and set it to 20</code>",
       "tests": [
         {
           "text": "use the set testing data too 20%",
@@ -87,33 +101,34 @@
     },
     {
       "name": "Apply the Algorithm",
-      "number": 7,
-      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. Why want to use linear regression for this so using the apply block apply <code>linear regression</code>",
+      "number": 8,
+      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>support vector machine</code>",
       "tests": [
         {
           "text": "fit the algorithm and use linear regression",
-          "test": "assert(code[0], 'linearregression'); assert(code[1], 'applyfunction');"
+          "test": "assert(code[0], 'svm'); assert(code[1], 'applyfunction');"
         }
       ],
       "codeblocks": true
     },
     {
       "name": "Check Accuracy",
-      "number": 8,
-      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
+      "number": 9,
+      "description": "Now that we finished our model we can check the accuracy of our algorithm! <br /> Use the accuracy function to see how good the model is by setting it to support vector machine. ",
       "tests": [
         {
           "text": "check the accuracy of the linear regression algorithm",
-          "test": "assert(code[0], 'linearregression'); assert(code[1], 'accuracyfunction');"
+          "test": "assert(code[0], 'svm'); assert(code[1], 'accuracyfunction');"
         }
       ], 
       "codeblocks": true
     },
     {
       "name": "Conclusion",
-      "number": 9, 
+      "number": 10, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
-      "codeblocks": false
+      "codeblocks": false,
+      "codeblockarea": "<p>Placeholder</p>"
     }
   ] 
 }

@@ -164,6 +164,14 @@ class Sidebar extends Component {
       }
     }
 
+    function or(a, b, c) {
+      if(a.toUpperCase() == b.toUpperCase() || a.toUpperCase() == c.toUpperCase()) {
+        arrayofbool.push(true);
+      } else {
+        arrayofbool.push(false);
+      }
+    }
+
     eval(JSONloader.challenges[this.state.lessonNumber].tests[0].test);
     console.log(arrayofbool)
 
@@ -252,6 +260,7 @@ class Sidebar extends Component {
                     </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
+                  {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/> : false }
                   {this.state.congratulations ? 
                   <Modal 
                       isOpen={this.state.modalOpen}
@@ -311,7 +320,7 @@ class Sidebar extends Component {
                     </Modal>
                     {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <button className="hint" onClick={this.hint}>Hint</button>: false}
                   </div>
-                  <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/>
+                  {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/> : false }
                   {this.state.congratulations ? 
                   <Modal 
                       isOpen={this.state.modalOpen}
