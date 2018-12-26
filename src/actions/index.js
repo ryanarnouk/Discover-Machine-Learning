@@ -1,9 +1,13 @@
 import axios from 'axios';
+import regression from '../seed/challenges/regression/lesson.json';
+import classification from '../seed/challenges/classification/lesson.json';
+import introcoding from '../seed/challenges/introcoding/lesson.json';
+import deeplearning from '../seed/challenges/deeplearning/lesson.json';
+import reinfocementlearning from '../seed/challenges/reinforcementlearning/lesson.json';
 
 export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticaed_user';
 export const AUTHENTICATION_ERROR = 'authentication_error';
-
 
 export function signInAction({ email, password }, history){
   return (dispatch) => {
@@ -46,6 +50,11 @@ export function SignUpAction({ name, email, password }, history) {
   }
 }
 
+// SOCIAL AUTHENTICATION
+export function TwitterLoginAction() {
+  console.log('hi')
+}
+
 // try to make this use history
 export function signOutAction(history) {
   console.log('signOutFunction');
@@ -54,7 +63,44 @@ export function signOutAction(history) {
   localStorage.removeItem('user_name')
   //   localStorage.clear();
   // only remove the user localstorage if logged out. Need to write code if someone else logs in with different data on server to clear previous user localstorage
-  window.location.href = '/';
+  //window.location.href = '/';
+
+  // On logout we want to get all the users completed challenges from localstorage and save it to the server in a json object. then when they sign up we can get those challenges and save it to the localstorage after it is cleared.
+  
+  console.log(regression.challenges.length);
+  var x = {
+    introcoding: [
+
+    ], 
+    regression: [
+
+    ],
+    classification: [
+
+    ],
+    deeplearning: [
+
+    ], 
+    reinforcementlearning: [
+
+    ]
+  }
+  for(var i in introcoding.challenges) {
+    x.introcoding.push(false)
+  }
+  for(var i in regression.challenges) {
+    x.regression.push(false)
+  }
+  for(var i in classification.challenges) {
+    x.classification.push(false)
+  }
+  for(var i in deeplearning.challenges) {
+    x.deeplearning.push(false)
+  }
+  for(var i in reinfocementlearning.challenges) {
+    x.reinforcementlearning.push(false)
+  }
+  console.log(x);
   return {
     type: UNAUTHENTICATED
   };
