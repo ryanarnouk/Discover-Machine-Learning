@@ -3,7 +3,7 @@ import regression from '../seed/challenges/regression/lesson.json';
 import classification from '../seed/challenges/classification/lesson.json';
 import introcoding from '../seed/challenges/introcoding/lesson.json';
 import deeplearning from '../seed/challenges/deeplearning/lesson.json';
-import reinfocementlearning from '../seed/challenges/reinforcementlearning/lesson.json';
+import reinforcementlearning from '../seed/challenges/reinforcementlearning/lesson.json';
 
 export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticaed_user';
@@ -66,8 +66,6 @@ export function signOutAction(history) {
   //window.location.href = '/';
 
   // On logout we want to get all the users completed challenges from localstorage and save it to the server in a json object. then when they sign up we can get those challenges and save it to the localstorage after it is cleared.
-  
-  console.log(regression.challenges.length);
   var x = {
     introcoding: [
 
@@ -86,19 +84,19 @@ export function signOutAction(history) {
     ]
   }
   for(var i in introcoding.challenges) {
-    x.introcoding.push(false)
+    x.introcoding.push(localStorage.getItem('challengecomplete introcoding ' + i))
   }
   for(var i in regression.challenges) {
-    x.regression.push(false)
+    x.regression.push(localStorage.getItem('challengecomplete regression ' + i))
   }
   for(var i in classification.challenges) {
-    x.classification.push(false)
+    x.classification.push(localStorage.getItem('challengecomplete classification ' + i))
   }
   for(var i in deeplearning.challenges) {
-    x.deeplearning.push(false)
+    x.deeplearning.push(localStorage.getItem('challengecomplete deeplearning ' + i))
   }
-  for(var i in reinfocementlearning.challenges) {
-    x.reinforcementlearning.push(false)
+  for(var i in reinforcementlearning.challenges) {
+    x.reinforcementlearning.push(localStorage.getItem('challengecomplete reinforcement ' + i))
   }
   console.log(x);
   return {
