@@ -4,6 +4,7 @@ import classification from '../seed/challenges/classification/lesson.json';
 import introcoding from '../seed/challenges/introcoding/lesson.json';
 import deeplearning from '../seed/challenges/deeplearning/lesson.json';
 import reinforcementlearning from '../seed/challenges/reinforcementlearning/lesson.json';
+import qs from 'qs';
 
 export const AUTHENTICATED = 'authenticated_user';
 export const UNAUTHENTICATED = 'unauthenticaed_user';
@@ -20,11 +21,18 @@ export function signInAction({ email, password }, history){
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
       localStorage.setItem('user_name', res.data.user.name);
+      localStorage.setItem('email', email);
       // do not know whether to use history.push or window.location
       //history.push('/challenges/regression/1');
       //window.location.href = "/profile";
-      window.location.href = "/challenges/regression/1"
+      //window.location.href = "/challenges/regression/1"
       console.log(res);
+      console.log(email);
+      axios.get(`/progress/load?email=${email}`).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      });
     }).catch((error) => {
       dispatch({
         type: AUTHENTICATION_ERROR,
@@ -100,14 +108,8 @@ export function signOutAction(history) {
     x.reinforcementlearning.push(Boolean(localStorage.getItem('challengecomplete reinforcement ' + d)))
   }
 
-  axios({
-    method: 'post',
-    headers: {'Content-Type': 'application/x-www-form-encoded'},
-    url: '/save/progress',
-    data: {
-      foo: 'bar'
-    }
-  }).then((res) => {
+  axios.post(`/progress/save?email=${localStorage.getItem('email')}`, qs.stringify(x)).then((res) => {
+    console.log(localStorage.getItem('email'));
     console.log(res);
   }).catch((err) => {
     console.log(err);

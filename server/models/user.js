@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema({
     index: { unique: true }
   }, 
   password: String, 
-  name: String
+  name: String,
+  progress: Object
 });
 
 // Compare the passed password with the value in the database a model method

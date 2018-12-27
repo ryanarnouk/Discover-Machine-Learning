@@ -44,7 +44,7 @@ const saveProgress = require('./routes/saveprogress')
 app.use('/auth', authRoutes);
 app.use('/api', apiRoutes);
 app.use('/nothotdog', notHotdog)
-app.use('/save', saveProgress);
+app.use('/progress', saveProgress);
 
 // start the server
 app.listen(port, () => {
