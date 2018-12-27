@@ -83,21 +83,36 @@ export function signOutAction(history) {
 
     ]
   }
+
   for(var i in introcoding.challenges) {
-    x.introcoding.push(localStorage.getItem('challengecomplete introcoding ' + i))
+    x.introcoding.push(Boolean(localStorage.getItem('challengecomplete introcoding ' + i)))
   }
-  for(var i in regression.challenges) {
-    x.regression.push(localStorage.getItem('challengecomplete regression ' + i))
+  for(var a in regression.challenges) {
+    x.regression.push(Boolean(localStorage.getItem('challengecomplete regression ' + a)))
   }
-  for(var i in classification.challenges) {
-    x.classification.push(localStorage.getItem('challengecomplete classification ' + i))
+  for(var b in classification.challenges) {
+    x.classification.push(Boolean(localStorage.getItem('challengecomplete classification ' + b)))
   }
-  for(var i in deeplearning.challenges) {
-    x.deeplearning.push(localStorage.getItem('challengecomplete deeplearning ' + i))
+  for(var c in deeplearning.challenges) {
+    x.deeplearning.push(Boolean(localStorage.getItem('challengecomplete deeplearning ' + c)))
   }
-  for(var i in reinforcementlearning.challenges) {
-    x.reinforcementlearning.push(localStorage.getItem('challengecomplete reinforcement ' + i))
+  for(var d in reinforcementlearning.challenges) {
+    x.reinforcementlearning.push(Boolean(localStorage.getItem('challengecomplete reinforcement ' + d)))
   }
+
+  axios({
+    method: 'post',
+    headers: {'Content-Type': 'application/x-www-form-encoded'},
+    url: '/save/progress',
+    data: {
+      foo: 'bar'
+    }
+  }).then((res) => {
+    console.log(res);
+  }).catch((err) => {
+    console.log(err);
+  });
+
   console.log(x);
   return {
     type: UNAUTHENTICATED
