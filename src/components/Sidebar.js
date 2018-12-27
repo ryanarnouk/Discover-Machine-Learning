@@ -136,14 +136,25 @@ class Sidebar extends Component {
     var arrayofbool = [];
     function assert(a, b) {
       // use toUpperCase so it is case insensitive
-      if(a.toUpperCase() == b.toUpperCase()) {
-        arrayofbool.push(true);
-      } else {
-        if(self.state.challengestate === true) {
+      if(typeof a === 'string' && typeof b === 'string') {
+        if(a.toUpperCase() === b.toUpperCase()) {
+          arrayofbool.push(true);
+        } else {
+          if(self.state.challengestate === true) {
+            arrayofbool.push(false);
+          }
           arrayofbool.push(false);
-        }
-        arrayofbool.push(false);
-      }  
+        }  
+      } else {
+        if(a == b) {
+          arrayofbool.push(true);
+        } else {
+          if(self.state.challengestate === true) {
+            arrayofbool.push(false);
+          }
+          arrayofbool.push(false);
+        } 
+      }
     }
 
     function lengthfunc(a, b) {
@@ -165,7 +176,7 @@ class Sidebar extends Component {
     }
 
     function or(a, b, c) {
-      if(a.toUpperCase() == b.toUpperCase() || a.toUpperCase() == c.toUpperCase()) {
+      if(a.toUpperCase() === b.toUpperCase() || a.toUpperCase() === c.toUpperCase()) {
         arrayofbool.push(true);
       } else {
         arrayofbool.push(false);
@@ -272,7 +283,7 @@ class Sidebar extends Component {
                       <div style={{fontFamily: 'Rubik', textAlign: 'center'}}>
                         <h1>Congratulations</h1>
                         <p>You have successfully completed the chapter!</p>
-                        <img src='/img/party.png'/>
+                        <img src='/img/party.png' alt="party"/>
                         <p><Link to="#">Continue onto the next lesson</Link></p>
                       </div>
                     </Modal>
@@ -332,7 +343,7 @@ class Sidebar extends Component {
                       <div style={{fontFamily: 'Rubik', textAlign: 'center'}}>
                         <h1>Congratulations</h1>
                         <p>You have successfully completed the chapter!</p>
-                        <img src='/img/party.png'/>
+                        <img src='/img/party.png' alt="party"/>
                         <p><Link to="#">Continue onto the next lesson</Link></p>
                       </div>
                     </Modal>

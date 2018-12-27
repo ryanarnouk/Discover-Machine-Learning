@@ -17,7 +17,8 @@
       "codeblocks": false,
       "hints": [
 
-      ]
+      ],
+      "codeblockarea": "<img src='/img/code.png' alt='an example of programming' style='width: 90%; height: 80%;'/><p>Above is a snippet of the code powering this very website.</p>"
     }, 
     {
       "name": "Add a Variable",
@@ -125,7 +126,7 @@
         }
       ],
       "codeblocks": true,
-      "previouscode": true
+      "previouscode": false
     },
     {
       "name": "If statements",

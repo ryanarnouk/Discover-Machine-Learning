@@ -90,9 +90,7 @@ class Lesson extends Component {
                   </div>
                 ) : (
                   <div>
-                    <p>this challenge does not require codeblocks 
-                      We can put text here or anything relevant to the information on the sidebar
-                    </p>
+                    <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
                   </div>
                 )
                 }
