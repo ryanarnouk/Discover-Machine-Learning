@@ -12,6 +12,7 @@ export const AUTHENTICATION_ERROR = 'authentication_error';
 
 export function signInAction({ email, password }, history){
   return (dispatch) => {
+    localStorage.clear();
     axios.post('/auth/login', `email=${email}&password=${password}`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -120,8 +121,6 @@ export function signOutAction(history) {
 
   localStorage.clear();
   window.location.href = '/';
-
-  console.log(localStorage)
 
   return {
     type: UNAUTHENTICATED

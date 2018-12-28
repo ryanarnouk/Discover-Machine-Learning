@@ -62,13 +62,13 @@ class Lesson extends Component {
   } 
 
   load = () => {
-    var xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`));
+    var xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${this.props.match.params.section} ${this.state.lessonNumber}`));
     Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
 
     if(JSONloader.challenges[this.state.lessonNumber].previouscode === true) {
       console.log(this.state.lessonNumber)
-      if(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`) === null) {
-        xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber - 1}`));
+      if(localStorage.getItem(`workspace ${this.props.match.params.section} ${this.state.lessonNumber}`) === null) {
+        xml = Blockly.Xml.textToDom(localStorage.getItem(`workspace ${this.props.match.params.section} ${this.state.lessonNumber - 1}`));
         Blockly.Xml.domToWorkspace(xml, Blockly.mainWorkspace); 
       }
     }
@@ -76,6 +76,8 @@ class Lesson extends Component {
 
   render() { 
     //console.log(`${this.props.match.params.section} section. Challenge number ${this.props.match.params.id}`);
+
+    console.log(this.props.match.params.section);
     return (
       <div style={{fontFamily: 'roboto'}}>
         <Media query="(max-width: 600px)">

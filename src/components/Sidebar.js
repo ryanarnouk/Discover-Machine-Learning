@@ -66,7 +66,8 @@ class Sidebar extends Component {
 
     // save users progress to localstorage
     if(this.check() === true) {
-      localStorage.setItem(`challengecomplete ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, true)
+      // right here it is getting the section not the url
+      localStorage.setItem(`challengecomplete ${this.props.route.params.section} ${this.state.lessonNumber}`, true)
       // need to save the values to server if the user is signed in
     }
   }
@@ -90,9 +91,9 @@ class Sidebar extends Component {
 
   save = () => {
     var xml = this.props.blockly.Xml.workspaceToDom(this.props.blockly.mainWorkspace);
-    localStorage.setItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`, this.props.blockly.Xml.domToText(xml));
-    console.log(localStorage.getItem(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${JSONloader.challenges[this.state.lessonNumber]}`));
-    console.log(`workspace ${JSONloader.challenges[this.state.lessonNumber].section} ${this.state.lessonNumber}`);
+    localStorage.setItem(`workspace ${this.props.route.params.section} ${this.state.lessonNumber}`, this.props.blockly.Xml.domToText(xml));
+    console.log(localStorage.getItem(`workspace ${this.props.route.params.section} ${JSONloader.challenges[this.state.lessonNumber]}`));
+    console.log(`workspace ${this.props.route.params.section} ${this.state.lessonNumber}`);
   }
 
   glossary = () => {
@@ -271,7 +272,7 @@ class Sidebar extends Component {
                     </Modal>
                     <button className="hint" onClick={this.hint}>Hint</button>
                   </div>
-                  {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()}className="refresh"/> : false }
+                  {JSONloader.challenges[this.state.lessonNumber].codeblocks ? <FontAwesome name="refresh" size="2x" style={{color: 'white'}} onClick={() => this.props.blockly.mainWorkspace.clear()} className="refresh"/> : false }
                   {this.state.congratulations ? 
                   <Modal 
                       isOpen={this.state.modalOpen}
