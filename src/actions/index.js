@@ -28,8 +28,20 @@ export function signInAction({ email, password }, history){
       //window.location.href = "/challenges/regression/1"
       console.log(res);
       console.log(email);
-      axios.get(`/progress/load?email=${email}`).then((res) => {
-        console.log(res);
+      axios.get(`/progress/load?email=${localStorage.getItem('email')}`).then((res) => {
+        var x = qs.parse(res.data.progress);
+        for(var i in x) {
+          if (x.hasOwnProperty(i)) {
+            for(var a in x[i]) {
+              console.log(x[i][a])
+              if(x[i][a] === 'true') {
+                console.log(`challengecomplete ${x[i]} ${x[i][a]}`)
+                localStorage.setItem(`challengecomplete ${x[i]} ${x[i][a]}`, true)
+              }
+            }
+            console.log(x[i])
+          }
+        }
       }).catch((err) => {
         console.log(err);
       });
@@ -69,9 +81,6 @@ export function signOutAction(history) {
   // trying to fix bug that clears all of localstorage
   localStorage.removeItem('user');
   localStorage.removeItem('user_name')
-  //   localStorage.clear();
-  // only remove the user localstorage if logged out. Need to write code if someone else logs in with different data on server to clear previous user localstorage
-  //window.location.href = '/';
 
   // On logout we want to get all the users completed challenges from localstorage and save it to the server in a json object. then when they sign up we can get those challenges and save it to the localstorage after it is cleared.
   var x = {
@@ -115,7 +124,11 @@ export function signOutAction(history) {
     console.log(err);
   });
 
-  console.log(x);
+  //localStorage.clear();
+  //window.location.href = '/';
+
+  console.log(localStorage)
+
   return {
     type: UNAUTHENTICATED
   };
