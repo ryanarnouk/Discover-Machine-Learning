@@ -29,19 +29,13 @@ export function signInAction({ email, password }, history){
       console.log(res);
       console.log(email);
       axios.get(`/progress/load?email=${localStorage.getItem('email')}`).then((res) => {
-        var x = qs.parse(res.data.progress);
-        for(var i in x) {
-          if (x.hasOwnProperty(i)) {
-            for(var a in x[i]) {
-              console.log(x[i][a])
-              if(x[i][a] === 'true') {
-                console.log(`challengecomplete ${x[i]} ${x[i][a]}`)
-                localStorage.setItem(`challengecomplete ${x[i]} ${x[i][a]}`, true)
-              }
-            }
-            console.log(x[i])
+        var x = res.data.progress;
+        Object.keys(x).forEach((key) => {
+          if(x[key] === 'true') {
+            localStorage.setItem(`challengecomplete ${key.slice(0, -3)} ${key.match(/([0-9])/gm)}`, true);
+            //console.log(`challengecomplete ${key.slice(0, -3)} ${key.match(/([0-9])/gm)}`)
           }
-        }
+        });
       }).catch((err) => {
         console.log(err);
       });
@@ -124,8 +118,8 @@ export function signOutAction(history) {
     console.log(err);
   });
 
-  //localStorage.clear();
-  //window.location.href = '/';
+  localStorage.clear();
+  window.location.href = '/';
 
   console.log(localStorage)
 

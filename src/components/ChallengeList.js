@@ -12,7 +12,7 @@ import DeepLearning from '../seed/challenges/deeplearning/lesson.json';
 class SubList extends Component {
   render() {
     return (
-      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}} onClick={() => window.open(`/challenges/${this.props.data.section}/${this.props.data.number}`)}>
+      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}} onClick={() => window.open(`/challenges/${this.props.section}/${this.props.data.number}`)}>
         {this.props.done ? (
           <CheckCircle/>
         ) : (
@@ -54,27 +54,27 @@ class ChallengeList extends Component {
             <ul style={{listStyleType: 'none', padding: 0, fontSize: 18}}>
               {this.props.id === 0 ? Introcoding.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete introcoding ${i}`)} data={a} key={i}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete introcoding ${i}`)} data={a} key={i} section='introcoding'/>
                 ]
               }): false}
               {this.props.id === 1 ? Regression.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete regression ${i}`)} data={a} key={i}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete regression ${i}`)} data={a} key={i} section='regression'/>
                 ]
               }): false}
               {this.props.id === 2 ? Classification.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete classification ${i}`)} data={a} key={i}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete classification ${i}`)} data={a} key={i} section='classification'/>
                 ]
               }): false}
               {this.props.id === 3 ? DeepLearning.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete deeplearning ${i}`)} data={a} key={i}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete deeplearning ${i}`)} data={a} key={i} section='deeplearning'/>
                 ]
               }): false}
               {this.props.id === 4 ? Reinforcement.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcement ${i}`)} data={a} key={i}/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcement ${i}`)} data={a} key={i} section='reinforcement'/>
                 ]
               }): false}
             </ul>
