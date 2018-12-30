@@ -12,7 +12,7 @@
         "Machine Learning,6"
       ],
       "codeblocks": false,
-      "codeblockarea": "<p>hi</p>"
+      "codeblockarea": "<p></p>"
     }, 
     {
       "name": "Intro Continued...",
@@ -72,7 +72,7 @@
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "codeblockarea": "<img src='/img/linearregression.png' style='width: 90%'/>"
+      "codeblockarea": "<img src='/img/linearregression.png' style='width: 76%'/><p>Above is an example of linear regresison, where a line is plotted through some data. We could do this exact thing to place a line bwteen the average square feet of a house and the price so that when we type a square feet we can get the average for what price it would be.</p>  "
     },
     {
       "name": "Import Linear Regression",
@@ -98,10 +98,15 @@
       "tests": [
         {
           "text": "set up the x and y data plots", 
-          "test": "assert(code[0], 'square feet'); assert(code[1], 'cost'); assert(code[2], 'setdata');"
+          "test": "or(code[0], 'square feet', 'feet'); assert(code[1], 'cost'); assert(code[2], 'setdata');"
         }
       ], 
-      "codeblocks": true 
+      "codeblocks": true ,
+      "hints": [
+        "Use the <code>set data</code> function to set the x plot and y plot of data.",
+        "Set the X plot to the square feet of the house (square feet) and set Y to the cost of the data (cost)",
+        "<img src='/img/setdatablock.png'/>"
+      ]
     }, 
     {
       "name": "Split the Train and Test size",
@@ -114,7 +119,10 @@
           "test": "assert(code[0], 20); assert(code[1], 'testingdata');"
         }
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "Use the testing data block to set the testing size to 20% (1/5) of the dataset. That we we can find out how good our algorithm is."
+      ]
     },
     {
       "name": "Apply the Algorithm",
@@ -126,7 +134,10 @@
           "test": "assert(code[0], 'linearregression'); assert(code[1], 'applyfunction');"
         }
       ],
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "Using the apply function set it to linear regression in the dropdown menu."
+      ]
     },
     {
       "name": "Check Accuracy",
@@ -138,14 +149,17 @@
           "test": "assert(code[0], 'linearregression'); assert(code[1], 'accuracyfunction');"
         }
       ], 
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "Check the accuracy of our model by setting the accuracy function to linear regression."
+      ]
     },
     {
       "name": "Conclusion",
       "number": 11, 
       "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
       "codeblocks": false,
-      "codeblockarea": "<p>placeholder</p>"
+      "codeblockarea": "<div><form><input type='number'>Square feet of house</input><input type='submit'></input></form></div>"
     }
   ] 
 }
