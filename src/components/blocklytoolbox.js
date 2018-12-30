@@ -24,7 +24,8 @@ if(window.location.pathname.split('/')[2] === 'regression'){
 } else if(window.location.pathname.split('/')[2] === 'introcoding') {
   toolbox = `
 <xml>
-  <block type="controls_if"></block>
+  <block type="ifstatement"></block>
+  <block type="elsestatement"></block>
   <block type="controls_whileUntil"></block>
   <block type="ifgreaterthanblock"></block>
   <block type="functionblock"></block>

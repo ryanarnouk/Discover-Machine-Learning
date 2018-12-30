@@ -10,19 +10,19 @@
     },
     {
       "name": "Computer Programming",
-      "definition": "Computer Programming is this idea that computers can be told what to do. A computer alone can not do anything unless it is programmed to do something. That is the whole point of programming."
+      "definition": "Coding otherwise known as programming is an idea about telling a computer what to do. Everything that you see on your screen whether that is your phone or your computer has computer code running beneath it which tells the computer what to do. There are a lot of different types of programming such as embedded programming which focuses on things like the operating system, or web development which works on things such as websites, just like this one. Or things like machine learning which programming can be used for."
     },
     {
       "name": "Variables",
-      "definition": "In computer programming, variables are used to store information that can be later referenced. "
+      "definition": "In computer programming, variables are used to store information that can be later referenced. You can make  a variable set it to a string or number and then after you can call it whenever you want in your code."
     },
     {
       "name": "Print Function",
-      "definition": "A print function in computer programming can print a variable, text, etc to the console to return a value."
+      "definition": "A print function in computer programming can print a variable, text, etc to the console to return a value. It is a good way to see how your program is running to check things like accuracy of your machine learning model. "
     },
     {
       "name": "Functions",
-      "definition": "A function is a section of a program that preforms a specific task. It can be a procedure or routine that can be called. The code can be reusable."
+      "definition": "A function is a section of a program that preforms a specific task. It can be a procedure or routine that can be called. The code can be reusable. This means, if you make a function that prints some text, you can call that function whenever you want in your code and it will run the function printing the variable."
     },
     {
       "name": "Machine Learning",

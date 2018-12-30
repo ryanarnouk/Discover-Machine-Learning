@@ -64,24 +64,9 @@ Blockly.Blocks['ifgreaterthanblock'] = {
     init: function() {
         this.appendDummyInput()
             .appendField(new Blockly.FieldTextInput(""), "variablename")
-            .appendField("")
-            .appendField(new Blockly.FieldDropdown([["is less than","is less than"], ["is greater than","is greater than"], ["is equal too","is equal too"]]), "dropdown")
+            .appendField(new Blockly.FieldDropdown([["is less than","is less than"], ["is greater than","is greater  than"], ["is equal too","is equal to"]]), "dropdown")
             .appendField(new Blockly.FieldNumber(0), "number");
         this.setOutput(true, null);
-        this.setColour(75);
-    this.setTooltip("");
-    this.setHelpUrl("");
-    }
-};
-
-Blockly.Blocks['ifgreaterthanblock'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput(""), "variablename")
-            .appendField(new Blockly.FieldDropdown([["is less than","is less than"], ["is greater than","is greater  than"], ["is equal too","is equal too"]]), "dropdown")
-            .appendField(new Blockly.FieldNumber(0), "number");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
         this.setColour(75);
     this.setTooltip("");
     this.setHelpUrl("");
@@ -172,6 +157,38 @@ Blockly.Blocks['accuracyfunction'] = {
     }
 };
   
+Blockly.Blocks['ifstatement'] = {
+    init: function() {
+        this.appendValueInput("if")
+            .setCheck(null)
+            .setAlign(Blockly.ALIGN_CENTRE)
+            .appendField("if");
+        this.appendStatementInput("do")
+            .setCheck(null)
+            .appendField("do");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['elsestatement'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("else");
+        this.appendStatementInput("NAME")
+            .setCheck(null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+  
+
 // CODE TO RUN ALL THE BLOCKS
 
 // block logic
@@ -261,4 +278,17 @@ Blockly.JavaScript['setdata'] = function(block) {
     var text_xvalue = block.getFieldValue('xvalue');
     var text_yvalue = block.getFieldValue('yvalue');
     return `${text_xvalue},${text_yvalue},setdata`
+};
+
+Blockly.JavaScript['ifstatement'] = function(block) {
+    var value_if = Blockly.JavaScript.valueToCode(block, 'if', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+    // TODO: Assemble JavaScript into code variable.
+    return `${value_if},${statements_do},ifstatement,`
+};
+  
+Blockly.JavaScript['elsestatement'] = function(block) {
+    var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+    // TODO: Assemble JavaScript into code variable.
+    return `${statements_name},elsestatement,`
 };
