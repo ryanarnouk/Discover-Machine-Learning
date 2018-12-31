@@ -138,7 +138,7 @@ class Sidebar extends Component {
     function assert(a, b) {
       // use toUpperCase so it is case insensitive
       if(typeof a === 'string' && typeof b === 'string') {
-        if(a.toUpperCase() === b.toUpperCase()) {
+        if(a.toUpperCase().trim() === b.toUpperCase().trim()) {
           arrayofbool.push(true);
         } else {
           if(self.state.challengestate === true) {
@@ -169,7 +169,7 @@ class Sidebar extends Component {
     }
 
     function doesnotequal(a, b) {
-      if(a !== b) {
+      if(a.topUpperCase().trim() !== b.toUpperCase().trim()) {
         arrayofbool.push(true);
       } else {
         arrayofbool.push(false);
@@ -177,7 +177,7 @@ class Sidebar extends Component {
     }
 
     function or(a, b, c) {
-      if(a.toUpperCase() === b.toUpperCase() || a.toUpperCase() === c.toUpperCase()) {
+      if(a.toUpperCase().trim() === b.toUpperCase().trim() || a.toUpperCase().trim() === c.toUpperCase().trim()) {
         arrayofbool.push(true);
       } else {
         arrayofbool.push(false);

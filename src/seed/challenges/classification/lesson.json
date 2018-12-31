@@ -4,7 +4,7 @@
       "name": "Intro to Classification",
       "section": "classification",
       "number": 1,
-      "description": "Every day, as humans we classify things based on shared qualities and characteristics. We don’t even think about it when we do it. Like humans, computers can do the same thing based on the data we give it. <br/> Classification is when we identify what category some data can belong to based on training data we give the computer. That training data gives the computer labels of example pieces of data so when we have a classifier it can recognize what category that could be in. Then with our testing data, we can see how good our classifier is at predicting the category of a given piece of data.",
+      "description": "Every day, as humans we classify things based on shared qualities and characteristics. We don’t even think about it when we do it. For example, we can choose what type of food something is based on how it looks, its colours, how it smells, etc. Like humans, computers can do the same thing based on the data we give it. <br/> Classification is when we identify what category some data can belong to based on training data we give the computer. That training data gives the computer labels of example pieces of data so when we have a classifier it can recognize what category that could be in. Then with our testing data, we can see how good our classifier is at predicting the category of a given piece of data.",
       "tests": [
       
       ],
@@ -12,7 +12,7 @@
         "Classification,9"
       ],
       "codeblocks": false,
-      "codeblockarea": "<p>This is a placeholder find some image that is good for classification here</p><img src='' style='width: 90%'/>"
+      "codeblockarea": "<p></p>"
     },
     {
       "name": "Classification Example",
@@ -41,7 +41,7 @@
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "codeblockarea": "<p>Placeholder</p>"
+      "codeblockarea": "<p></p>"
     },
     {
       "name": "Support Vector Machines",
@@ -55,7 +55,7 @@
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "codeblockarea": "<img src='/img/supportvectormachine.png' /><p>Above you can see a support vector machine in action. It finds the optimal line to seperate two data plots based on the maximum margin between the nearest data points on either side. This could be data on iris flowers and how big they are or anything that SVM might be optimal for."
+      "codeblockarea": "<img src='/img/supportvectormachine.png' /><p>Above you can see a support vector machine in action. It finds the optimal line to seperate two data plots based on the maximum margin between the nearest data points on either side. This could be data on iris flowers and how big they are or anything that SVM might be optimal for. <br /><img src='/img/svm.png' style='width: 70%'/>"
     },
     {
       "name": "Import Algorithm",
@@ -126,9 +126,9 @@
     {
       "name": "Conclusion",
       "number": 10, 
-      "description": "Now that we finished our house predictor we can test it out! Try placing a number in square feet and see what it ends up predicting",
+      "description": "Now that we finished our classifier for our type of iris flower we can input some data and see what it would predict as to what flower it is.",
       "codeblocks": false,
-      "codeblockarea": "<p>Placeholder</p>"
+      "codeblockarea": "<div style='margin-top: 10%;'><form><input placeholder='Sepal Length' type='number'></input><br /><input placeholder='Sepal Width' type='number'></input><br /><input placeholder='Petal Length' type='number'></input><br /><input placeholder='Petal Width' type='number'><br /></input><input type='submit' /></form></div>"
     }
   ] 
 }
