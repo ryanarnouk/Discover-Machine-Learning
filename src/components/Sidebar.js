@@ -285,7 +285,7 @@ class Sidebar extends Component {
                         <h1>Congratulations</h1>
                         <p>You have successfully completed the chapter!</p>
                         <img src='/img/party.png' alt="party"/>
-                        <p><Link to="#">Continue onto the next lesson</Link></p>
+                        <p><Link to="/challenges">Continue onto the next lesson</Link></p>
                       </div>
                     </Modal>
                      : null}
@@ -345,7 +345,7 @@ class Sidebar extends Component {
                         <h1>Congratulations</h1>
                         <p>You have successfully completed the chapter!</p>
                         <img src='/img/party.png' alt="party"/>
-                        <p><Link to="#">Continue onto the next lesson</Link></p>
+                        <p><Link to="/challenges">Continue onto the next lesson</Link></p>
                       </div>
                     </Modal>
                      : null}
