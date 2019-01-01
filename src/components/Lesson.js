@@ -8,6 +8,7 @@ import ProfileNavbar from './ProfileNavbar'
 import NotHotdog from './NotHotdog';
 import toolbox from './blocklytoolbox'
 import Parser from 'html-react-parser'
+import GoogleAds from './GoogleAds';
 
 class Lesson extends Component {
   constructor(props) {
@@ -93,6 +94,7 @@ class Lesson extends Component {
                 ) : (
                   <div>
                     <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
+                    <GoogleAds />
                   </div>
                 )
                 }
@@ -107,7 +109,10 @@ class Lesson extends Component {
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                     </div>
                   ) : (
-                    <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
+                    <div>
+                      <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
+                      <GoogleAds />
+                    </div>
                   )
                   }
                 </div>
