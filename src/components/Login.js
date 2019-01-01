@@ -10,7 +10,7 @@ import { signInAction } from '../actions';
 
 class Login extends Component {
   state = {
-    errorPopup: null
+    errorPopup: false
   }
 
   submit = (values) => {
@@ -39,7 +39,7 @@ class Login extends Component {
           {this.state.errorPopup ? (
             <div style={{backgroundColor: '#7F1614', padding: 16, display: 'flex'}}>
               <p style={{margin: 0}}>{localStorage.getItem('message')}</p>     
-              <FontAwesome name="times" size="2x" style={{ cursor: 'pointer'}}onClick={()=> this.setState({ errorPopup: false })}/>  
+              <FontAwesome name="times" size="2x" style={{cursor: 'pointer', right: 0}} onClick={()=> this.setState({ errorPopup: false })}/>  
             </div>
           ) : false}
           <div style={{backgroundColor: 'white', color: 'black', padding: 20}}>

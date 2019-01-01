@@ -12,7 +12,7 @@ export const AUTHENTICATION_ERROR = 'authentication_error';
 
 export function signInAction({ email, password }, history){
   return (dispatch) => {
-    localStorage.clear();
+    //localStorage.clear();
     axios.post('/auth/login', `email=${email}&password=${password}`, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -121,6 +121,21 @@ export function signOutAction(history) {
 
   localStorage.clear();
   window.location.href = '/';
+
+  // we want to clear localstorage but not xml code for workspace. So this code clears everything but the localstorage elements containing workspace things
+  var nonworkspacelocalstorage = []
+  for(var i = 0; i < localStorage.length; i++) {
+    //console.log(localStorage.key(i).match(/workspace/g));
+    if(!localStorage.key(i).match(/workspace/g)) {
+      nonworkspacelocalstorage.push(localStorage.key(i))
+    }
+  }
+
+  // loop backwards to delete all the items
+  for(var a = nonworkspacelocalstorage.length-1; a >= 0; a--) {
+    localStorage.removeItem(nonworkspacelocalstorage[a])
+    //console.log(nonworkspacelocalstorage[a])
+  }
 
   return {
     type: UNAUTHENTICATED
