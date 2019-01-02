@@ -4,7 +4,7 @@
       "name": "What is Coding",
       "section": "introcoding",
       "number": 1,
-      "description": "Coding otherwise known as programming is an idea about telling a computer what to do. Everything that you see on your screen whether that is your phone or your computer has computer code running beneath it which tells the computer what to do. There are a lot of different types of programming such as embedded programming which focuses on things like the operating system, or web development which works on things such as websites, just like this one. In this website, we are going to use programming for machine learning.",
+      "description": "Coding, otherwise known as programming, is an idea that tells a computer what to do and how to function. Everything that you see on your screen, whether on your phone or your computer, has code running inside of it which tells the computer what to do. There are a lot of different types of programming, such as embedded programming which focuses on things like the operating system or web development which works on things such as websites just like this one. In this course, we are going to use programming for machine learning.",
       "tests": [
         {
           "text": "set value to 20",
@@ -24,7 +24,7 @@
       "name": "Add a Variable",
       "section": "introcoding",
       "number": 2,
-      "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and make a variable. Name it <code>x</code> and set it too 3.",
+      "description": "In computer programming, variables are used to store information to be referenced later. For example you can use the variable block and create one. Name it <code>x</code> and set it to 3.",
       "tests": [
         {
           "text": "add a variable x and set it too 3",
@@ -45,7 +45,7 @@
       "name": "Print variable",
       "section": "introcoding",
       "number": 3, 
-      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text, or things such as variables. Add onto the variable function and print it. Using the <code>print</code> function make it print <code>x</code>, and you will then see the variable output in the console.",
+      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text or things such as variables. Add onto the variable function and print it. Using the <code>print</code> function make it print <code>x</code>, and then you can see the variable output in the console.",
       "tests": [
         {
           "text": "print the variable x",
@@ -66,7 +66,7 @@
       "name": "Functions",
       "section": "introcoding",
       "number": 4, 
-      "description": "Functions are another big part of programming, it can be thought of a block of code that can be called. This makes the code reusable as you can call it more than once as well as keep code separated and better. Make a function using the function block and call it <code>z</code>. Inside it, make a variable y and set it to some text. Then print the variable inside of the function.",
+      "description": "Functions are another important part of programming. They can be thought of as a block of code that can be called later in the program and run. This makes the code reusable as you can call and run it multiple times as well as keep the code separated and looking simpler. Make a function using the function block and call it <code>z</code>. Inside it, make a variable named <code>y</code> and set it to some text. Then you can print the variable inside of the function.",
       "tests": [
         {
           "text": "make a function put a variable and print it",
@@ -88,7 +88,7 @@
       "name": "Call the function",
       "section": "introcoding",
       "number": 5, 
-      "description": "The beauty of a function is how you can call it whenever you want. You can call function z now. Try using a <code>call function</code> and call it to see the print function return a value. Make sure that the <code>call function</code> is out of the function.",
+      "description": "The beauty of a function is how you can call it whenever your heart desires. You can call function<code>z</code> now. Try using a <code>call function</code> and call it to see the print function return a value. Make sure that you call the function outside of the variable and print statement.",
       "tests": [
         {
           "text": "call the function z",
@@ -101,12 +101,12 @@
         "Add the call function block to call the function z.",
         "Make sure that it is outside of the function block to call it.",
         "<img src='/img/callfunction.png' />"
-      ]
+      ] 
     }, 
     {
       "name": "If statements",
       "number": 6,
-      "description": "Similar to a yes or no question, an <code>if</code> statement has a instruction say it can check if a variable is equal to text. If that is true, a block of code would get executed and if it is false nothing would be executed. Try making an if statement testing if a number is less than or greater than a number by and print something inside that if statement to make sure it works.",
+      "description": "”Similar to a yes or no question an <code>if</code> statement can check if a value is equal to another value. For example, with an if statement we can check if a variable is equal to a specific text. If that is true the block of code would run and if it is false nothing would run. Try creating an if statement to test if a number is less than or greater than a number by printing some text if it is true.",
       "tests": [
         {
           "text": "Use an if statement to check if a number is equal to or greater than another number",
@@ -124,7 +124,7 @@
     {
       "name": "Conclusion",
       "number": 8, 
-      "description": "Now that we have finished learning about the fundamentals of coding and how it is used we can start learning about machine learning in the next section.",
+      "description": "Now that we have finished learning about the fundamentals of coding and how it can be used we can start learning about machine learning in the next section.",
       "codeblocks": false,
       "codeblockarea": "<h1>Interested in Programming?</h1><p>There are many resources out on the internet to help you learn how to code</p><p>Here are some of my personal favorites:</p><ul><li><a href='http://freecodecamp.org' target='_blank'>freeCodeCamp</a></li><li><a href='http://udacity.com' target='_blank'>Udacity</a></li></ul> <p>There are many more great resources to learn how to code in programming languages that interest you</p>"
     }

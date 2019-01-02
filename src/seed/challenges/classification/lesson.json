@@ -4,7 +4,7 @@
       "name": "Intro to Classification",
       "section": "classification",
       "number": 1,
-      "description": "Every day, as humans we classify things based on shared qualities and characteristics. We don’t even think about it when we do it. For example, we can choose what type of food something is based on how it looks, its colours, how it smells, etc. Like humans, computers can do the same thing based on the data we give it. <br/> Classification is when we identify what category some data can belong to based on training data we give the computer. That training data gives the computer labels of example pieces of data so when we have a classifier it can recognize what category that could be in. Then with our testing data, we can see how good our classifier is at predicting the category of a given piece of data.",
+      "description": "Every day as humans we classify things based on shared qualities and characteristics. We may not even think about it when we do it. For example, we choose what type of food something is based on how it looks, its colours, how it smells, etc. Like humans, computers can do the same thing based on the data we give it. <br/> Classification is when we identify what category some data can belong to based on training data we give the computer. That training data gives the computer labels of example pieces of data so when we have a classifier it can recognize what category an input value could be in. If that is a cancer tumor it can classify the tumor as not harmful or harmful. Then with our testing data, we can see how good our classifier is at predicting the category of a given piece of data.",
       "tests": [
       
       ],
@@ -18,7 +18,7 @@
       "name": "Classification Example",
       "section": "classification",
       "number": 2, 
-      "description": "In order to make a classifier there are many different types of algorithms you can use. Each algorithm is good for a specific task. One of these algorithms <code>Support Vector Machine (SVM)</code> can be used detect what type of flower a given flower is based on things like how wide and long the pedals of the flower are, etc.",
+      "description": "In order to create a classifier there are many different types of algorithms you can use. Each algorithm is good for a specific task. One of these algorithms <code>Support Vector Machine (SVM)</code> can be used to detect the type of any given flower is based on things like how wide and long the pedals of the flower are, etc.",
       "tests": [
 
       ],
@@ -27,13 +27,13 @@
         "Support Vector Machine,9"
       ],
       "codeblocks": false,
-      "codeblockarea": "<h2>Flower Data: </h2><img src='/img/irisflowerdata.png' style='width: 50%;'/><img src='/img/irisflower.png' style='width: 50%;'/><p>Above we have data on the flower. The size of the sepal and the petal, and then we have the type of flower it is. We can then train the computer to make connections between all this data to predict what type of flower it is. We can then predict the accuracy of our classifier by splitting some testing data from the dataset.<img src='/img/irisclassifier.png' style='width: 100%;'/><p>Above is a classifier, each one is using a different algorithm. That can tell you how using a different algorithm can change a lot about a classifier."
+      "codeblockarea": "<h2>Flower Data: </h2><img src='/img/irisflowerdata.png' style='width: 50%;'/><img src='/img/irisflower.png' style='width: 50%;'/><p>Above we have data on the flower: the size of the sepal and the petal and the type of flower it is. We can then train the computer to make connections between all this data to predict what type of flower it is. We can then predict the accuracy of our classifier by splitting some testing data from the data.<img src='/img/irisclassifier.png' style='width: 100%;'/><p>Above is a classifier. Each one is using a different algorithm. That can tell you how using a different algorithm can change a lot about a classifier."
     },
     {
       "name": "Types of Algorithms",
       "section": "classification",
       "number": 3, 
-      "description": "There are many different types of algorithms for classification, each good for a specific problem. For example, some of the most used algorithms include support vector machines (which we talked about last lesson), K-Nearest Neighbors that can group data points together based on a number around a point, and neural networks which we would talk about in more detail in the next chapter. In this chapter we will focus on Support Vector Machines.",
+      "description": "There are many different types of algorithms for classification, each good for a specific problem. For example, some of the most used algorithms include support vector machines (which we talked about last lesson) and  K-Nearest Neighbors an algorithm that can group data points together based on a number around a point, and neural networks which we will talk about in more detail in the next chapter. In this chapter we will focus on support vector machines.",
       "tests": [
         
       ],
@@ -47,7 +47,7 @@
       "name": "Support Vector Machines",
       "section": "classification",
       "number": 4, 
-      "description": "In this chapter we are going to focus on <strong>support vector machines</strong>. Support vector machines work by plotting a line between data points. It plots this line by plotting 3 seperate lines each one going to a data point. The distance between these points and the main line are called the margin. Maximizing the distance between the nearest datapoint on either class will help us get the right line.",
+      "description": "In this chapter we are going to focus on <strong>support vector machines</strong>. Support vector machines work by plotting a line between data points. It plots this line by plotting 3 seperate lines each one going to a data point. The distance between these points and the main line is called the margin. Maximizing the distance between the nearest datapoint on either class will help us get the right line.",
       "tests": [
         
       ],
@@ -77,7 +77,7 @@
       "name": "Set up X and Y data",
       "section": "classification",
       "number": 6, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the flower and the y plot is going to be the actual type of flower that we will train our model on. Basically we split our data into two parts: information about the flower and then the type of flower. <br /> Set the x value to <code>flower</code> and set the y value to <code>species</code>",
+      "description": "We have 2 sets of data: the x data and the y data. The x data is going to be the information about the flower and the y plot is going to be the actual type of flower that we will train our model on. Basically we split our data into two parts: information about the flower and then the type of flower. <br /> Set the x value to <code>flower</code> and set the y value to <code>species</code>",
       "tests": [
         {
           "text": "set the plots of data", 
@@ -90,10 +90,10 @@
       "name": "Split the Train and Test size",
       "section": "classification",
       "number": 7, 
-      "description": "Now we want to split our data for training and testing. For now let’s take 20% of the dataset and use it for testing the algorithm to make sure we did good. Use the <code>set testing data` and set it to 20</code>",
+      "description": "Now we want to split our data for training and testing. For now let’s take 20% of the data and use it for testing the algorithm to make sure that the algorithm is good. Use the <code>set testing data</code> statement and set it to 20%",
       "tests": [
         {
-          "text": "use the set testing data too 20%",
+          "text": "use the set testing data to 20%",
           "test": "assert(code[0], 20); assert(code[1], 'testingdata');"
         }
       ],
@@ -102,7 +102,7 @@
     {
       "name": "Apply the Algorithm",
       "number": 8,
-      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>support vector machine</code>",
+      "description": "Now that we have our data split up into separate parts and ready to test the algorithm there is one thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>support vector machine</code>",
       "tests": [
         {
           "text": "fit the algorithm and use linear regression",
@@ -114,7 +114,7 @@
     {
       "name": "Check Accuracy",
       "number": 9,
-      "description": "Now that we finished our model we can check the accuracy of our algorithm! <br /> Use the accuracy function to see how good the model is by setting it to support vector machine. ",
+      "description": "Now that we finished our model we can check the accuracy of our algorithm. <br /> Use the accuracy function to see how good the model is by setting it to support vector machine. ",
       "tests": [
         {
           "text": "check the accuracy of the linear regression algorithm",
@@ -123,10 +123,10 @@
       ], 
       "codeblocks": true
     },
-    {
+    { 
       "name": "Conclusion",
       "number": 10, 
-      "description": "Now that we finished our classifier for our type of iris flower we can input some data and see what it would predict as to what flower it is.",
+      "description": "Now that we finished our classifier for our type of iris flower we can input some data and see what type of flower it will predict.",
       "codeblocks": false,
       "codeblockarea": "<div style='margin-top: 10%;'><form><input placeholder='Sepal Length' type='number'></input><br /><input placeholder='Sepal Width' type='number'></input><br /><input placeholder='Petal Length' type='number'></input><br /><input placeholder='Petal Width' type='number'><br /></input><input type='submit' /></form></div>"
     }

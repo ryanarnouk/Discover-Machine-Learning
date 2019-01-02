@@ -4,7 +4,10 @@
       "name": "Intro to Machine Learning",
       "section": "regression",
       "number": 1,
-      "description": "<p>Ever wonder how things like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and like, or maybe how cars can drive themselves? This is all done with something called Machine learning.</p>",
+      "description": "<p>Ever wonder how programs like Siri and Google assistant are able to talk to us and do things for us, or how YouTube and Instagram suggests images and videos for you based on things that you watched and enjoyed? Maybe even how self driving cars work. These are all done with something called Machine Learning.</p>",
+      "tests": [
+
+      ],
       "definitions": [
         "Machine Learning,6"
       ],
@@ -15,7 +18,7 @@
       "name": "Intro Continued...",
       "section": "regression",
       "number": 2,
-      "description": "Machine learning is this idea that computers learn based on data. Data is information, whether that is information about images, house prices, medical information, etc. Data is all around us, and it can be used for Machine Learning.  Algorithms based on math are used to make a machine predict things based on that information. Data is fed into the computer and the computer learns from the data and it gets better the more data is fed into the algorithm. Before machine learning, computers to be explicitly programmed to do specific things. There is 3 types of machine learning, Supervised Learning, Unsupervised Learning, and Reinforcement Learning. ",
+      "description": "Machine learning is the idea that computers learn based on data. Data is information, whether it is about images, house prices, medical information, etc. Data is all around us, and it can be used for Machine Learning. Mathematical algorithms are used to make a machine predict things based on that information. Data is fed into the computer and the computer learns from the data and it gets better the more data is fed into the algorithm. Before machine learning, computers were directly programmed to do specific things.",
       "tests": [
         
       ],
@@ -29,7 +32,7 @@
       "name": "Machine Learning Examples",
       "section": "regression",
       "number": 3, 
-      "description": "Let's say we want to program a computer to detect license plates. Before machine learning, we would have to program each part of the license plate. For example, the plate is white, it has six characters, it has curves on 4 corners. As you can see, this can be very inconvenient especially since there are so many different type of license plates. Instead, we can use an algorithm and give the computer images of licenses so that it can learn what a licence plate looks like.",
+      "description": "Let's say we want to program a computer to detect license plates. Before machine learning, we would have to program each part of the license plate. For example, the plate is white, it has six characters and it has curves on 4 corners. As you can see, this can be very inconvenient because there are so many different type of license plates. Instead, we can use an algorithm and give the computer images of license plates so that it can learn what a licence plate looks like.",
       "tests": [
         {
 
@@ -45,7 +48,7 @@
       "name": "Types of Machine Learning",
       "section": "regression",
       "number": 4, 
-      "description": "There are 3 different types of machine learning. Supervised learning, unsupervised learning, and reinforcement learning. In this lesson, we are going to focus on supervised learning using linear regression an algorithm we can then use to predict house prices.",
+      "description": "There are 3 different types of machine learning. Supervised learning, unsupervised learning, and reinforcement learning. In this lesson, we are going to focus on supervised learning using linear regression which is an algorithm we can then use to predict house prices.",
       "tests": [
         
       ],
@@ -56,13 +59,13 @@
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "codeblockarea": "<h2>Supervised Learning:</h3><p>In supervised Learning, both input and output data is provided. Inputs and output data are labelled for classification.</p><h2>Unsupervised Learning</h2><p>Unlike supervised learning, unsupervised learning has unlabeled data. That means that the algorithm is presented with uncategorised data that is unlabel and the algorithm needs to come up with patterns found in the data to classify them with each other. Unsupervised learning is can be unpredictable.</p><h2>Reinforcement Learning</h2><p>Reinforcement learning has no data. Instead, it is a type of programming that trains algorithms with rewards and punishments. A reinforcement learning algorithm learns by interacting with its environment and it recieves awards for good moves and gets penalties for preforming a bad move. The algorithm can learn completely by itself.</p>"
+      "codeblockarea": "<h2>Supervised Learning:</h3><p>In supervised Learning, both input and output data is provided. Inputs and output data are labelled for classification.</p><h2>Unsupervised Learning</h2><p>Unlike supervised learning, unsupervised learning has unlabeled data. That means that the algorithm is presented with uncategorised data that is unlabel and the algorithm needs to come up with patterns found in the data to classify them with each other. Unsupervised learning is can be unpredictable.</p><h2>Reinforcement Learning</h2><p>Reinforcement learning has no data. Instead, it is a type of programming that trains algorithms with rewards and punishments. A reinforcement learning algorithm learns by interacting with its environment and it receives awards for good moves and gets penalties for performing a bad move. The algorithm can learn completely by itself.</p>"
     },
     {
       "name": "Intro to Linear Regression",
       "section": "regression",
       "number": 5, 
-      "description": "<div><p>The first algorithm we are going to take a look at is Linear Regression. Linear Regression is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through number data points, that way to you can plot a line through data points that represent 2 parts of the data. For example, making a house price predictor you can plot a line through data that represents square feet of the house and the actual price. That way we can input any square feet value and get a prediction on the price of the house. </p></div>",
+      "description": "The first algorithm we are going to take a look at is linear regression. Linear regression is a supervised learning algorithm. We can use linear regression to predict prices. Linear regression plots a line through numerical data points, that way you can plot a line through all the data points to get the average. For example, you can create an algorithm that predicts the price of a house and you can plot a line through that data using linear regression. With that average line bringing together the square feet and the price of a house we can input any square feet value and with that line that we the computer created we can get an approximate prediction of the price of the house based on our set of data.",
       "tests": [
       
       ],
@@ -70,13 +73,13 @@
         "Linear Regression,0"
       ],
       "codeblocks": false,
-      "codeblockarea": "<img src='/img/linearregression.png' style='width: 76%'/><p>Above is an example of linear regresison, where a line is plotted through some data. We could do this exact thing to place a line bwteen the average square feet of a house and the price so that when we type a square feet we can get the average for what price it would be.</p>  "
+      "codeblockarea": "<img src='/img/linearregression.png' style='width: 76%'/><p>Above is an example of linear regression, where a line is plotted through some data. We could do this exact thing to place a line between the average square feet of a house and the price so that when we type a square feet we can get the average for what price it would be.</p>  "
     },
     {
       "name": "Import Linear Regression",
       "section": "regression",
       "number": 6, 
-      "description": "Now we want to start coding! First we need to import linear regression so that we can start to use it to train our algorithm. Start by using an import block and typing linear regression to import it.",
+      "description": "Now we can begin coding! First we need to import linear regression so that we can start to use it to train our algorithm. Start by using an import block and typing linear regression to import it.",
       "tests": [
         {
           "text": "use the import function to import linear regression",
@@ -92,7 +95,7 @@
       "name": "Set up X and Y data",
       "section": "regression",
       "number": 7, 
-      "description": "We have 2 sets of data the X data and the y data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on (the class). Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y). That way we can train our computer to recognize a pattern between the cost of the house and the square feet of the house. <br /><br /> Use the <code>set data</code> function to set the <code>X</code> value to <strong>square feet</strong> and the Y value to the <strong>cost</strong>. ",
+      "description": "We have 2 sets of data to work with: the “x” data and the “y” data. The X data is going to be the information about the house (square feet) and the y plot is going to be the actual answer that we will train our model on (this is commonly referred to as the class). Basically we split our data into two parts: square feet of the house (x) and the cost of the house (y). That way we can train our computer to recognize a pattern between the cost of the house and the square feet of the house. Then, when we want to plot our data and our linear regression we can have the <code>x</code> value of the graph (horizontal axis) the square feet of the house, and then the vertical axis the <code>y</code> value to the cost of the house.<br /><br /> Use the <code>set data</code> function to set the <code>X</code> value to <strong>square feet</strong> and the Y value to the <strong>cost</strong>. ",
       "tests": [
         {
           "text": "set up the x and y data plots", 
@@ -110,7 +113,7 @@
       "name": "Split the Train and Test size",
       "section": "regression",
       "number": 8, 
-      "description": "Now that we split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
+      "description": "Now that we have split our data into two separate parts for training we want to take a small portion of that data and use it to test our algorithm. We want to set some of the data as training data so the computer can learn from it, and then we want to test some of the data to make sure that our algorithm is good. <br/> Let’s split the testing size to 20% of the data. Set that with the `set testing data` block. Make sure that it is split to 20.",
       "tests": [
         {
           "text": "use the set testing data too 20%",
@@ -119,13 +122,13 @@
       ],
       "codeblocks": true,
       "hints": [
-        "Use the testing data block to set the testing size to 20% (1/5) of the dataset. That we we can find out how good our algorithm is."
+        "Use the testing data block to set the testing size to 20% (1/5) of the set of data. That we we can find out how good our algorithm is."
       ]
     },
     {
       "name": "Apply the Algorithm",
       "number": 9,
-      "description": "Now that we have our data split up into seperate parts, and we have our data to test the algorithm there is one thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>linear regression</code>",
+      "description": "Now that we have our data split up into seperate parts and to test the algorithm there is one more thing we need to do: Apply the algorithm. We want to use linear regression for this so using the apply block apply <code>linear regression</code>",
       "tests": [
         {
           "text": "fit the algorithm and use linear regression",
@@ -140,7 +143,7 @@
     {
       "name": "Check Accuracy",
       "number": 10,
-      "description": "Now that we finished our model we can check the accuracy of our algorithm! Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on our testing data we set. Call the accuracy function and make sure you set it to linear regression.",
+      "description": "Now that we finished our model we can check the accuracy of our algorithm. Using the accuracy function, we can print to see how good our model is. This is done by running the algorithm on the testing data we set. Call the accuracy function and make sure you set it to linear regression.",
       "tests": [
         {
           "text": "check the accuracy of the linear regression algorithm",
