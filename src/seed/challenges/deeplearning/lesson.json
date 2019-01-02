@@ -1,34 +1,33 @@
 {
   "challenges": [
     {
-      "name": "test",
-      "section": "classification",
+      "name": "Deep Learning",
+      "section": "deeplearning",
       "number": 1,
-      "description": "test",
+      "description": "<p>Deep learning is a subfield of machine learning which uses algorithms inspired by neurological networks in the brain. It basically is the science of getting computers to learn and act like humans do. It learns by feeding data to the algorithm. Neural Networks can classify data and it is a good classification algorithm.</p>",
       "tests": [
         {
           "text": "set value to 20",
-          "test": "assert()"
+          "test": ""
         }
+      ],
+      "definitions": [
+        "Supervised Learning,1",
+        "Linear Regression,1"
       ],
       "codeblocks": false,
       "hints": [
-        
-      ]
-    }, 
+
+      ],
+      "codeblockarea": "<div style='marginLeft: 30%'><img src='/img/neuralnetwork.png'/><p>The structure a neural network follows, with an input an output and a layer.</p><img src='/img/neuralnetwork2.jpeg'/></div>"
+    },
     {
-      "name": "test",
-      "section": "classification",
+      "name": "Coming Soon", 
+      "section": "deeplearning",
       "number": 2,
-      "description": [
-        "test"
-      ],
-      "tests": [
-        {
-          "text": "second part"
-        }
-      ],
-      "codeblocks": true
+      "description": "More Deep Learning challenges coming soon.",
+      "codeblocks": false,
+      "codeblockarea": "<p></p>"
     }
   ] 
 }

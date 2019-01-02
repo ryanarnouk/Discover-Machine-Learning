@@ -107,11 +107,12 @@ class Lesson extends Component {
                   {JSONloader.challenges[this.state.lessonNumber].codeblocks ? (
                     <div id="editor" className="editor" ref={ref => {this.editor = ref}} style={{width: '100%'}}>
                       <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
+                      {/*<GoogleAds />*/}
                     </div>
                   ) : (
                     <div>
                       <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
-                      <GoogleAds />
+                      {/*<GoogleAds />*/}
                     </div>
                   )
                   }
