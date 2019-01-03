@@ -19,7 +19,7 @@
       "hints": [
 
       ],
-      "codeblockarea": "<div style='marginLeft: 30%'><img src='/img/neuralnetwork.png'/><p>The structure a neural network follows, with an input an output and a layer.</p><img src='/img/neuralnetwork2.jpeg'/></div>"
+      "codeblockarea": "<div><img src='/img/neuralnetwork.png'/><p>The structure a neural network follows, with an input an output and a layer.</p><img src='/img/neuralnetwork2.jpeg'/></div>"
     },
     {
       "name": "Coming Soon", 

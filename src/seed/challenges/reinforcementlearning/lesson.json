@@ -18,7 +18,7 @@
       "hints": [
 
       ],
-      "codeblockarea": "<div style='margin-left:80%;'><img src='/img/reinforcementlearning.png'/></div>"
+      "codeblockarea": "<div><img src='/img/reinforcementlearning.png'/></div>"
     },
     {
       "name": "Reinforcement Learning Agent",
@@ -32,12 +32,12 @@
       "hints": [
 
       ],
-      "codeblockarea": "<img style='margin-left: 50%' src='/img/reinforcementlearning2.png'/>"
+      "codeblockarea": "<img src='/img/reinforcementlearning2.png'/>"
     },
     {
       "name": "More Coming Soon...",
       "section": "reinforcementlearning",
-      "number": 2,
+      "number": 3,
       "description": "More reinforcement learning challenges and lessons are coming soon.",
       "definitions": [
         "Reinforcement Learning,8"

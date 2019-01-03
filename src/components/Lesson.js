@@ -92,9 +92,9 @@ class Lesson extends Component {
                     <div id="blocklyDiv" className="blocky-div" ref={ref => {this.blocklyDiv = ref}} style={{position: 'absolute'}}></div>
                   </div>
                 ) : (
-                  <div>
-                    <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
-                    <GoogleAds />
+                  <div style={{marginLeft: '31%'}}>
+                    <div>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
+                    {/*<GoogleAds />*/}
                   </div>
                 )
                 }
@@ -110,8 +110,8 @@ class Lesson extends Component {
                       {/*<GoogleAds />*/}
                     </div>
                   ) : (
-                    <div>
-                      <div style={{marginLeft: '31%'}}>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
+                    <div style={{marginLeft: '31%'}}>
+                      <div>{Parser(JSONloader.challenges[this.state.lessonNumber].codeblockarea)}</div>
                       {/*<GoogleAds />*/}
                     </div>
                   )
