@@ -1,31 +1,110 @@
 import React, { Component } from 'react';
 
 import '../styles/Signup.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
-import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
-import { SignUpAction } from '../actions';
 
-class Signup extends Component {
-  submit = (values) => {
-    console.log(values);
-    this.props.SignUpAction(values, this.props.history);
+import { withFirebase, FirebaseContext } from './Firebase';
+
+const SignUpPage = () => (
+  <div>
+    <FirebaseContext.Consumer>
+      {firebase => <SignUpForm firebase={firebase} />}
+    </FirebaseContext.Consumer>
+  </div>
+);
+
+const INITIAL_STATE = {
+  username: '',
+  email: '',
+  passwordOne: '',
+  passwordTwo: '',
+  error: null,
+};
+
+
+class SignUpForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { ...INITIAL_STATE };
+  }
+
+  onSubmit = (event) => {
+    const { username, email, passwordOne } = this.state;
+
+    this.props.firebase
+      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/challenges/introcoding/1');
+      }).catch(err => {
+        this.setState({ err });
+      });
+
+    event.preventDefault();
+  }
+
+  onChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   render() { 
-    const { handleSubmit } = this.props;
+    const {
+      username, 
+      email,
+      passwordOne,
+      passwordTwo,
+      error
+    } = this.state;
+
+    const isInvalid = 
+      passwordOne !== passwordTwo ||
+      passwordOne === '' ||
+      email === '' ||
+      username === '';
+
     return ( 
-      <div className="signupscreen" style={{fontFamily: 'Rubik'}}> 
+      <div className="signupscreen" style={{fontFamily: 'Rubik'}}>
         <div className="signup">
           <h1>Sign Up</h1>
           <h3>It's free, and hardly takes a minute</h3>
-          <form onSubmit={ handleSubmit(this.submit) } style={{fontFamily: 'Rubik'}}>
-            <Field type="input" placeholder="Username" className="email" component="input" name="name" onChange={this.nameChange}/><br />
-            <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
-            <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />
-            <input type="submit" value="Sign Up" className="submit"/> 
+          <form onSubmit={this.onSubmit} style={{fontFamily: 'Rubik'}}>
+            <input
+              name="username"
+              value={username}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Username"
+              className='email'
+            />
+            <input
+              name="email"
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email"
+              className='email'
+            />
+            <input
+              name="passwordOne"
+              value={passwordOne}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password"
+              className='password'
+            />
+            <input
+              name="passwordTwo"
+              value={passwordTwo}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Confirm Password"
+              className='password'
+            /><br />
+            <button type="submit"className="submit" disabled={isInvalid}>Sign Up</button>
+            {error && <p>{error.message}</p>}
             <p style={{fontSize: 13}}>By creating an account you agree to our <Link to="/privacypolicy" style={{color: 'dodgerblue'}}>Terms & Privacy</Link></p>
           </form>
           <div>
@@ -49,12 +128,4 @@ class Signup extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { errorMessage: state.auth.error }
-}
-
-const reduxFormSignup = reduxForm({
-  form: 'signup'
-})(Signup);
- 
-export default connect(mapStateToProps, {SignUpAction})(reduxFormSignup);
+export default withRouter(SignUpPage);

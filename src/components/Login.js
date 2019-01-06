@@ -4,14 +4,42 @@ import '../styles/Login.css';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
-import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
-import { signInAction } from '../actions';
+
+import { FirebaseContext } from './Firebase';
+
+
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null
+}
 
 class Login extends Component {
-  state = {
-    errorPopup: false
+  constructor(props) {
+    super(props);
+
+    this.state = { ...INITIAL_STATE };
   }
+
+  onSubmit = event => {
+    const { email, password } = this.state;
+
+    this.props.firebase
+      .doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push('/challenges/introcoding/1');
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+
+    event.preventDefault();
+  };
+
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   submit = (values) => {
     console.log(values);
@@ -31,7 +59,9 @@ class Login extends Component {
   }
 
   render() { 
-    const { handleSubmit } = this.props; 
+    const { email, password, error } = this.state;
+
+    const isInvalid = password === '' || email === '';
 
     return ( 
       <div className="loginscreen" style={{fontFamily: 'Rubik'}}>
@@ -44,10 +74,28 @@ class Login extends Component {
           ) : false}
           <div style={{backgroundColor: 'white', color: 'black', padding: 20}}>
             <h1>Login</h1>
-            <form onSubmit={ handleSubmit(this.submit) }>
-              <Field type="email" placeholder="Email" className="email" component="input" name="email" onChange={this.emailChange}/><br />
-              <Field className="password" type="password" placeholder="Password" component="input" name="password" onChange={this.passwordChange}/><br />
-              <input type="submit" value="Login" className="submit"/> 
+            <form onSubmit={this.onSubmit}>
+              <input
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                type="text"
+                placeholder="Email"
+                className="email"
+              />
+              <input
+                name="password"
+                value={password}
+                onChange={this.onChange}
+                type="password"
+                placeholder="Password"
+                className="password"
+              /><br />
+              <button disabled={isInvalid} type="submit" className="submit">
+                Sign In
+              </button>
+
+              {error && <p>{error.message}</p>}
             </form>
             <div>
               <h2>Or log in with:</h2>
@@ -65,12 +113,12 @@ class Login extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
-}
+const SignInPage = () => (
+  <div>
+    <FirebaseContext.Consumer>
+      {firebase => <Login firebase={firebase} />}
+    </FirebaseContext.Consumer>
+  </div>
+)
 
-const reduxFormSignin = reduxForm({
-  form: 'signin'
-})(Login);
- 
-export default connect(mapStateToProps, {signInAction})(reduxFormSignin);
+export default SignInPage;
