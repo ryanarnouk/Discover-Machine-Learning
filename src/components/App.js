@@ -16,6 +16,7 @@ import Profile from './Profile';
 import Challenges from './Challenges';
 import Hint from './Hint';
 import BugReport from './BugReport'
+import ForgotPassword from './PasswordChange/ForgotPassword';
 
 import requireAuth from './RequireAuth';
 import noRequireAuth from './NoRequireAuth';
@@ -51,6 +52,7 @@ class App extends Component {
             <Route path="/faq" component={noRequireAuth(() => {window.location.href="/landing-page/faq.html"})} />
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
+            <Route path="/forgotpassword" component={ForgotPassword} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

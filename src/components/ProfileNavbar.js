@@ -19,6 +19,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Help from '@material-ui/icons/Help';
+import { FirebaseContext } from './Firebase';
+
+const SignOut = ({ firebase }) => (
+  <MenuItem onClick={firebase.doSignOut}>
+    Sign Out
+  </MenuItem>
+);
+
+const SignOutButton = () => (
+  <FirebaseContext.Consumer>
+    {firebase => <SignOut firebase={firebase}/>}
+  </FirebaseContext.Consumer>
+)
 
 const styles = {
   root: {
@@ -115,6 +128,7 @@ class ProfileNavbar extends Component {
               >
                 <MenuItem component={props => <Link to="/profile" onClick={this.forceUpdate} {...props}/>}>Profile</MenuItem>
                 <MenuItem onClick={() => signOutAction()}>Logout</MenuItem>
+                <SignOutButton />
               </Menu>
             </div>
           </Toolbar>
