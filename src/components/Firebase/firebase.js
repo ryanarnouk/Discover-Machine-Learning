@@ -31,6 +31,18 @@ class Firebase {
 
   doPasswordUpdate = password => 
     this.auth.currentUser.updatePassword(password);
+
+  onAuthStateChanged = (username) => {
+    this.auth.onAuthStateChanged((user) => {
+      user.updateProfile({
+        displayName: username
+      }).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      })
+    });
+  }
 }
 
 export default Firebase;

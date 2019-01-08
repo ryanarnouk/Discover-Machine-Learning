@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
 import { FirebaseContext } from './Firebase';
-
+import { Authenticated, AuthenticationError } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
@@ -26,12 +26,16 @@ class Login extends Component {
 
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((res) => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push('/challenges/introcoding/1');
+        //this.props.history.push('/challenges/introcoding/1');
+        // here we want to push authenticated state
+        Authenticated();
+        console.log(res);
       })
       .catch(error => {
         this.setState({ error });
+        AuthenticationError();
       });
 
     event.preventDefault();
@@ -94,7 +98,6 @@ class Login extends Component {
               <button disabled={isInvalid} type="submit" className="submit">
                 Sign In
               </button>
-
               {error && <p>{error.message}</p>}
             </form>
             <div>
@@ -105,6 +108,7 @@ class Login extends Component {
                 <FontAwesome name="google" size="2x" style={{backgroundColor: '#DB4437', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', marginLeft: 22, width: 30}}/>
               </div>
             </div>
+            <p><Link to="/forgotpassword">Forgot Password?</Link></p>
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
           </div>
         </div>
@@ -116,7 +120,7 @@ class Login extends Component {
 const SignInPage = () => (
   <div>
     <FirebaseContext.Consumer>
-      {firebase => <Login firebase={firebase} />}
+      {firebase => <Login firebase={firebase}/>}
     </FirebaseContext.Consumer>
   </div>
 )

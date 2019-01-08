@@ -43,6 +43,8 @@ class SignUpForm extends Component {
         this.setState({ err });
       });
 
+    this.props.firebase.onAuthStateChanged(username);
+
     event.preventDefault();
   }
 
