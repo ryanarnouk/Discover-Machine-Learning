@@ -1,13 +1,14 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 
+// FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
-  apiKey: "AIzaSyAS1awTM680LmsU5wXixVD9vBy0LgLn6dU",
-  authDomain: "discover-machine-learning.firebaseapp.com",
-  databaseURL: "https://discover-machine-learning.firebaseio.com",
-  projectId: "discover-machine-learning",
-  storageBucket: "discover-machine-learning.appspot.com",
-  messagingSenderId: "565596260646"
+  apiKey: "AIzaSyBHKRha8FojiyLUXRczSMeViXUK_d9f2tY",
+  authDomain: "discover-ml.firebaseapp.com",
+  databaseURL: "https://discover-ml.firebaseio.com",
+  projectId: "discover-ml",
+  storageBucket: "discover-ml.appspot.com",
+  messagingSenderId: "994317226207"
 };
 
 class Firebase {

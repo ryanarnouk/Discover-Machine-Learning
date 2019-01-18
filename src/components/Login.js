@@ -6,7 +6,7 @@ import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
 import { FirebaseContext } from './Firebase';
-import { Authenticated, AuthenticationError } from '../actions';
+//import { Authenticated, AuthenticationError } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
@@ -30,12 +30,12 @@ class Login extends Component {
         this.setState({ ...INITIAL_STATE });
         //this.props.history.push('/challenges/introcoding/1');
         // here we want to push authenticated state
-        Authenticated();
+        //Authenticated();
         console.log(res);
       })
       .catch(error => {
         this.setState({ error });
-        AuthenticationError();
+        //AuthenticationError();
       });
 
     event.preventDefault();
