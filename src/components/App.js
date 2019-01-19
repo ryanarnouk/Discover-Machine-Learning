@@ -11,10 +11,13 @@ import Challenges from './Challenges';
 import Hint from './Hint';
 import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
+
 import RequireAuth from './RequireAuth';
+import NoRequireAuth from './noRequireAuth';
 
 import { FirebaseContext } from './Firebase';
 import { AuthUserContext } from './Session';
+import noRequireAuth from './noRequireAuth';
 
 const user = localStorage.getItem('user');
 
@@ -53,8 +56,8 @@ class Routes extends Component {
             <Route path="/challenges/:section/:id" render={(props) => (
               <Lesson {...this.props} {...props}/>
             )} />
-            <Route path="/signup" component={(Signup)} />
-            <Route path="/login" component={Login} />
+            <Route path="/signup" component={noRequireAuth(Signup)} />
+            <Route path="/login" component={noRequireAuth(Login)} />
             <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
             <Route path="/profile" component={RequireAuth(Profile)} />

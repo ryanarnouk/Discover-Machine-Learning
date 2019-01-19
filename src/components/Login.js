@@ -29,14 +29,12 @@ class Login extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then((res) => {
         this.setState({ ...INITIAL_STATE });
-        //this.props.history.push('/challenges/introcoding/1');
-        // here we want to push authenticated state
-        //Authenticated();
-        console.log(res);
+        window.location.href = '/profile';
+        localStorage.setItem('user_name', res.user.displayName);
+        localStorage.setItem('email', res.user.email);
       })
       .catch(error => {
         this.setState({ error });
-        //AuthenticationError();
       });
 
     event.preventDefault();
