@@ -8,6 +8,8 @@ import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 import { FirebaseContext } from './Firebase';
 //import { Authenticated, AuthenticationError } from '../actions';
 
+import { AuthUserContext } from './Session';
+
 const INITIAL_STATE = {
   email: '',
   password: '',
@@ -110,6 +112,9 @@ class Login extends Component {
             </div>
             <p><Link to="/forgotpassword">Forgot Password?</Link></p>
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+            <AuthUserContext.Consumer>
+              {authUser => authUser ? <p>authenticated</p> : <p>no authenticated</p>}
+            </AuthUserContext.Consumer>
           </div>
         </div>
       </div>

@@ -11,5 +11,9 @@ import Firebase, { FirebaseContext } from './components/Firebase';
 ReactGA.initialize('UA-121847358-2');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <FirebaseContext.Provider value={new Firebase()}>
+    <App />
+  </FirebaseContext.Provider>, 
+  document.getElementById('root'));
 registerServiceWorker();

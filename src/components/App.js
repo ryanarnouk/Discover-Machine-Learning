@@ -13,7 +13,8 @@ import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
 
 
-import Firebase, { FirebaseContext } from './Firebase';
+import { FirebaseContext } from './Firebase';
+import { AuthUserContext } from './Session';
 
 //let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api)(createStore);
 
@@ -26,14 +27,30 @@ if(user) {
 }
 
 
-class App extends Component {
-  state = {
-    test: "this is a test state"
+class Routes extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    }
+  }
+
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser ? this.setState({ authUser }) : this.setState({ authUser: null });
+      }
+    )
+  }
+
+  componentWillUnmount() {
+    this.listener();
   }
 
   render() {
     return (
-      <FirebaseContext.Provider value={new Firebase()}>
+      <AuthUserContext.Provider value={this.state.authUser}>
         <Router>
           <Switch>
             <Route exact path="/" component={() => {window.location.href="/landing-page/index.html"}} />
@@ -54,9 +71,15 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </Router>
-      </FirebaseContext.Provider>
+      </AuthUserContext.Provider>
     );
   }
 }
+
+const App = () => (
+  <FirebaseContext.Consumer>
+    {firebase => <Routes firebase={firebase}/>}
+  </FirebaseContext.Consumer>
+);
 
 export default App;
