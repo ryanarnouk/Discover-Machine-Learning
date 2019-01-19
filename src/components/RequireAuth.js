@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { FirebaseContext } from './Firebase';
+import { AuthUserContext } from './Session';
 
 export default function (ComposedComponent) {
   class Authentication extends Component {
@@ -20,7 +21,9 @@ export default function (ComposedComponent) {
 
     render() {
       return (
-        <ComposedComponent />
+        <AuthUserContext.Consumer>
+          {authUser => authUser ? <ComposedComponent {...this.props}/> : null}
+        </AuthUserContext.Consumer>
       );
     }
   }
