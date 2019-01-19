@@ -11,14 +11,10 @@ import Challenges from './Challenges';
 import Hint from './Hint';
 import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
-
+import RequireAuth from './RequireAuth';
 
 import { FirebaseContext } from './Firebase';
 import { AuthUserContext } from './Session';
-
-//let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api)(createStore);
-
-//let store = createStoreWithMiddleware(machineLearningIntroduction);
 
 const user = localStorage.getItem('user');
 
@@ -36,7 +32,7 @@ class Routes extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.listener = this.props.firebase.auth.onAuthStateChanged(
       authUser => {
         authUser ? this.setState({ authUser }) : this.setState({ authUser: null });
@@ -61,7 +57,7 @@ class Routes extends Component {
             <Route path="/login" component={Login} />
             <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
-            <Route path="/profile" component={Profile} />
+            <Route path="/profile" component={RequireAuth(Profile)} />
             <Route path="/challenges" component={() => <Challenges profilenavbar={true}/>} />
             <Route path="/privacypolicy" component={() => {window.location.href="/landing-page/privacypolicy.html"}} />
             <Route path="/faq" component={() => {window.location.href="/landing-page/faq.html"}} />

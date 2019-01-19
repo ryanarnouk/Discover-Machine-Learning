@@ -6,7 +6,6 @@ import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
 import { FirebaseContext } from './Firebase';
-//import { Authenticated, AuthenticationError } from '../actions';
 
 import { AuthUserContext } from './Session';
 
