@@ -32,6 +32,7 @@ class Login extends Component {
         window.location.href = '/profile';
         localStorage.setItem('user_name', res.user.displayName);
         localStorage.setItem('email', res.user.email);
+        //localStorage.setItem('user', res.user);
       })
       .catch(error => {
         this.setState({ error });
@@ -109,9 +110,9 @@ class Login extends Component {
             </div>
             <p><Link to="/forgotpassword">Forgot Password?</Link></p>
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-            <AuthUserContext.Consumer>
+            {/*<AuthUserContext.Consumer>
               {authUser => authUser ? <p>authenticated</p> : <p>no authenticated</p>}
-            </AuthUserContext.Consumer>
+            </AuthUserContext.Consumer>*/}
           </div>
         </div>
       </div>

@@ -1,5 +1,12 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import firebase from 'firebase';
+import qs from 'qs';
+import regression from '../../seed/challenges/regression/lesson.json';
+import classification from '../../seed/challenges/classification/lesson.json';
+import introcoding from '../../seed/challenges/introcoding/lesson.json';
+import deeplearning from '../../seed/challenges/deeplearning/lesson.json';
+import reinforcementlearning from '../../seed/challenges/reinforcementlearning/lesson.json';
 
 // FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
@@ -11,10 +18,10 @@ var config = {
   messagingSenderId: "994317226207"
 };
 
+app.initializeApp(config);
+
 class Firebase {
   constructor() {
-    app.initializeApp(config);
-
     this.auth = app.auth();
   }
 
@@ -26,7 +33,66 @@ class Firebase {
   doSignInWithEmailAndPassword = (email, password) => 
     this.auth.signInWithEmailAndPassword(email, password);
 
-  doSignOut = () => this.auth.signOut();
+  doSignOut = () => {
+    this.auth.signOut();
+
+    // on logout we want to get all the users completed challenges from localstorage and save it to the database in a json object.
+    // On logout we want to get all the users completed challenges from localstorage and save it to the server in a json object. then when they sign up we can get those challenges and save it to the localstorage after it is cleared.
+    /*var x = {
+      introcoding: [
+
+      ], 
+      regression: [
+
+      ],
+      classification: [
+
+      ],
+      deeplearning: [
+
+      ], 
+      reinforcementlearning: [
+
+      ]
+    }
+
+    for(var i in introcoding.challenges) {
+      x.introcoding.push(Boolean(localStorage.getItem('challengecomplete introcoding ' + i)))
+    }
+    for(var a in regression.challenges) {
+      x.regression.push(Boolean(localStorage.getItem('challengecomplete regression ' + a)))
+    }
+    for(var b in classification.challenges) {
+      x.classification.push(Boolean(localStorage.getItem('challengecomplete classification ' + b)))
+    }
+    for(var c in deeplearning.challenges) {
+      x.deeplearning.push(Boolean(localStorage.getItem('challengecomplete deeplearning ' + c)))
+    }
+    for(var d in reinforcementlearning.challenges) {
+      x.reinforcementlearning.push(Boolean(localStorage.getItem('challengecomplete reinforcement ' + d)))
+    }
+    var stringx = qs.stringify(x)*/
+    firebase.database().ref('users/' + localStorage.getItem('email')).set({
+      progress: 'test'
+    })
+
+    /*localStorage.clear();
+
+    // we want to clear localstorage but not xml code for workspace. So this code clears everything but the localstorage elements containing workspace things
+    var nonworkspacelocalstorage = []
+    for(var i = 0; i < localStorage.length; i++) {
+      //console.log(localStorage.key(i).match(/workspace/g));
+      if(!localStorage.key(i).match(/workspace/g)) {
+        nonworkspacelocalstorage.push(localStorage.key(i))
+      }
+    }
+
+    // loop backwards to delete all the items
+    for(var a = nonworkspacelocalstorage.length-1; a >= 0; a--) {
+      localStorage.removeItem(nonworkspacelocalstorage[a])
+      //console.log(nonworkspacelocalstorage[a])
+    }*/
+  }
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
