@@ -30,15 +30,13 @@ class Firebase {
   doCreateUserWithEmailAndPassword = (email, password) => 
     this.auth.createUserWithEmailAndPassword(email, password);
 
-  doSignInWithEmailAndPassword = (email, password) => 
+  doSignInWithEmailAndPassword = (email, password) => {
     this.auth.signInWithEmailAndPassword(email, password);
-
+    // need to get user progress
+  }
+  
   doSignOut = () => {
-    this.auth.signOut();
-
-    // on logout we want to get all the users completed challenges from localstorage and save it to the database in a json object.
-    // On logout we want to get all the users completed challenges from localstorage and save it to the server in a json object. then when they sign up we can get those challenges and save it to the localstorage after it is cleared.
-    /*var x = {
+    var x = {
       introcoding: [
 
       ], 
@@ -71,12 +69,16 @@ class Firebase {
     for(var d in reinforcementlearning.challenges) {
       x.reinforcementlearning.push(Boolean(localStorage.getItem('challengecomplete reinforcement ' + d)))
     }
-    var stringx = qs.stringify(x)*/
-    firebase.database().ref('users/' + localStorage.getItem('email')).set({
-      progress: 'test'
-    })
 
-    /*localStorage.clear();
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        firebase.database().ref('users/' + user.uid).set({
+          progress: x
+        }).then(() => {
+          this.auth.signOut();
+        });
+      }
+    });
 
     // we want to clear localstorage but not xml code for workspace. So this code clears everything but the localstorage elements containing workspace things
     var nonworkspacelocalstorage = []
@@ -91,7 +93,7 @@ class Firebase {
     for(var a = nonworkspacelocalstorage.length-1; a >= 0; a--) {
       localStorage.removeItem(nonworkspacelocalstorage[a])
       //console.log(nonworkspacelocalstorage[a])
-    }*/
+    }
   }
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
