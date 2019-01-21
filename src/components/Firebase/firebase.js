@@ -30,10 +30,8 @@ class Firebase {
   doCreateUserWithEmailAndPassword = (email, password) => 
     this.auth.createUserWithEmailAndPassword(email, password);
 
-  doSignInWithEmailAndPassword = (email, password) => {
+  doSignInWithEmailAndPassword = (email, password) => 
     this.auth.signInWithEmailAndPassword(email, password);
-    // need to get user progress
-  }
   
   doSignOut = () => {
     var x = {
@@ -79,6 +77,7 @@ class Firebase {
         });
       }
     });
+    console.log(x)
 
     // we want to clear localstorage but not xml code for workspace. So this code clears everything but the localstorage elements containing workspace things
     var nonworkspacelocalstorage = []
@@ -110,6 +109,16 @@ class Firebase {
       }).catch((err) => {
         console.log(err);
       })
+    });
+  }
+
+  getUserProgress = () => {
+    var userId = firebase.auth().currentUser.uid;
+    return firebase.database().ref('/users/' + userId + '/progress').once('value').then((snapshot) => {
+      var x = snapshot.val();
+      for(var key in x) {
+        
+      }
     });
   }
 }

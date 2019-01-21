@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import '../styles/Profile.css';
 import ProfileNavbar from './ProfileNavbar';
 import Challenges from './Challenges';
+import { FirebaseContext } from './Firebase';
 
 class Profile extends Component {
+  componentWillMount() {
+    // ideally this would load when user signs in instead of on profile
+    this.props.firebase.getUserProgress();
+  }
+
   profilepicture = () => {
     if(localStorage.getItem('user_name') !== null) {
       return (
@@ -28,4 +34,10 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+const UserProfile = () => (
+  <FirebaseContext.Consumer>
+    {firebase => <Profile firebase={firebase}/>}
+  </FirebaseContext.Consumer>
+)
+
+export default UserProfile;

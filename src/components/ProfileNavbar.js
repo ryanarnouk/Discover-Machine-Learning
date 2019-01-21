@@ -20,11 +20,9 @@ import Help from '@material-ui/icons/Help';
 import { FirebaseContext } from './Firebase';
 
 const SignOut = ({ firebase }) => (
-  <div>
-    <MenuItem onClick={firebase.doSignOut}>
-      Sign Out
-    </MenuItem>
-  </div>
+  <MenuItem onClick={firebase.doSignOut}>
+    Sign Out
+  </MenuItem>
 );
 
 const SignOutButton = () => (
