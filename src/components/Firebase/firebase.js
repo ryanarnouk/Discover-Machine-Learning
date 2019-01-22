@@ -116,8 +116,14 @@ class Firebase {
     var userId = firebase.auth().currentUser.uid;
     return firebase.database().ref('/users/' + userId + '/progress').once('value').then((snapshot) => {
       var x = snapshot.val();
-      for(var key in x) {
-        
+      console.log(x)
+      for(var u in x) {
+        for(var i=0; i < x[u].length; i++) {
+          if(x[u][i] === true) {
+            console.log(`challengecomplete ${u} ${i}`)
+            localStorage.setItem(`challengecomplete ${u} ${i}`, true)
+          }
+        }
       }
     });
   }
