@@ -6,7 +6,8 @@ import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
 import { FirebaseContext } from './Firebase';
-import { Authenticated, AuthenticationError } from '../actions';
+
+import { AuthUserContext } from './Session';
 
 const INITIAL_STATE = {
   email: '',
@@ -28,14 +29,13 @@ class Login extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then((res) => {
         this.setState({ ...INITIAL_STATE });
-        //this.props.history.push('/challenges/introcoding/1');
-        // here we want to push authenticated state
-        Authenticated();
-        console.log(res);
+        window.location.href = '/profile';
+        localStorage.setItem('user_name', res.user.displayName);
+        localStorage.setItem('email', res.user.email);
+        //localStorage.setItem('user', res.user);
       })
       .catch(error => {
         this.setState({ error });
-        AuthenticationError();
       });
 
     event.preventDefault();
@@ -110,6 +110,9 @@ class Login extends Component {
             </div>
             <p><Link to="/forgotpassword">Forgot Password?</Link></p>
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+            {/*<AuthUserContext.Consumer>
+              {authUser => authUser ? <p>authenticated</p> : <p>no authenticated</p>}
+            </AuthUserContext.Consumer>*/}
           </div>
         </div>
       </div>

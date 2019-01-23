@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import machineLearningIntroduction from '../reducers';
-import thunkMiddleware from 'redux-thunk';
-import api from '../middleware/api';
-import { AUTHENTICATED } from '../actions/index';
 import NoMatch from './NoMatch';
 import Lesson from './Lesson';
 import Signup from './Signup';
@@ -18,27 +12,47 @@ import Hint from './Hint';
 import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
 
-import requireAuth from './RequireAuth';
-import noRequireAuth from './NoRequireAuth';
+import RequireAuth from './RequireAuth';
+import NoRequireAuth from './noRequireAuth';
 
-let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, api)(createStore);
-
-let store = createStoreWithMiddleware(machineLearningIntroduction);
+import { FirebaseContext } from './Firebase';
+import { AuthUserContext } from './Session';
+import noRequireAuth from './noRequireAuth';
 
 const user = localStorage.getItem('user');
 
 if(user) {
-  store.dispatch({ type: AUTHENTICATED });
+  //store.dispatch({ type: AUTHENTICATED });
 }
 
 
-class App extends Component {
+class Routes extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    }
+  }
+
+  componentWillMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser ? this.setState({ authUser }) : this.setState({ authUser: null });
+      }
+    )
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
   render() {
     return (
-      <Provider store={store}>
+      <AuthUserContext.Provider value={this.state.authUser}>
         <Router>
           <Switch>
-            <Route exact path="/" component={noRequireAuth(() => {window.location.href="/landing-page/index.html"})} />
+            <Route exact path="/" component={() => {window.location.href="/landing-page/index.html"}} />
             <Route path="/challenges/:section/:id" render={(props) => (
               <Lesson {...this.props} {...props}/>
             )} />
@@ -46,19 +60,25 @@ class App extends Component {
             <Route path="/login" component={noRequireAuth(Login)} />
             <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
-            <Route path="/profile" component={requireAuth(Profile)} />
+            <Route path="/profile" component={RequireAuth(Profile)} />
             <Route path="/challenges" component={() => <Challenges profilenavbar={true}/>} />
-            <Route path="/privacypolicy" component={noRequireAuth(() => {window.location.href="/landing-page/privacypolicy.html"})} />
-            <Route path="/faq" component={noRequireAuth(() => {window.location.href="/landing-page/faq.html"})} />
+            <Route path="/privacypolicy" component={() => {window.location.href="/landing-page/privacypolicy.html"}} />
+            <Route path="/faq" component={() => {window.location.href="/landing-page/faq.html"}} />
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
             <Route path="/forgotpassword" component={ForgotPassword} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
-      </Provider>
+      </AuthUserContext.Provider>
     );
   }
 }
+
+const App = () => (
+  <FirebaseContext.Consumer>
+    {firebase => <Routes firebase={firebase}/>}
+  </FirebaseContext.Consumer>
+);
 
 export default App;

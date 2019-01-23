@@ -14,5 +14,6 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 ReactDOM.render(
   <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </FirebaseContext.Provider>, document.getElementById('root'));
+  </FirebaseContext.Provider>, 
+  document.getElementById('root'));
 registerServiceWorker();

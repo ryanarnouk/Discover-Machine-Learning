@@ -38,7 +38,7 @@ class SignUpForm extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push('/challenges/introcoding/1');
+        window.location.href = '/challenges/introcoding/1';
       }).catch(err => {
         this.setState({ err });
       });

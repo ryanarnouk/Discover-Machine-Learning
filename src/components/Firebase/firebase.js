@@ -1,19 +1,27 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import firebase from 'firebase';
+import qs from 'qs';
+import regression from '../../seed/challenges/regression/lesson.json';
+import classification from '../../seed/challenges/classification/lesson.json';
+import introcoding from '../../seed/challenges/introcoding/lesson.json';
+import deeplearning from '../../seed/challenges/deeplearning/lesson.json';
+import reinforcementlearning from '../../seed/challenges/reinforcementlearning/lesson.json';
 
+// FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
-  apiKey: "AIzaSyAS1awTM680LmsU5wXixVD9vBy0LgLn6dU",
-  authDomain: "discover-machine-learning.firebaseapp.com",
-  databaseURL: "https://discover-machine-learning.firebaseio.com",
-  projectId: "discover-machine-learning",
-  storageBucket: "discover-machine-learning.appspot.com",
-  messagingSenderId: "565596260646"
+  apiKey: "AIzaSyBHKRha8FojiyLUXRczSMeViXUK_d9f2tY",
+  authDomain: "discover-ml.firebaseapp.com",
+  databaseURL: "https://discover-ml.firebaseio.com",
+  projectId: "discover-ml",
+  storageBucket: "discover-ml.appspot.com",
+  messagingSenderId: "994317226207"
 };
+
+app.initializeApp(config);
 
 class Firebase {
   constructor() {
-    app.initializeApp(config);
-
     this.auth = app.auth();
   }
 
@@ -24,8 +32,68 @@ class Firebase {
 
   doSignInWithEmailAndPassword = (email, password) => 
     this.auth.signInWithEmailAndPassword(email, password);
+  
+  doSignOut = () => {
+    var x = {
+      introcoding: [
 
-  doSignOut = () => this.auth.signOut();
+      ], 
+      regression: [
+
+      ],
+      classification: [
+
+      ],
+      deeplearning: [
+
+      ], 
+      reinforcementlearning: [
+
+      ]
+    }
+
+    for(var i in introcoding.challenges) {
+      x.introcoding.push(Boolean(localStorage.getItem('challengecomplete introcoding ' + i)))
+    }
+    for(var a in regression.challenges) {
+      x.regression.push(Boolean(localStorage.getItem('challengecomplete regression ' + a)))
+    }
+    for(var b in classification.challenges) {
+      x.classification.push(Boolean(localStorage.getItem('challengecomplete classification ' + b)))
+    }
+    for(var c in deeplearning.challenges) {
+      x.deeplearning.push(Boolean(localStorage.getItem('challengecomplete deeplearning ' + c)))
+    }
+    for(var d in reinforcementlearning.challenges) {
+      x.reinforcementlearning.push(Boolean(localStorage.getItem('challengecomplete reinforcement ' + d)))
+    }
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        firebase.database().ref('users/' + user.uid).set({
+          progress: x
+        }).then(() => {
+          this.auth.signOut();
+        });
+      }
+    });
+    console.log(x)
+
+    // we want to clear localstorage but not xml code for workspace. So this code clears everything but the localstorage elements containing workspace things
+    var nonworkspacelocalstorage = []
+    for(var i = 0; i < localStorage.length; i++) {
+      //console.log(localStorage.key(i).match(/workspace/g));
+      if(!localStorage.key(i).match(/workspace/g)) {
+        nonworkspacelocalstorage.push(localStorage.key(i))
+      }
+    }
+
+    // loop backwards to delete all the items
+    for(var a = nonworkspacelocalstorage.length-1; a >= 0; a--) {
+      localStorage.removeItem(nonworkspacelocalstorage[a])
+      //console.log(nonworkspacelocalstorage[a])
+    }
+  }
 
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
@@ -41,6 +109,22 @@ class Firebase {
       }).catch((err) => {
         console.log(err);
       })
+    });
+  }
+
+  getUserProgress = () => {
+    var userId = firebase.auth().currentUser.uid;
+    return firebase.database().ref('/users/' + userId + '/progress').once('value').then((snapshot) => {
+      var x = snapshot.val();
+      console.log(x)
+      for(var u in x) {
+        for(var i=0; i < x[u].length; i++) {
+          if(x[u][i] === true) {
+            console.log(`challengecomplete ${u} ${i}`)
+            localStorage.setItem(`challengecomplete ${u} ${i}`, true)
+          }
+        }
+      }
     });
   }
 }

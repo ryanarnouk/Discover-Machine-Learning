@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { signOutAction } from '../actions';
-import 'rc-tooltip/assets/bootstrap_white.css';
 import '../styles/App.css';
 
 import PropTypes from 'prop-types';
@@ -127,7 +125,6 @@ class ProfileNavbar extends Component {
                 onClose={this.handleClose}
               >
                 <MenuItem component={props => <Link to="/profile" onClick={this.forceUpdate} {...props}/>}>Profile</MenuItem>
-                <MenuItem onClick={() => signOutAction()}>Logout</MenuItem>
                 <SignOutButton />
               </Menu>
             </div>
