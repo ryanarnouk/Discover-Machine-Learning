@@ -7,7 +7,9 @@ import { FirebaseContext } from './Firebase';
 class Profile extends Component {
   componentWillMount() {
     // ideally this would load when user signs in instead of on profile
-    this.props.firebase.getUserProgress();
+    this.props.firebase.getUserProgress().then(() => {
+      this.forceUpdate();
+    });
   }
 
   profilepicture = () => {
