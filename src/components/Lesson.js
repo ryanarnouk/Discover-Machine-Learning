@@ -80,7 +80,7 @@ class Lesson extends Component {
 
     console.log(this.props.match.params.section);
     return (
-      <div style={{fontFamily: 'roboto'}}>
+      <div style={{fontFamily: 'roboto', overflow: 'hidden'}}>
         <Media query="(max-width: 600px)">
           {matches => 
             matches ? (

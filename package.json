@@ -57,6 +57,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "buildhtml": "html-minifier --input-dir ./test --output-dir ./test-out --html-5 --collapse-whitespace",
     "deploy": "aws s3 sync build/ s3://discover-machine-learning"
   },
   "proxy": "http://localhost:3001",
