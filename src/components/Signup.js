@@ -52,6 +52,47 @@ class SignUpForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
+  onGoogleSubmit = event => {
+    this.props.firebase.doSignInWithGoogle().then(socialAuthUser => {
+      this.setState({ error: null });
+      localStorage.setItem('user_name', socialAuthUser.user.displayName);
+      localStorage.setItem('email', socialAuthUser.user.email);
+      //window.location.href = '/profile';
+    }).catch(error => {
+      this.setState({error});
+    })
+
+    event.preventDefault();
+  }
+
+  onFacebookSubmit = event => {
+    this.props.firebase.doSignInWithFacebook().then(socialAuthUser => {
+        this.setState({ error: null });
+        localStorage.setItem('user_name', socialAuthUser.user.displayName);
+        localStorage.setItem('email', socialAuthUser.user.email);
+        window.location.href = '/profile';
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+
+    event.preventDefault();
+  }
+
+  onTwitterSubmit = event => {
+    this.props.firebase.doSignInWithTwitter().then(socialAuthUser => {
+      this.setState({ error: null });
+      localStorage.setItem('user_name', socialAuthUser.user.displayName);
+      localStorage.setItem('email', socialAuthUser.user.email);
+      window.location.href = '/profile';
+    })
+    .catch(error => {
+      this.setState({ error });
+    });
+
+  event.preventDefault();
+  }
+
   render() { 
     const {
       username, 
@@ -112,9 +153,9 @@ class SignUpForm extends Component {
           <div>
             <h2>Or sign up with:</h2>
             <div>
-            <FontAwesome name="twitter" size="2x" style={{backgroundColor: '#1dcaff', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', width: 30}}/>
-            <FontAwesome name="facebook" size="2x" style={{backgroundColor: '#3B5998', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', marginLeft: 22, width: 30}}/>
-            <FontAwesome name="google" size="2x" style={{backgroundColor: '#DB4437', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', marginLeft: 22, width: 30}}/>
+            <FontAwesome name="twitter" size="2x" style={{backgroundColor: '#1dcaff', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', width: 30}} onClick={this.onTwitterSubmit}/>
+            <FontAwesome name="facebook" size="2x" style={{backgroundColor: '#3B5998', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', marginLeft: 22, width: 30}} onClick={this.onFacebookSubmit}/>
+            <FontAwesome name="google" size="2x" style={{backgroundColor: '#DB4437', borderRadius: 90, padding: 5, color: 'white', cursor: 'pointer', marginLeft: 22, width: 30}} onClick={this.onGoogleSubmit}/>
             </div>
           </div>
           <div>

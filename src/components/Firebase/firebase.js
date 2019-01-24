@@ -23,6 +23,10 @@ app.initializeApp(config);
 class Firebase {
   constructor() {
     this.auth = app.auth();
+
+    this.googleProvider = new app.auth.GoogleAuthProvider();
+    this.facebookProvider = new app.auth.FacebookAuthProvider();
+    this.twitterProvider = new app.auth.TwitterAuthProvider();
   }
 
   // authentication API
@@ -127,6 +131,15 @@ class Firebase {
       }
     });
   }
+
+  doSignInWithGoogle = () => 
+    this.auth.signInWithPopup(this.googleProvider);
+
+  doSignInWithFacebook = () =>
+    this.auth.signInWithPopup(this.facebookProvider);
+
+  doSignInWithTwitter = () =>
+    this.auth.signInWithPopup(this.twitterProvider);
 }
 
 export default Firebase;
