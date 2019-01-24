@@ -12,7 +12,7 @@ import DeepLearning from '../seed/challenges/deeplearning/lesson.json';
 class SubList extends Component {
   render() {
     return (
-      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}} onClick={() => window.open(`/challenges/${this.props.section}/${this.props.data.number}`)}>
+      <div style={{display: 'flex', alignItems: 'center', cursor: 'pointer', marginLeft: 50}} onClick={() => window.location.href = `/challenges/${this.props.section}/${this.props.data.number}`}>
         {this.props.done ? (
           <CheckCircle/>
         ) : (
