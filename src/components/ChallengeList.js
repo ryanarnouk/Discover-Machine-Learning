@@ -74,7 +74,7 @@ class ChallengeList extends Component {
               }): false}
               {this.props.id === 4 ? Reinforcement.challenges.map((a, i) => {
                 return [
-                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcement ${i}`)} data={a} key={i} section='reinforcement'/>
+                  <SubList text={a.name} done={localStorage.getItem(`challengecomplete reinforcementlearning ${i}`)} data={a} key={i} section='reinforcementlearning'/>
                 ]
               }): false}
             </ul>
