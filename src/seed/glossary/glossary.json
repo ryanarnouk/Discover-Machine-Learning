@@ -26,23 +26,23 @@
     },
     {
       "name": "Machine Learning",
-      "definition": "Machine learning stuff"
+      "definition": "Machine Learning is an application of artificial intelligence that teaches a computer things through data that is fed into an algorithm. The computer can then learn by itself rather than having to be programmed to learn specific things. For example, you can use an algorithm and feed the computer images of licenses plates so it learns about them, or you can program it. If you program it you need to mention specific things such as: the colour of the license plate, the shape, the letters, etc."
     },
     {
       "name": "Unsupervised Learning",
-      "definition": "Unsupervised Learning stuff"
+      "definition": "Unsupervised Learning is a type of machine learning that uses algorithms but the data is not labeled. It can group and cluster data based on patterns and similarities with each data point."
     },
     {
       "name": "Reinforcement Learning",
-      "definition": "Reinforcement Learning stuff"
+      "definition": "Reinforcement Learning is a type of Machine Learning that an algorithm learns by interacting with an environment. This is refered to as an agent."
     }, 
     {
       "name": "Classification",
-      "definition": "Classifaction dopeness"
+      "definition": "Classification is when an algorithm seperates data points into groups based on their characteristics."
     },
     {
       "name": "Support Vector Machine",
-      "definition": "Support Vector Machines"
+      "definition": "Support vector machines work by plotting a line between data points. It plots this line by plotting 3 seperate lines each one going to a data point. The distance between these points and the main line is called the margin. Maximizing the distance between the nearest datapoint on either class will help us get the right line."
     }
   ]
 }
