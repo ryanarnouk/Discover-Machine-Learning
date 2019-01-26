@@ -119,7 +119,14 @@
       "name": "Else Statements",
       "number": 7, 
       "description": "If the if statement returns false, then you can also execute whatever code you want with an <code>else</code> statement. Add it to the end of an if statement and return text. Now, if the condition returns false, that text would get returned in the console.",
-      "codeblocks": true
+      "tests": [
+        {
+          "text": "use an else statement to print something else",
+          "test": "assert(code[3], 'ifstatement'); assert(code[6], 'elsestatement');"
+        }
+      ], 
+      "codeblocks": true,
+      "previouscode": true
     },
     {
       "name": "Conclusion",
