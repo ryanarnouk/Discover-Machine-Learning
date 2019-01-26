@@ -266,7 +266,7 @@ class Sidebar extends Component {
                         <Close style={{color: '#7F0001', width: 90, height: 90}}/>
                         <h1>Try Again</h1>
                         <button className="incorrectcontinuebutton" onClick={this.closeModal}>Continue</button>
-                        <button className="hintbutton">Hint</button>
+                        <button className="hintbutton" onClick={this.hint}>Hint</button>
                       </div>
                       )}
                     </Modal>
@@ -326,7 +326,7 @@ class Sidebar extends Component {
                           <Close style={{color: '#7F0001', width: 90, height: 90}}/>
                           <h1>Try Again</h1>
                           <button className="incorrectcontinuebutton" onClick={this.closeModal}>Continue</button>
-                          <button className="hintbutton">Hint</button>
+                          <button className="hintbutton" onClick={this.hint}>Hint</button>
                         </div>
                       )}
                     </Modal>
