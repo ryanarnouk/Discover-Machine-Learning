@@ -2,11 +2,11 @@
   "definitions": [
     {
       "name": "Linear Regression",
-      "definition": "Linear regression is when we do some awesome stuff to predict house prices <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/438px-Linear_regression.svg.png'></img>"
+      "definition": "Linear regression plots a line through numerical data points, that way you can plot a line through all the data points to get the average. For example, you can create an algorithm that predicts the price of a house and you can plot a line through that data using linear regression. With that average line bringing together the square feet and the price of a house we can input any square feet value and with that line that we the computer created we can get an approximate prediction of the price of the house based on our set of data."
     },
     {
       "name": "Supervised Learning",
-      "definition": "Supervised learning is dope"
+      "definition": "In supervised Learning, both input and output data is provided. Inputs and output data are labelled for classification."
     },
     {
       "name": "Computer Programming",
