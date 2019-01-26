@@ -45,7 +45,7 @@
       "name": "Print variable",
       "section": "introcoding",
       "number": 3, 
-      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text or things such as variables. Add onto the variable function and print it. Using the <code>print</code> function make it print <code>x</code>, and then you can see the variable output in the console.",
+      "description": "Another part of programming is printing our output. Below, there is a console which can be used to print text or things such as variables. Add onto the variable function and print it. Using the <code>print</code> function make it print <code>x</code>, and then you can see the variable output in the console.<br /> Remember to add on to your previous variable statement",
       "tests": [
         {
           "text": "print the variable x",
@@ -88,7 +88,7 @@
       "name": "Call the function",
       "section": "introcoding",
       "number": 5, 
-      "description": "The beauty of a function is how you can call it whenever your heart desires. You can call function<code>z</code> now. Try using a <code>call function</code> and call it to see the print function return a value. Make sure that you call the function outside of the variable and print statement.",
+      "description": "The beauty of a function is how you can call it whenever your heart desires. You can call function<code>z</code> now. Try using a <code>call function</code> and call it to see the print function return a value. Make sure that you call the function outside of the variable and print statement. <br/><br /> Make sure that you call your function outside of the function block and <strong>add on to your code from the last lesson</strong>",
       "tests": [
         {
           "text": "call the function z",
@@ -118,7 +118,7 @@
     {
       "name": "Else Statements",
       "number": 7, 
-      "description": "If the if statement returns false, then you can also execute whatever code you want with an <code>else</code> statement. Add it to the end of an if statement and return text. Now, if the condition returns false, that text would get returned in the console.",
+      "description": "If the if statement returns false, then you can also execute whatever code you want with an <code>else</code> statement. Add it to the end of an if statement and return text. Now, if the condition returns false, that text would get returned in the console. You should have an if statement and an else statement after.",
       "tests": [
         {
           "text": "use an else statement to print something else",

@@ -112,7 +112,7 @@ class SignUpForm extends Component {
       <div className="signupscreen" style={{fontFamily: 'Rubik'}}>
         <div className="signup">
           <h1>Sign Up</h1>
-          <h3>It's free, and hardly takes a minute</h3>
+          <h3>It's free, and hardly takes a minute.</h3>
           <form onSubmit={this.onSubmit} style={{fontFamily: 'Rubik'}}>
             <input
               name="username"
