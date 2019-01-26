@@ -9,7 +9,7 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="setdata"></block>
   <block type="testingdata"></block>
   <block type="accuracyfunction"></block>
-  </xml`
+  </xml>`
 } else if(window.location.pathname.split('/')[2] === 'classification') {
   toolbox = `<xml>
   <block type="importfunction"></block>
@@ -20,7 +20,7 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="setdata"></block>
   <block type="testingdata"></block>
   <block type="accuracyfunction"></block>
-  </xml`
+  </xml>`
 } else if(window.location.pathname.split('/')[2] === 'introcoding') {
   toolbox = `
 <xml>
@@ -33,16 +33,16 @@ if(window.location.pathname.split('/')[2] === 'regression'){
   <block type="printfunction"></block>
   <block type="argumentblock"></block>
   <block type="callfunctionblock"></block>
-</xml
+</xml>
 `
 } else if(window.location.pathname.split('/')[2] === 'deeplearning') {
   toolbox = `<xml>
   <block type="printfunction"></block>
-  </xml`
+  </xml>`
 } else if(window.location.pathname.split('/')[2] === 'reinforcementlearning') {
   toolbox = `<xml>
   <block type="printfunction"></block>
-  </xml`
+  </xml>`
 }
 
 export default toolbox;
