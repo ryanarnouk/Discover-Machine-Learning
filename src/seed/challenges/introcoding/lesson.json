@@ -129,8 +129,27 @@
       "previouscode": true
     },
     {
-      "name": "Conclusion",
+      "name": "Loops", 
       "number": 8, 
+      "description": "In programming, you can loop through a statement. That way you can keep repeating a statement while something is true. For example, you can use a <code>repeat while</code>. First make a variable <code>x</code> and set it equal to <code>0</code>. Use a <code>repeat while</code> statement and make it so while <code>x</code> is less than a number it executes the code. Inside the loop you want to use a <code>plus</code> statement to add to <code>x</code> every time the function is run, and print the current value of <code>x</code> for each interval.",
+      "tests": [
+        {
+          "text": "use a repeat while loop",
+          "test": "assert(code[2], 'variablefunction'); assert(code[0], 'x'); assert(code[1], '0'); assert(code[9], 'repeatwhile'); assert(code[5], '1'); assert(code[6], 'addition'); assert(code[4], 'x')"
+        }
+      ],
+      "codeblocks": true,
+      "hints": [
+        "Make a variable equal to 0",
+        "Use a repeat while statement to loop through a function",
+        "Inside the repeat while statement add 1 to the variable x using the addition statement",
+        "Print the value of <code>x</code> using the print function inside the repeat function",
+        "<img src='/img/loops.png' />"
+      ]
+    },
+    {
+      "name": "Conclusion",
+      "number": 9, 
       "description": "Now that we have finished learning about the fundamentals of coding and how it can be used we can start learning about machine learning in the next section.",
       "codeblocks": false,
       "codeblockarea": "<h1>Interested in Programming?</h1><p>There are many resources out on the internet to help you learn how to code</p><p>Here are some of my personal favorites:</p><ul><li><a href='http://freecodecamp.org' target='_blank'>freeCodeCamp</a></li><li><a href='http://udacity.com' target='_blank'>Udacity</a></li></ul> <p>There are many more great resources to learn how to code in programming languages that interest you</p>"

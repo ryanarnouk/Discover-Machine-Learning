@@ -1,6 +1,7 @@
 /* eslint-disable */
 // disable linting on this file in specific
 import Blockly from 'node-blockly/browser'
+import { number } from 'prop-types';
 
 // import function 
 Blockly.Blocks['importfunction'] = {
@@ -188,6 +189,35 @@ Blockly.Blocks['elsestatement'] = {
     }
 };
   
+Blockly.Blocks['repeatwhile'] = {
+    init: function() {
+        this.appendValueInput("repeatwhile")
+            .setCheck(null)
+            .appendField("repeat while");
+        this.appendStatementInput("do")
+            .setCheck(null)
+            .appendField("do");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['addition'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldTextInput("variable"), "variable")
+            .appendField("plus")
+            .appendField(new Blockly.FieldNumber(0), "number");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(15);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
 
 // CODE TO RUN ALL THE BLOCKS
 
@@ -252,7 +282,7 @@ Blockly.JavaScript['ifgreaterthanblock'] = function(block) {
     var dropdown_dropdown = block.getFieldValue('dropdown');
     var number_number = block.getFieldValue('number');
     // TODO: Assemble JavaScript into code variable.
-    return `${text_variablename},${dropdown_dropdown},${number_number},`;
+    return `${text_variablename},${dropdown_dropdown},${number_number},ifgreaterthanblock,`;
 };
 
 Blockly.JavaScript['argumentblock'] = function(block) {
@@ -292,3 +322,16 @@ Blockly.JavaScript['elsestatement'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     return `${statements_name},elsestatement,`
 };
+
+Blockly.JavaScript['repeatwhile'] = function(block) {
+    var value_repeatwhile = Blockly.JavaScript.valueToCode(block, 'repeatwhile', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+    return `${value_repeatwhile},${statements_do},repeatwhile,`;
+};
+
+Blockly.JavaScript['addition'] = function(block) {
+    var text_variable = block.getFieldValue('variable');
+    var number_number = block.getFieldValue('number');
+    // TODO: Assemble JavaScript into code variable.
+    return `${text_variable},${number_number},addition,`;
+  };

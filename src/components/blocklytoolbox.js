@@ -26,13 +26,14 @@ if(window.location.pathname.split('/')[2] === 'regression'){
 <xml>
   <block type="ifstatement"></block>
   <block type="elsestatement"></block>
-  <block type="controls_whileUntil"></block>
+  <block type="repeatwhile"></block>
   <block type="ifgreaterthanblock"></block>
   <block type="functionblock"></block>
   <block type="variablefunction"></block>
   <block type="printfunction"></block>
   <block type="argumentblock"></block>
   <block type="callfunctionblock"></block>
+  <block type="addition"></block>
 </xml>
 `
 } else if(window.location.pathname.split('/')[2] === 'deeplearning') {
