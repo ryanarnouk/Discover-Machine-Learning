@@ -113,7 +113,11 @@
           "test": "assert(code[3], 'ifstatement');"
         }
       ], 
-      "codeblocks": true
+      "codeblocks": true,
+      "hints": [
+        "Use an if statement block and check if a number is less than another number",
+        "Print some text inside the if statement"
+      ]
     },
     {
       "name": "Else Statements",
@@ -126,7 +130,12 @@
         }
       ], 
       "codeblocks": true,
-      "previouscode": true
+      "previouscode": true,
+      "hints": [
+        "Add on an else statement outside of the if statement",
+        "If the condition returns false, the else statement should follow",
+        "Print something in the else statement"
+      ]
     },
     {
       "name": "Loops", 
