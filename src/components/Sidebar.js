@@ -107,9 +107,20 @@ class Sidebar extends Component {
 
   run = () => {
     var code = this.props.blockly.JavaScript.workspaceToCode(this.props.blockly.getMainWorkspace());
-    this.setState({consoletext: code});
-    if(code === "") {
+    this.setState({consoletext: code[code.length - 1]});
+    if(code[0] === "") {
       this.setState({consoletext: "Nothing To Return"})
+    }
+
+    if(JSONloader.challenges[this.state.lessonNumber].codeblocks === true) {
+      this.save();
+    }
+
+    // save users progress to localstorage
+    if(this.check() === true) {
+      // right here it is getting the section not the url
+      localStorage.setItem(`challengecomplete ${this.props.route.params.section} ${this.state.lessonNumber}`, true)
+      // need to save the values to server if the user is signed in
     }
   }
 
@@ -127,8 +138,8 @@ class Sidebar extends Component {
       return true;
     }
     
-    this.setState({consoletext: code[0]});
-    if(code === "") {
+    this.setState({consoletext: code[code.length - 1]});
+    if(code[0] === "") {
       this.setState({consoletext: "Nothing To Return"})
     }
     // make tests work with multiple blockly components

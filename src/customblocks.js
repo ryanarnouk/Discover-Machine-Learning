@@ -225,7 +225,7 @@ Blockly.Blocks['addition'] = {
 Blockly.JavaScript['printfunction'] = function(block) {
     var text_variable = block.getFieldValue('variable');
     // TODO: Assemble JavaScript into code variable
-    return text_variable + ',' + 'printfunction';
+    return `${text_variable},printfunction`;
 };
 
 Blockly.JavaScript['importfunction'] = function(block) {
