@@ -21,6 +21,7 @@ import { AuthUserContext } from './Session';
 import noRequireAuth from './noRequireAuth';
 import Home from './Homepage/Home';
 import Connect from './GameConnect/Connect';
+import StartNewGame from './GameConnect/StartNewGame';
 
 const user = localStorage.getItem('user');
 
@@ -73,6 +74,7 @@ class Routes extends Component {
             {/* Routes for Game connect with class */}
             <Route path="/menu" component={/*RequireAuth(*/Menu/*)*/} />
             <Route path="/connect" component={/*RequireAuth(*/Connect/*)*/} />
+            <Route path="/startnew" component={/*RequireAuth(*/StartNewGame/*)*/} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
