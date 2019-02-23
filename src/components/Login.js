@@ -29,7 +29,7 @@ class Login extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then((res) => {
         this.setState({ ...INITIAL_STATE });
-        window.location.href = '/profile';
+        window.location.href = '/menu';
         localStorage.setItem('user_name', res.user.displayName);
         localStorage.setItem('email', res.user.email);
         //localStorage.setItem('user', res.user);

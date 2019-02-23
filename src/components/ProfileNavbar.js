@@ -95,39 +95,40 @@ class ProfileNavbar extends Component {
 
     return ( 
       <div className={classes.root}>
-        <AppBar position="static" style={{backgroundColor: '#424242'}}>
+        <AppBar position="static" style={{backgroundColor: '#26317F'}}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
               <MenuIcon/>
             </IconButton>
-            <Typography variant="title" color="inherit" className={classes.flex}></Typography>
-            <div>
-              <IconButton 
-                aria-owns={open ? 'menu-appbar': null}
-                aria-haspopup="true"
-                onClick={this.handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu 
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={this.handleClose}
-              >
-                <MenuItem component={props => <Link to="/profile" onClick={this.forceUpdate} {...props}/>}>Profile</MenuItem>
-                <SignOutButton />
-              </Menu>
-            </div>
+            <Typography variant="title" color="inherit">
+              5$
+            </Typography>
+            <IconButton 
+              aria-owns={open ? 'menu-appbar': null}
+              aria-haspopup="true"
+              onClick={this.handleMenu}
+              color="inherit"
+              centered
+            > 
+              <AccountCircle />
+            </IconButton>
+            <Menu 
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={this.handleClose}
+            >
+              <MenuItem component={props => <Link to="/profile" onClick={this.forceUpdate} {...props}/>}>Profile</MenuItem>
+              <SignOutButton />
+            </Menu>
           </Toolbar>
         </AppBar>
         <Drawer open={this.state.menu} onClose={this.toggleDrawer(false)}>

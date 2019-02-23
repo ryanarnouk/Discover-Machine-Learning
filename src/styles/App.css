@@ -12,7 +12,7 @@ body {
 }
 
 .sidebar {
-  background-color: #424242;
+  background-color: #26317F;
   height: 100vh;
   width: 30%;
   position: fixed;
@@ -20,7 +20,7 @@ body {
 }
 
 .sidebartop {
-  background-color: #424242;
+  background-color: #26317F;
   height: 30%;
 }
 
@@ -99,7 +99,7 @@ body {
 }
 
 .blocklyFlyoutBackground {
-  fill: #212121;
+  fill: #0A237F;
 }
 
 .challenge {
@@ -316,4 +316,75 @@ body {
   padding: 5px;
   width: 87%;
   font-family: 'Rubik';
+}
+
+.menubutton {
+  cursor: pointer;
+  background-color: #0DC8FF; 
+  color: white;
+  padding: 15px;
+  font-family: 'Rubik';
+  width: 100%;
+  text-align: center;
+  margin: 8px;
+  transition: background-color .20s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color .30s ease-in-out;
+  -webkit-transition: background-color .30s ease-in-out;  
+}
+
+.menubutton:hover {
+  background-color: #0C67E8;
+  transition: background-color .30s ease-in-out;
+  /*vendor prefixes*/
+  -moz-transition: background-color .30s ease-in-out;
+  -webkit-transition: background-color .30s ease-in-out;  
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.code[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+
+.code[type=number] {
+  background-color: #0DC8FF;
+  padding: 12px 0px;
+  margin: 8px 0;
+  border: none;
+  height: 36px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-family: 'Rubik';
+  font-size: 1.8em;
+}
+
+.code {
+  width: 100%;
+}
+
+.code::placeholder {
+  color: white;
+}
+
+.gamecodesubmit {
+  background-color: rgb(0, 89, 212); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  font-family: 'Rubik'
 }

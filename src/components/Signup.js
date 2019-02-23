@@ -38,7 +38,7 @@ class SignUpForm extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        window.location.href = '/challenges/introcoding/1';
+        window.location.href = '/menu';
       }).catch(err => {
         this.setState({ err });
       });
@@ -146,7 +146,7 @@ class SignUpForm extends Component {
               placeholder="Confirm Password"
               className='password'
             /><br />
-            <button type="submit"className="submit" disabled={isInvalid}>Sign Up</button>
+            <button type="submit" className="submit" disabled={isInvalid}>Sign Up</button>
             {error && <p>{error.message}</p>}
             <p style={{fontSize: 13}}>By creating an account you agree to our <Link to="/privacypolicy" style={{color: 'dodgerblue'}}>Terms & Privacy</Link></p>
           </form>

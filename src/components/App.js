@@ -11,6 +11,7 @@ import Challenges from './Challenges';
 import Hint from './Hint';
 import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
+import Menu from './GameConnect/Menu';
 
 import RequireAuth from './RequireAuth';
 import NoRequireAuth from './noRequireAuth';
@@ -18,6 +19,8 @@ import NoRequireAuth from './noRequireAuth';
 import { FirebaseContext } from './Firebase';
 import { AuthUserContext } from './Session';
 import noRequireAuth from './noRequireAuth';
+import Home from './Homepage/Home';
+import Connect from './GameConnect/Connect';
 
 const user = localStorage.getItem('user');
 
@@ -52,7 +55,7 @@ class Routes extends Component {
       <AuthUserContext.Provider value={this.state.authUser}>
         <Router>
           <Switch>
-            <Route exact path="/" component={() => {window.location.href="/landing-page/index.html"}} />
+            <Route exact path="/" component={Home} />
             <Route path="/challenges/:section/:id" render={(props) => (
               <Lesson {...this.props} {...props}/>
             )} />
@@ -67,6 +70,9 @@ class Routes extends Component {
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
             <Route path="/forgotpassword" component={ForgotPassword} />
+            {/* Routes for Game connect with class */}
+            <Route path="/menu" component={/*RequireAuth(*/Menu/*)*/} />
+            <Route path="/connect" component={/*RequireAuth(*/Connect/*)*/} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
