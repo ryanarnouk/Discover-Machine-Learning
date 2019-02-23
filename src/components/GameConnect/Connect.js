@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Connect extends Component {
   render() { 
@@ -10,6 +11,7 @@ class Connect extends Component {
             <input type="number" className="code" name="code" placeholder="Game Code" required/>
             <input type="submit" className="gamecodesubmit" value="Connect"/>
           </form>
+          <p style={{color: 'white', fontFamily: 'Rubik', textAlign: 'center'}}>Teacher? Start a new game <Link to="startnew">here</Link></p>
         </div>
       </div>
     );
