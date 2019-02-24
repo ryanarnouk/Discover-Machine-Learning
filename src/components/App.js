@@ -22,6 +22,7 @@ import noRequireAuth from './noRequireAuth';
 import Home from './Homepage/Home';
 import Connect from './GameConnect/Connect';
 import StartNewGame from './GameConnect/StartNewGame';
+import Leaderboard from './GameConnect/Leaderboard';
 
 const user = localStorage.getItem('user');
 
@@ -71,10 +72,12 @@ class Routes extends Component {
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
             <Route path="/forgotpassword" component={ForgotPassword} />
+            
             {/* Routes for Game connect with class */}
             <Route path="/menu" component={/*RequireAuth(*/Menu/*)*/} />
             <Route path="/connect" component={/*RequireAuth(*/Connect/*)*/} />
             <Route path="/startnew" component={/*RequireAuth(*/StartNewGame/*)*/} />
+            <Route path="/leaderboard" component={/*RequireAuth(*/Leaderboard/*)*/} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

@@ -12,8 +12,11 @@ class User extends Component {
   }
 }
 
-
 class StartNewGame extends Component {
+  startgame = () => {
+    window.location.href = '/leaderboard';
+  }
+
   render() { 
     return (  
       <div style={{width: '100%', height: '100vh', backgroundColor: '#0C7CE8'}}>
@@ -43,7 +46,7 @@ class StartNewGame extends Component {
             <User username="azbo400" />
             <User username="azbo400" />
           </div>
-          <button style={{margin: '0 auto', fontFamily: 'Rubik', border: 'none', padding: '16px 40px', background: 'rgb(255, 255, 255, 0.6)', cursor: 'pointer', borderRadius: '10px'}}>Start Game</button>
+          <button style={{margin: '0 auto', fontFamily: 'Rubik', border: 'none', padding: '16px 40px', background: 'rgb(255, 255, 255, 0.6)', cursor: 'pointer', borderRadius: '10px'}} onClick={this.startgame}>Start Game</button>
           <p style={{color: 'white', fontFamily: 'Rubik', position: 'absolute', bottom: 0}}>31 students online</p>
         </div>
       </div>
