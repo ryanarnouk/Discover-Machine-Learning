@@ -7,6 +7,7 @@ import classification from '../../seed/challenges/classification/lesson.json';
 import introcoding from '../../seed/challenges/introcoding/lesson.json';
 import deeplearning from '../../seed/challenges/deeplearning/lesson.json';
 import reinforcementlearning from '../../seed/challenges/reinforcementlearning/lesson.json';
+import { NewGame, JoinGame, EndGame, StartGame} from './game';
 
 // FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
@@ -140,6 +141,12 @@ class Firebase {
 
   doSignInWithTwitter = () =>
     this.auth.signInWithPopup(this.twitterProvider);
+
+  //--------------------- game connect code --------------
+  NewGame = () => NewGame()
+  JoinGame = () => JoinGame()
+  EndGame = () => EndGame()
+  StartGame = () => StartGame()
 }
 
 export default Firebase;

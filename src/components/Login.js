@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
 import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
-import { FirebaseContext } from './Firebase';
+import { withFirebase, FirebaseContext } from './Firebase';
 
 import { AuthUserContext } from './Session';
 
@@ -161,12 +161,4 @@ class Login extends Component {
   }
 }
 
-const SignInPage = () => (
-  <div>
-    <FirebaseContext.Consumer>
-      {firebase => <Login firebase={firebase}/>}
-    </FirebaseContext.Consumer>
-  </div>
-)
-
-export default SignInPage;
+export default Login;

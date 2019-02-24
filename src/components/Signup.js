@@ -7,14 +7,6 @@ import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
 import { withFirebase, FirebaseContext } from './Firebase';
 
-const SignUpPage = () => (
-  <div>
-    <FirebaseContext.Consumer>
-      {firebase => <SignUpForm firebase={firebase} />}
-    </FirebaseContext.Consumer>
-  </div>
-);
-
 const INITIAL_STATE = {
   username: '',
   email: '',
@@ -24,7 +16,7 @@ const INITIAL_STATE = {
 };
 
 
-class SignUpForm extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -171,4 +163,4 @@ class SignUpForm extends Component {
   }
 }
 
-export default withRouter(SignUpPage);
+export default withRouter(withFirebase(SignUp));

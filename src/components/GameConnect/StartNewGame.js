@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
+import { withFirebase, FirebaseContext } from '../Firebase';
 
 class User extends Component {
   render() {
@@ -13,6 +14,14 @@ class User extends Component {
 }
 
 class StartNewGame extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillMount() {
+    this.props.firebase.NewGame();
+  }
+
   startgame = () => {
     window.location.href = '/leaderboard';
   }
@@ -54,4 +63,4 @@ class StartNewGame extends Component {
   }
 }
  
-export default StartNewGame;
+export default withFirebase(StartNewGame);
