@@ -12,6 +12,7 @@ export const NewGame = () => {
     ],
     state: 'waiting'
   });
+  return id;
 }
 
 export const JoinGame = (a) => {
@@ -25,24 +26,44 @@ export const JoinGame = (a) => {
         //.push returns 2 for some reason and not pushed value
         firebase.database().ref('games/' + `${a}`).set({
           users: newUser,
-          progress: 'waiting'
+          state: 'waiting'
         })
       } else {
         firebase.database().ref('games/' + `${a}`).set({
           users: [
             {'test1': '0'}
           ],
-          progress: 'waiting'
+          state: 'waiting'
         })
       }
     }
   });
 }
 
-export const EndGame = () => {
+export const EndGame = (a) => {
   console.log('end game')
+  firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
+    if (snapshot.exists()) {
+      // object exists
+      firebase.database().ref('games/' + `${a}`).remove(); // remove instance
+    }
+  });
 }
 
-export const StartGame = () => {
+export const StartGame = (a, callback) => {
   console.log('start game')
+  firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
+    if (snapshot.exists()) {
+      if(snapshot.val().users) {
+        var users = snapshot.val().users;
+        firebase.database().ref('games/' + `${a}`).set({
+          users: users,
+          state: 'playing'
+        })
+      } else {
+        return 'No users to start game'
+      }
+    }
+  })
+  callback();
 }

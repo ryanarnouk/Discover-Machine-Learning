@@ -145,8 +145,8 @@ class Firebase {
   //--------------------- game connect code --------------
   NewGame = () => NewGame()
   JoinGame = (a) => JoinGame(a)
-  EndGame = () => EndGame()
-  StartGame = () => StartGame()
+  EndGame = (a) => EndGame(a)
+  StartGame = (a, callback) => StartGame(a, callback)
 }
 
 export default Firebase;

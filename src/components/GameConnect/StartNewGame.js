@@ -16,21 +16,27 @@ class User extends Component {
 class StartNewGame extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      gamecode: ''
+    }
   }
 
   componentWillMount() {
-    this.props.firebase.NewGame();
+    this.setState({gamecode: this.props.firebase.NewGame()});
   }
 
   startgame = () => {
-    window.location.href = '/leaderboard';
+    this.props.firebase.StartGame(this.state.gamecode, function () {
+      window.location.href = '/leaderboard';
+    });
   }
 
   render() { 
     return (  
       <div style={{width: '100%', height: '100vh', backgroundColor: '#0C7CE8'}}>
         <div style={{backgroundColor: '#0DC8FF', padding: 44}}>
-          <h1 style={{fontFamily: 'Rubik', color: 'white', margin: 0, textAlign: 'center', fontSize: '7em'}}>123456</h1>
+          <h1 style={{fontFamily: 'Rubik', color: 'white', margin: 0, textAlign: 'center', fontSize: '7em'}}>{this.state.gamecode}</h1>
           <p style={{fontFamily: 'Rubik', color: 'white', textAlign: 'center', fontSize: '1.4em'}}>Type this game code in.</p>
         </div>
         <div style={{margin: 13, textAlign: 'center'}}>
