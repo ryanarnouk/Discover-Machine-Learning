@@ -16,7 +16,7 @@ class Leaderboard extends Component {
   render() { 
     return (
       <div style={{display: 'flex'}}>
-        <div style={{backgroundColor: '#0C7CE8', width: '100%', height: '100vh'}}>
+        <div style={{backgroundColor: '#0C7CE8', width: '100%'}}>
           <div style={{textAlign: 'center', backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', width: '100%', height: '100%'}}>  
             <div>
               <h1 style={{color: 'white', fontFamily: 'Rubik', textAlign: 'center', margin: 0}}>Leaderboard</h1>
