@@ -21,3 +21,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vscode
+
+
+# ignore css files
+*.css linguist-vendored
