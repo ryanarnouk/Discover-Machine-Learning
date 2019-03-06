@@ -19,9 +19,14 @@ import noRequireAuth from './ProtectedRoutes/noRequireAuth';
 import { FirebaseContext } from './Firebase';
 import { AuthUserContext } from './Session';
 import Home from './Homepage/Home';
+
+// game connect
 import Connect from './GameConnect/Connect';
 import StartNewGame from './GameConnect/StartNewGame';
 import Leaderboard from './GameConnect/Leaderboard';
+
+// quiz
+import Quiz from './Quiz/Quiz';
 
 const user = localStorage.getItem('user');
 
@@ -71,7 +76,7 @@ class Routes extends Component {
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
             <Route path="/forgotpassword" component={ForgotPassword} />
-            
+            <Route path="/quiz" component={Quiz} />
             {/* Routes for Game connect with class */}
             <Route path="/menu" component={/*RequireAuth(*/Menu/*)*/} />
             <Route path="/connect" component={/*RequireAuth(*/Connect/*)*/} />
