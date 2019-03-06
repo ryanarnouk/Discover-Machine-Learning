@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
-import { FirebaseContext } from './Firebase';
-import { AuthUserContext } from './Session';
+import { FirebaseContext } from '../Firebase';
+import { AuthUserContext } from '../Session';
+import { withRouter } from 'react-router-dom';
 
 export default function (ComposedComponent) {
   class Authentication extends Component {
     componentDidMount() {
       this.listener = this.props.firebase.auth.onAuthStateChanged(
         authUser => {
-          if(authUser) {
-            window.location.href = '/profile'
+          if(!authUser) {
+            window.location.href = '/login';
           }
-        }
+        },
       )
     }
 
@@ -22,9 +23,9 @@ export default function (ComposedComponent) {
     render() {
       return (
         <AuthUserContext.Consumer>
-          {authUser => authUser ? null : <ComposedComponent {...this.props}/>}
+          {authUser => authUser ? <ComposedComponent {...this.props}/> : null}
         </AuthUserContext.Consumer>
-      )
+      );
     }
   }
 
@@ -36,5 +37,5 @@ export default function (ComposedComponent) {
     </div>
   )
 
-  return Auth;
+  return withRouter(Auth);
 }

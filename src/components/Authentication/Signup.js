@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import '../styles/Signup.css';
+import '../../styles/Signup.css';
 import { Link, withRouter } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
-import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
+import '../../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
-import { withFirebase, FirebaseContext } from './Firebase';
+import { withFirebase, FirebaseContext } from '../Firebase';
 
 const INITIAL_STATE = {
   username: '',

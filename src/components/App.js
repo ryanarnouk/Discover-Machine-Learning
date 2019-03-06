@@ -3,8 +3,8 @@ import '../styles/App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import Lesson from './Lesson';
-import Signup from './Signup';
-import Login from './Login';
+import Signup from './Authentication/Signup';
+import Login from './Authentication/Login';
 import About from './About';
 import Profile from './Profile';
 import Challenges from './Challenges';
@@ -13,12 +13,11 @@ import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
 import Menu from './GameConnect/Menu';
 
-import RequireAuth from './RequireAuth';
-import NoRequireAuth from './noRequireAuth';
+import RequireAuth from './ProtectedRoutes/RequireAuth';
+import noRequireAuth from './ProtectedRoutes/noRequireAuth';
 
 import { FirebaseContext } from './Firebase';
 import { AuthUserContext } from './Session';
-import noRequireAuth from './noRequireAuth';
 import Home from './Homepage/Home';
 import Connect from './GameConnect/Connect';
 import StartNewGame from './GameConnect/StartNewGame';

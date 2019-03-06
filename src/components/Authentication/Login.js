@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import '../styles/Login.css';
+import '../../styles/Login.css';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
-import '../styles/font-awesome-4.7.0/css/font-awesome.min.css'
+import '../../styles/font-awesome-4.7.0/css/font-awesome.min.css'
 
-import { withFirebase, FirebaseContext } from './Firebase';
+import { withFirebase, FirebaseContext } from '../Firebase';
 
-import { AuthUserContext } from './Session';
+import { AuthUserContext } from '../Session';
 
 const INITIAL_STATE = {
   email: '',
