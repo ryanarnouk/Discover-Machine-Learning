@@ -1,0 +1,13 @@
+{
+  "questions": [
+    {
+      "question": "How does support vector machines work?",
+      "options": [
+        "It justs works",
+        "This is a test",
+        "It works by splitting the data plots",
+        "Seperates plots"
+      ]
+    }
+  ]
+}

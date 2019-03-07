@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import QuizJSON from '../../seed/quiz/quiz.json';
 
 class Option extends Component {
   render() {
@@ -20,13 +21,15 @@ class Quiz extends Component {
       <div style={{width: '100vw', height: '100vh', backgroundColor: '#BC00EB', fontFamily: 'Rubik'}}>
         <div style={{padding: 10, textAlign: 'center', color: 'white', backgroundColor: '#CA46EB'}}>
           <strong><p style={{margin: 0}}>Quiz Mode</p></strong>
-          <h1>How does support vector machines work?</h1>
+          <h1>{QuizJSON.questions[0].question}</h1>
         </div>
         <div style={{color: 'white', listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '3em', margin: 20}}>
-          <Option color="blue" text="Seperates plots between the data" /> 
-          <Option color="orange" text="Seperates plots between the data" />  
-          <Option color="green" text="Seperates plots between the data" />  
-          <Option color="red" text="Seperates plots between the data" />
+          {QuizJSON.questions[0].options.map((a, i) => {
+            var colours = ["blue", "orange", "green", "red"];
+            return (
+              <Option color={colours[i]} text={a} key={i} />
+            );
+          })} 
         </div>
       </div>
     );
