@@ -21,19 +21,23 @@ class StartNewGame extends Component {
 
     this.state = {
       gamecode: '',
-      gamestart: false
+      gamestart: false,
+      users: null
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({gamecode: this.props.firebase.NewGame()});
+    this.props.firebase.GetUsers('873394').then((a) => {
+      this.setState({users: a});
+    });
   }
 
   startgame = () => {
     this.props.firebase.StartGame(this.state.gamecode, () => {
 
     });
-    this.setState({gamestart: true})
+    this.setState({gamestart: true});
   }
 
   render() { 
@@ -50,26 +54,16 @@ class StartNewGame extends Component {
               <p style={{fontFamily: 'Rubik', color: 'white', textAlign: 'center', fontSize: '1.4em'}}>Type this game code in.</p>
             </div>
             <div style={{margin: 13, textAlign: 'center'}}>
-              <div style={{display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gridGap: '1em'}}>
-                <User username="ryanarnouk" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
-                <User username="azbo400" />
+              <div>
+                {this.state.users ? (
+                  <div style={{display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gridGap: '1em'}}>
+                    {this.state.users.map((a, i) => {
+                      return (
+                        <User key={i} username={Object.getOwnPropertyNames(a)} />
+                      )
+                    })}
+                  </div>
+                ) : false}
               </div>
               <button style={{margin: '0 auto', fontFamily: 'Rubik', border: 'none', padding: '16px 40px', background: 'rgb(255, 255, 255, 0.6)', cursor: 'pointer', borderRadius: '10px'}} onClick={this.startgame}>Start Game</button>
               <p style={{color: 'white', fontFamily: 'Rubik', position: 'absolute', bottom: 0}}>31 students online</p>

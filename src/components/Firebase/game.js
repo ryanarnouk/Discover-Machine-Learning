@@ -16,14 +16,11 @@ export const NewGame = () => {
 }
 
 export const JoinGame = (a) => {
-  console.log('join game')
-  // change id to what users types in
-  firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
+  let promise = firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
     if (snapshot.exists()) {
       if(snapshot.val().users) {
         var newUser = snapshot.val().users;
         newUser.push({'test3': '0'});
-        //.push returns 2 for some reason and not pushed value
         firebase.database().ref('games/' + `${a}`).set({
           users: newUser,
           state: 'waiting'
@@ -36,8 +33,12 @@ export const JoinGame = (a) => {
           state: 'waiting'
         })
       }
+    } else {
+      return 'This game does not exist.';
     }
   });
+
+  return promise
 }
 
 export const EndGame = (a) => {
@@ -66,4 +67,34 @@ export const StartGame = (a, callback) => {
     }
   })
   callback();
+}
+
+// client functions
+
+
+export const DeleteUser = () => {
+
+}
+
+export const GetUsers = (a) => {
+  let promise = firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
+    if (snapshot.exists()) {
+      if(snapshot.val().users) {
+        return snapshot.val().users.map((a) => {  
+          return a
+        })
+      } else {
+        return 'No users.';
+      }
+    } else {
+      return 'game does not exist';
+    }
+  })
+
+  return promise;
+}
+
+export const onUserConnect = () => {
+  // redirect to wait page 
+
 }
