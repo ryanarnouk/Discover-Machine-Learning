@@ -6,7 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 import ReactGA from 'react-ga';
 
 import Firebase, { FirebaseContext } from './components/Firebase';
-import { GameContext }  from './components/GameContext';
 
 // Google Analytics
 ReactGA.initialize('UA-121847358-2');
@@ -17,17 +16,14 @@ class Providers extends Component {
     super(props);
 
     this.state = {
-      gamecode: '123456'
     }
   }
 
   render() {
     return (
-      <GameContext.Provider value={this.state}>
-        <FirebaseContext.Provider value={new Firebase()}>
-          <App />
-        </FirebaseContext.Provider>
-      </GameContext.Provider>
+      <FirebaseContext.Provider value={new Firebase()}>
+        <App />
+      </FirebaseContext.Provider>
     );
   }
 }

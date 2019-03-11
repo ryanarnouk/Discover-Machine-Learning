@@ -28,7 +28,7 @@ class StartNewGame extends Component {
 
   componentDidMount() {
     this.setState({gamecode: this.props.firebase.NewGame()});
-    this.props.firebase.GetUsers('873394').then((a) => {
+    this.props.firebase.GetUsers(this.state.gamecode).then((a) => {
       this.setState({users: a});
     });
   }
@@ -41,17 +41,18 @@ class StartNewGame extends Component {
   }
 
   render() { 
+    console.log(this.state.users)
     return (  
       <GameContext.Provider value={this.state}>
         {this.state.gamestart ? 
           <InGameLeaderboard />
         :
-          <div style={{width: '100%', height: '100vh', backgroundColor: '#0C7CE8'}}>
+          <div style={{width: '100%', height: '100vh', backgroundColor: '#0C7CE8', fontFamily: 'Rubik'}}>
             <div style={{backgroundColor: '#0DC8FF', padding: 44}}>
-              <h1 style={{fontFamily: 'Rubik', color: 'white', margin: 0, textAlign: 'center', fontSize: '7em'}}><GameContext.Consumer>
+              <h1 style={{color: 'white', margin: 0, textAlign: 'center', fontSize: '7em'}}><GameContext.Consumer>
                 {(context) => context.gamecode}
               </GameContext.Consumer></h1>
-              <p style={{fontFamily: 'Rubik', color: 'white', textAlign: 'center', fontSize: '1.4em'}}>Type this game code in.</p>
+              <p style={{color: 'white', textAlign: 'center', fontSize: '1.4em'}}>Type this game code in.</p>
             </div>
             <div style={{margin: 13, textAlign: 'center'}}>
               <div>
@@ -63,10 +64,10 @@ class StartNewGame extends Component {
                       )
                     })}
                   </div>
-                ) : false}
+                ) : <p style={{color: 'white'}}>No users connected. Share the game code to connect users.</p>}
               </div>
-              <button style={{margin: '0 auto', fontFamily: 'Rubik', border: 'none', padding: '16px 40px', background: 'rgb(255, 255, 255, 0.6)', cursor: 'pointer', borderRadius: '10px'}} onClick={this.startgame}>Start Game</button>
-              <p style={{color: 'white', fontFamily: 'Rubik', position: 'absolute', bottom: 0}}>31 students online</p>
+              <button style={{margin: '0 auto', border: 'none', padding: '16px 40px', background: 'rgb(255, 255, 255, 0.6)', cursor: 'pointer', borderRadius: '10px'}} onClick={this.startgame}>Start Game</button>
+              <p style={{color: 'white', position: 'absolute', bottom: 0}}>31 students online</p>
             </div>
           </div> }
       </GameContext.Provider>

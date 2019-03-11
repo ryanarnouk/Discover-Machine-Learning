@@ -19,6 +19,7 @@ export const JoinGame = (a) => {
   let promise = firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
     if (snapshot.exists()) {
       if(snapshot.val().users) {
+        // second user
         var newUser = snapshot.val().users;
         newUser.push({'test3': '0'});
         firebase.database().ref('games/' + `${a}`).set({
@@ -26,6 +27,7 @@ export const JoinGame = (a) => {
           state: 'waiting'
         })
       } else {
+        // first user
         firebase.database().ref('games/' + `${a}`).set({
           users: [
             {'test1': '0'}
@@ -84,7 +86,8 @@ export const GetUsers = (a) => {
           return a
         })
       } else {
-        return 'No users.';
+        // no users
+        return null;
       }
     } else {
       return 'game does not exist';
@@ -96,5 +99,4 @@ export const GetUsers = (a) => {
 
 export const onUserConnect = () => {
   // redirect to wait page 
-
 }
