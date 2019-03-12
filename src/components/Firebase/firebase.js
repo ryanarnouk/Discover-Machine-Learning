@@ -7,7 +7,7 @@ import classification from '../../seed/challenges/classification/lesson.json';
 import introcoding from '../../seed/challenges/introcoding/lesson.json';
 import deeplearning from '../../seed/challenges/deeplearning/lesson.json';
 import reinforcementlearning from '../../seed/challenges/reinforcementlearning/lesson.json';
-import { NewGame, JoinGame, EndGame, StartGame, DeleteUser, GetUsers } from './game';
+import { NewGame, JoinGame, EndGame, StartGame, DeleteUser, GetUsers, onNewUser } from './game';
 
 // FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
@@ -149,6 +149,9 @@ class Firebase {
   StartGame = (a, callback) => StartGame(a, callback)
   DeleteUser = () => DeleteUser();
   GetUsers = (a) =>  GetUsers(a);
+
+  //event listeners
+  onNewUser = (a) => onNewUser(a);
 }
 
 export default Firebase;

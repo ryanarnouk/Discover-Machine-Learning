@@ -3,6 +3,7 @@ import FontAwesome from 'react-fontawesome';
 import { withFirebase, FirebaseContext } from '../Firebase';
 import { GameContext }  from '../GameContext';
 import InGameLeaderboard from './InGameLeaderboard';
+import firebase from 'firebase';
 
 class User extends Component {
   render() {
@@ -30,6 +31,20 @@ class StartNewGame extends Component {
     this.setState({gamecode: this.props.firebase.NewGame()});
     this.props.firebase.GetUsers(this.state.gamecode).then((a) => {
       this.setState({users: a});
+      // update when new user is added
+      firebase.database().ref('games/' + `${this.state.gamecode}`).on('value', (snapshot) => {
+        if (snapshot.exists()) {
+          if (snapshot.val().users) {
+            this.setState({users: snapshot.val().users.map((a) => {
+              return a;
+            })});
+          } else {
+            return 'no users'
+          }
+        } else {
+          return 'game does not exist'
+        }
+      }) 
     });
   }
 

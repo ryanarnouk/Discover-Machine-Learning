@@ -100,3 +100,23 @@ export const GetUsers = (a) => {
 export const onUserConnect = () => {
   // redirect to wait page 
 }
+
+// event listeners
+export const onNewUser = (a) => {
+  // listen for new user
+  // rewrite get user code but do not return anything to keep it async
+  // maybe cant return because it is on or something ?
+  firebase.database().ref('games/' + `${a}`).on('value', (snapshot) => {
+    if (snapshot.exists()) {
+      if (snapshot.val().users) {
+        return snapshot.val().users.map((a) => {
+          return a;
+        })
+      } else {
+        return 'no users'
+      }
+    } else {
+      return 'game does not exist'
+    }
+  }) 
+} 
