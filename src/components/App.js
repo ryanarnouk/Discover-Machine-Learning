@@ -24,6 +24,7 @@ import Home from './Homepage/Home';
 import Connect from './GameConnect/Connect';
 import StartNewGame from './GameConnect/StartNewGame';
 import Leaderboard from './GameConnect/Leaderboard';
+import GameInfo from './GameConnect/GameInfo';
 
 // quiz
 import Quiz from './Quiz/Quiz';
@@ -82,6 +83,7 @@ class Routes extends Component {
             <Route path="/connect" component={/*RequireAuth(*/Connect/*)*/} />
             <Route path="/startnew" component={/*RequireAuth(*/StartNewGame/*)*/} />
             <Route path="/leaderboard" component={/*RequireAuth(*/Leaderboard/*)*/} />
+            <Route path="/gameinfo" component={GameInfo} />
             <Route component={NoMatch} />
           </Switch>
         </Router>

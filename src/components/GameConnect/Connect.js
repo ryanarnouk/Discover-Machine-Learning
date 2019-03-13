@@ -4,6 +4,7 @@ import { withFirebase, FirebaseContext } from '../Firebase';
 import FontAwesome from 'react-fontawesome';
 import { GameContext } from '../GameContext';
 import WaitScreen from './WaitScreen';
+import firebase from 'firebase';
 
 class Error extends Component {
   render() {
@@ -38,6 +39,13 @@ class Connect extends Component {
       } else {
         this.setState({waitscreen: true});
       }
+
+      // wait for change to playing
+      firebase.database().ref('games/' + `${this.state.gamecode}`).on('child_changed', (snapshot) => {
+        // game started
+        // redirect to information page
+        window.location.href = '/gameinfo';
+      }) 
     });
   }
 
