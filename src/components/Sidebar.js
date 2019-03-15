@@ -62,7 +62,7 @@ class Sidebar extends Component {
     // contine with ctrl + enter
     window.addEventListener('keydown', (e) => {
       window.addEventListener('keydown', (a) => {
-        if(e.keyCode === 17 && a.keyCode === 16) {
+        if(e.keyCode === 17 && a.keyCode === 13) {
           this.openModal();
         }
       });
