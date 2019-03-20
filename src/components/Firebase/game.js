@@ -113,5 +113,9 @@ export const onNewUser = (a) => {
 // money system
 export const updateMoney = (username, money, gameid) => {
   // update the users money
-  firebase.database().ref('games/' + `${gameid}` + '/users/' + username).set(money);
+  firebase.database().ref('games/' + `${gameid}` + '/users/' + username).once('value', (snapshot) => {
+    if (snapshot.exists()) {
+      firebase.database().ref('games/' + `${gameid}` + '/users/' + username).set(money);
+    }
+  })
 }
