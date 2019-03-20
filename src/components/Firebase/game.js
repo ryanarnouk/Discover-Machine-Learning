@@ -19,21 +19,10 @@ export const JoinGame = (a) => {
   let promise = firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
     if (snapshot.exists()) {
       if(snapshot.val().users) {
-        // second user
-        var newUser = snapshot.val().users;
-        newUser.push({'test3': '0'});
-        firebase.database().ref('games/' + `${a}`).set({
-          users: newUser,
-          state: 'waiting'
-        })
+        firebase.database().ref('games/' + `${a}` + '/users/' + 'test2').set("0");
       } else {
         // first user
-        firebase.database().ref('games/' + `${a}`).set({
-          users: [
-            {'test1': '0'}
-          ],
-          state: 'waiting'
-        })
+        firebase.database().ref('games/' + `${a}` + '/users').set({'test1': '0'})
       }
     } else {
       return 'This game does not exist.';
@@ -120,3 +109,9 @@ export const onNewUser = (a) => {
     }
   }) 
 } 
+
+// money system
+export const updateMoney = (username, money, gameid) => {
+  // update the users money
+  firebase.database().ref('games/' + `${gameid}` + '/users/' + username).set(money);
+}

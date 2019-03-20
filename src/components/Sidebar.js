@@ -12,6 +12,9 @@ import JSONschema from '../seed/Schema/JSONschema.json'
 import FontAwesome from 'react-fontawesome';
 import { Link } from 'react-router-dom';
 
+// firebase
+import { withFirebase, FirebaseContext } from './Firebase';
+
 //validate json
 // first thing we want to do is validate the JSON that is going to come through here
 const ajv = Ajv({allErrors: true});
@@ -49,7 +52,8 @@ class Sidebar extends Component {
       lessonNumber: this.props.route.params.id - 1,
       consoletext: "Your code will output here...",
       challengestate: false,
-      congratulations: false
+      congratulations: false,
+      gamecode: '674891'
     }
 
     this.openModal = this.openModal.bind(this);
@@ -222,9 +226,11 @@ class Sidebar extends Component {
     if(localStorage.getItem('money') === null) {
       localStorage.setItem('money', 5);
       // push to server
+      this.props.firebase.updateMoney('test1', localStorage.getItem('money'), this.state.gamecode);
     } else {
       localStorage.setItem('money', parseInt(localStorage.getItem('money'), 10) + 5);
       // push to server 
+      this.props.firebase.updateMoney('test1', localStorage.getItem('money'), this.state.gamecode);
     }
 
     // if it is the last lesson it needs to redirect to new page that congratulates them and then lets them go to next chapter.
@@ -393,4 +399,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar;
+export default withFirebase(Sidebar);

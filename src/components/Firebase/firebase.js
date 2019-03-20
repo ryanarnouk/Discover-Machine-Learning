@@ -7,7 +7,7 @@ import classification from '../../seed/challenges/classification/lesson.json';
 import introcoding from '../../seed/challenges/introcoding/lesson.json';
 import deeplearning from '../../seed/challenges/deeplearning/lesson.json';
 import reinforcementlearning from '../../seed/challenges/reinforcementlearning/lesson.json';
-import { NewGame, JoinGame, EndGame, StartGame, DeleteUser, GetUsers, onNewUser } from './game';
+import { NewGame, JoinGame, EndGame, StartGame, DeleteUser, GetUsers, onNewUser, updateMoney } from './game';
 
 // FIX CONFIG BACK TO OTHER APP WHEN DONE
 var config = {
@@ -152,6 +152,9 @@ class Firebase {
 
   //event listeners
   onNewUser = (a) => onNewUser(a);
+
+  // update users money
+  updateMoney = (username, money, gameid) => updateMoney(username, money, gameid);
 }
 
 export default Firebase;
