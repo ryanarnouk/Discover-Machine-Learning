@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 
 // firebase
 import { withFirebase, FirebaseContext } from './Firebase';
+import { GameContext }  from './GameContext';
 
 //validate json
 // first thing we want to do is validate the JSON that is going to come through here
@@ -53,7 +54,7 @@ class Sidebar extends Component {
       consoletext: "Your code will output here...",
       challengestate: false,
       congratulations: false,
-      gamecode: '674891'
+      gamecode: localStorage.getItem('gamecode')
     }
 
     this.openModal = this.openModal.bind(this);
@@ -241,7 +242,7 @@ class Sidebar extends Component {
     if(this.state.lessonNumber + 1 === x[x.length-1]) {
       this.setState({congratulations: true});
     } else {
-      window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
+      //window.location = `/challenges/${window.location.pathname.split('/')[2]}/${this.state.lessonNumber + 2}`
     }
   }
 

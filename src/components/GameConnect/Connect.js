@@ -49,6 +49,10 @@ class Connect extends Component {
     });
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('gamecode', this.state.gamecode);
+  }
+
   onClick = () => {
     this.setState({error: null})
   }
