@@ -63,8 +63,9 @@ export const StartGame = (a, callback) => {
 // client functions
 
 
-export const DeleteUser = () => {
-
+export const DeleteUser = (gameid, username) => {
+  // delete the user from the database
+  firebase.database().ref('games/' + `${gameid}` + '/users/' + username).remove();
 }
 
 export const GetUsers = (a) => {

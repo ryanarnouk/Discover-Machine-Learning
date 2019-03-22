@@ -6,11 +6,28 @@ import InGameLeaderboard from './InGameLeaderboard';
 import firebase from 'firebase';
 
 class User extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      gamecode: this.props.gamecode,
+      exists: true
+    }
+  }
+
+  removeUser = () => {
+    this.props.firebase.DeleteUser(this.state.gamecode,this.props.username);
+    this.setState({exists: false});
+  }
+
   render() {
     return (
-      <div style={{backgroundColor: 'white', background: 'rgb(255, 255, 255, 0.6)', color: 'black', fontFamily: 'Rubik', padding: 8, borderRadius: '8px'}}>
-        {this.props.username}
-        <FontAwesome name="times-circle-o" style={{cursor: 'pointer', float: 'right'}}/>
+      <div>
+        {this.state.exists ? (
+          <div style={{backgroundColor: 'white', background: 'rgb(255, 255, 255, 0.6)', color: 'black', fontFamily: 'Rubik', padding: 8, borderRadius: '8px'}}>
+            {this.props.username}
+            <FontAwesome name="times-circle-o" style={{cursor: 'pointer', float: 'right'}} onClick={this.removeUser}/>
+          </div>) : false
+        }
       </div>
     );
   }
@@ -74,7 +91,7 @@ class StartNewGame extends Component {
                   <div style={{display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gridGap: '1em'}}>
                   {Object.keys(this.state.users).map((a, i) => {
                     return (
-                      <User key={i} username={a} />
+                      <User key={i} username={a} gamecode={this.state.gamecode} firebase={this.props.firebase}/>
                     )
                   })}
                   </div>

@@ -147,7 +147,6 @@ class Firebase {
   JoinGame = (a) => JoinGame(a)
   EndGame = (a) => EndGame(a)
   StartGame = (a, callback) => StartGame(a, callback)
-  DeleteUser = () => DeleteUser();
   GetUsers = (a) =>  GetUsers(a);
 
   //event listeners
@@ -155,6 +154,8 @@ class Firebase {
 
   // update users money
   updateMoney = (username, money, gameid) => updateMoney(username, money, gameid);
+  // delete the user from the game 
+  DeleteUser = (gameid, username) => DeleteUser(gameid, username);
 }
 
 export default Firebase;
