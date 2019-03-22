@@ -16,20 +16,25 @@ export const NewGame = () => {
 }
 
 export const JoinGame = (a) => {
+  // username needs to exist for user to sign up
+  const username = localStorage.getItem('user_name');
   let promise = firebase.database().ref('games/' + `${a}`).once('value').then((snapshot) => {
-    if (snapshot.exists()) {
-      if(snapshot.val().users) {
-        firebase.database().ref('games/' + `${a}` + '/users/' + 'test2').set("0");
+    if (localStorage.getItem('user_name')) {
+      if (snapshot.exists()) {
+        if(snapshot.val().users) {
+          firebase.database().ref('games/' + `${a}` + '/users/' + username).set("0");
+        } else {
+          // first user [] ES6 and babel function to reference variable
+          firebase.database().ref('games/' + `${a}` + '/users').set({[username]: '0'})
+        }
       } else {
-        // first user
-        firebase.database().ref('games/' + `${a}` + '/users').set({'test1': '0'})
+        return 'This game does not exist.';
       }
     } else {
-      return 'This game does not exist.';
+      return "You must create an account."
     }
   });
-
-  return promise
+  return promise;
 }
 
 export const EndGame = (a) => {
