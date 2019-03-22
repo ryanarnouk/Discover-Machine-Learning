@@ -100,8 +100,11 @@ class ProfileNavbar extends Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleDrawer(true)}>
               <MenuIcon/>
             </IconButton>
+            {/*Empty typography element set at flex: 1 so tha the other elements are pushed to the right side*/}
+            <Typography type="title" color="inherit" style={{flex: 1}}>
+            </Typography>
             <Typography variant="title" color="inherit">
-              5$
+              ${localStorage.getItem('money')}
             </Typography>
             <IconButton 
               aria-owns={open ? 'menu-appbar': null}

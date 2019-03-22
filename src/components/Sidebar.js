@@ -297,7 +297,8 @@ class Sidebar extends Component {
                       {this.state.challengestate ? (
                         <div>
                         <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
-                        <h1>Great Job</h1>
+                        <h1 style={{margin: 0}}>Great Job</h1>
+                        <h1 style={{color: 'green', fontSize: '3.6em', textAlign: 'center'}}>+ $5</h1>
                         <button className="continuebutton" onClick={this.continue}>Continue</button>
                       </div>
                     ) : (
@@ -360,7 +361,8 @@ class Sidebar extends Component {
                       {this.state.challengestate ? (
                         <div>
                           <Check style={{color: '#0E8EFF', width: 90, height: 90}}/>
-                          <h1>Great Job</h1>
+                          <h1 style={{margin: 0}}>Great Job</h1>
+                          <h1 style={{color: 'green', fontSize: '3.6em', textAlign: 'center'}}>+ $5</h1>
                           <button className="continuebutton" onClick={this.continue}>Continue</button>
                         </div>
                       ) : (
