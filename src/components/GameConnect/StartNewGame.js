@@ -76,7 +76,7 @@ class StartNewGame extends Component {
     return (  
       <GameContext.Provider value={this.state}>
         {this.state.gamestart ? 
-          <InGameLeaderboard />
+          <InGameLeaderboard users={this.state.users} gamecode={this.state.gamecode} firebase={this.props.firebase}/>
         :
           <div style={{width: '100%', height: '100vh', backgroundColor: '#0C7CE8', fontFamily: 'Rubik'}}>
             <div style={{backgroundColor: '#0DC8FF', padding: 44}}>
