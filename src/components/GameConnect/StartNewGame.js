@@ -35,9 +35,8 @@ class StartNewGame extends Component {
       firebase.database().ref('games/' + `${this.state.gamecode}`).on('value', (snapshot) => {
         if (snapshot.exists()) {
           if (snapshot.val().users) {
-            this.setState({users: snapshot.val().users.map((a) => {
-              return a;
-            })});
+            console.log(snapshot.val().users);
+            this.setState({users: snapshot.val().users});
           } else {
             return 'no users'
           }
@@ -73,11 +72,11 @@ class StartNewGame extends Component {
               <div>
                 {this.state.users ? (
                   <div style={{display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gridGap: '1em'}}>
-                    {this.state.users.map((a, i) => {
-                      return (
-                        <User key={i} username={Object.getOwnPropertyNames(a)} />
-                      )
-                    })}
+                  {Object.keys(this.state.users).map((a, i) => {
+                    return (
+                      <User key={i} username={a} />
+                    )
+                  })}
                   </div>
                 ) : <p style={{color: 'white'}}>No users connected. Share the game code to connect users.</p>}
               </div>
