@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { GameContext } from '../GameContext';
 import firebase from 'firebase';
+import _ from 'underscore';
 
 class User extends Component {
   render() {
@@ -28,7 +29,15 @@ class Leaderboard extends Component {
       if (snapshot.exists()) {
         if (snapshot.val().users) {
           console.log(snapshot.val().users);
-          this.setState({users: snapshot.val().users});
+          // sort the object into an array (data type must be a number)
+          var sortedarray = [];
+          for (var key in snapshot.val().users) {
+            sortedarray.push([key, snapshot.val().users[key]]);
+          }
+          sortedarray.sort((a, b) => b[1] - a[1]);
+
+          // using underscore.js _.object function to convert array to object
+          this.setState({users: _.object(sortedarray)});
         } else {
           return 'no users'
         }

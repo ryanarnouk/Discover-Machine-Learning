@@ -223,15 +223,17 @@ class Sidebar extends Component {
   }
 
   continue = () => {
+    // MONEY MUST BE STORED AS AN INT
+    const money = parseInt(localStorage.getItem('money'));
     // add money to user localstorage object
     if(localStorage.getItem('money') === null && localStorage.getItem('user_name')) {
       localStorage.setItem('money', 5);
       // push to server
-      this.props.firebase.updateMoney(localStorage.getItem('user_name'), localStorage.getItem('money'), this.state.gamecode);
+      this.props.firebase.updateMoney(localStorage.getItem('user_name'), money, this.state.gamecode);
     } else {
       localStorage.setItem('money', parseInt(localStorage.getItem('money'), 10) + 5);
       // push to server 
-      this.props.firebase.updateMoney(localStorage.getItem('user_name'), localStorage.getItem('money'), this.state.gamecode);
+      this.props.firebase.updateMoney(localStorage.getItem('user_name'), money, this.state.gamecode);
     }
 
     // if it is the last lesson it needs to redirect to new page that congratulates them and then lets them go to next chapter.
