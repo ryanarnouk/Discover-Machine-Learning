@@ -1,0 +1,74 @@
+.landing {
+  background: #CAE4DB;
+  color: #414141;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  max-height: 100%;
+  padding: 20px;
+}
+
+.left-container {
+  flex: 0 1 50%;
+  min-height: 100%;
+  max-width: 50%;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right-container {
+  flex: 0 1 50%;
+  display: flex;
+  max-width: 50%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  max-width: 50%;
+}
+
+.codeblockeditor {
+  background-color: #FEDCD2;
+  color: #DF744A;
+}
+
+.classroom {
+  background-color: #DCB239;
+  color: #DF744A;
+}
+
+.leaderboard {
+  color: #DCB239;
+  background-color: #DF744A;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.left-container-landing {
+  flex: 0 1 50%;
+  min-height: 100%;
+  max-width: 30%;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right-container-landing {
+  flex: 0 1 50%;
+  display: flex;
+  max-width: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+}
+
+.quizmode {
+  background-color: #CAE4DB;
+  color: #414141;  
+}

@@ -4,7 +4,7 @@ import QuizJSON from '../../seed/quiz/quiz.json';
 class Option extends Component {
   render() {
     return (
-      <div style={{backgroundColor: this.props.color, padding: 80, borderRadius: 5, textAlign: 'center', fontSize: 20, cursor: 'pointer'}}>
+      <div style={{backgroundColor: this.props.color, padding: 80, borderRadius: 5, textAlign: 'center', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <p>{this.props.text}</p>
       </div>
     );

@@ -18,23 +18,31 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  button: {
+    cursor: 'pointer', 
+    margin: 17
+  }
 };
 
-
-class Navbar extends Component {
-  render() { 
+function Navbar (props) {
+  const { classes } = props;
     return (  
-      <div className={styles.root}>
-        <AppBar position="static">
+      <div style={{position: 'fixed'}}>
+        <AppBar position="fixed" color="default" className={classes.root}> 
           <Toolbar>
-            <Typography variant="h6" color="inherit" className={styles.grow}>
+            <img src="/img/favicon.png" style={{width: '3%'}}/>
+            <Typography variant="title" color="inherit" className={classes.grow}>
               Discover Machine Learning
             </Typography>
+            <Typography color="inherit" className={classes.button}>About</Typography>
+            <Typography color="inherit" className={classes.button}>Learn More</Typography>
+            <Typography color="inherit" className={classes.button}>Privacy Policy</Typography>
+            <Typography color="inherit" className={classes.button}>Login</Typography>
+            <Button variant="contained" color="primary">Sign Up</Button>
           </Toolbar>
         </AppBar>
       </div>
     );
-  }
 }
- 
-export default Navbar;
+
+export default withStyles(styles)(Navbar);

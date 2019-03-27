@@ -1,12 +1,12 @@
 {
   "questions": [
     {
-      "question": "How does support vector machines work?",
+      "question": "What is a support vector machine?",
       "options": [
-        "It justs works",
-        "This is a test",
-        "It works by splitting the data plots",
-        "Seperates plots"
+        "A classification algorithm.",
+        "An algorithm that plots a line between data points on a plane.",
+        "An algorithm that plots a line based on maximizing the distances between the nearest data points on either class. (hyperplane)",
+        "All of the above"
       ]
     }
   ]
