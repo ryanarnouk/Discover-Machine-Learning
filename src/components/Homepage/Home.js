@@ -5,6 +5,7 @@ import CodeBlockEditor from './CodeBlockEditor';
 import Classroom from './Classroom';
 import Leaderboard from './Leaderboard';
 import QuizMode from './QuizMode';
+import Features from './Features';
 
 import '../../styles/LandingPage.css';
 import SimpleIntro from './SimpleIntro';
@@ -20,6 +21,7 @@ class Home extends Component {
         <Classroom />
         <Leaderboard />
         <QuizMode />
+        <Features />
       </div>
     );
   }

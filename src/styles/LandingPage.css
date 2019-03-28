@@ -72,3 +72,48 @@ body {
   background-color: #CAE4DB;
   color: #414141;  
 }
+
+.featureouter {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 3em;
+  margin: 3%;
+  align-items: start;
+}
+
+
+.feature {
+  width: 40%;
+  font-size: 14px;
+  background-color: #fff;
+  background: hsla(0,0%,100%,.7);
+  height: 100%;
+  padding: 1px 1px 1px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: auto;
+  background-color: #fffcfc;
+  color: #414141;
+}
+
+.iconouter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon::before {
+  background-color: #FEDCD2;
+  padding: 20px;
+  border-radius: 100%;
+  width: 20px;
+  text-align: center;
+  margin: 0px;
+}
+
+.icon {
+  color: #DF744A;
+}
