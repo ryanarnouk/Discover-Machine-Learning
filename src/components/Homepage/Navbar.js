@@ -30,7 +30,7 @@ function Navbar (props) {
       <div style={{position: 'fixed'}}>
         <AppBar position="fixed" color="default" className={classes.root}> 
           <Toolbar>
-            <img src="/img/favicon.png" style={{width: '3%'}}/>
+            <img src="/img/favicon.png" style={{width: '3%', marginRight: 20}}/>
             <Typography variant="title" color="inherit" className={classes.grow}>
               Discover Machine Learning
             </Typography>

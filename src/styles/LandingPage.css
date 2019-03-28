@@ -36,12 +36,12 @@
 }
 
 .classroom {
-  background-color: #DCB239;
+  background-color: #ffd54f;
   color: #DF744A;
 }
 
 .leaderboard {
-  color: #DCB239;
+  color:#ffd54f;
   background-color: #DF744A;
 }
 
@@ -80,6 +80,7 @@ body {
   grid-gap: 3em;
   margin: 3%;
   align-items: start;
+  justify-content: start;
 }
 
 
@@ -92,7 +93,7 @@ body {
   padding: 1px 1px 1px 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 0px;
   margin: auto;
   background-color: #fffcfc;
@@ -109,11 +110,12 @@ body {
   background-color: #FEDCD2;
   padding: 20px;
   border-radius: 100%;
-  width: 20px;
   text-align: center;
   margin: 0px;
+  font-size: 30px;
 }
 
 .icon {
   color: #DF744A;
+  margin-top: 30px;
 }
