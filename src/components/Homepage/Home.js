@@ -6,9 +6,12 @@ import Classroom from './Classroom';
 import Leaderboard from './Leaderboard';
 import QuizMode from './QuizMode';
 import Features from './Features';
+import SimpleIntro from './SimpleIntro';
+import WhyLearn from './WhyLearn';
+import GetStartedNow from './GetStartedNow';
+import Footer from './Footer';
 
 import '../../styles/LandingPage.css';
-import SimpleIntro from './SimpleIntro';
 
 class Home extends Component {
   render () {
@@ -22,6 +25,9 @@ class Home extends Component {
         <Leaderboard />
         <QuizMode />
         <Features />
+        <WhyLearn />
+        <GetStartedNow />
+        <Footer />
       </div>
     );
   }
