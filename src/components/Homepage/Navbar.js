@@ -30,15 +30,15 @@ function Navbar (props) {
       <div style={{position: 'fixed'}}>
         <AppBar position="fixed" color="default" className={classes.root}> 
           <Toolbar>
-            <img src="/img/favicon.png" style={{width: '3%', marginRight: 20}}/>
-            <Typography variant="title" color="inherit" className={classes.grow}>
+            <img src="/img/favicon.png" style={{width: '3%', marginRight: 20}} />
+            <Typography variant="title" color="inherit" className={classes.grow} style={{cursor: 'pointer'}} onClick={() => window.location.href = "/"}>
               Discover Machine Learning
             </Typography>
-            <Typography color="inherit" className={classes.button}>About</Typography>
-            <Typography color="inherit" className={classes.button}>Learn More</Typography>
-            <Typography color="inherit" className={classes.button}>Privacy Policy</Typography>
-            <Typography color="inherit" className={classes.button}>Login</Typography>
-            <Button variant="contained" color="primary">Sign Up</Button>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/about"}>About</Typography>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/learnmore"}>Learn More</Typography>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/privacypolicy"}>Privacy Policy</Typography>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/login"}>Login</Typography>
+            <Button variant="contained" color="primary" onClick={() => window.location.href = "/signup"}>Sign Up</Button>
           </Toolbar>
         </AppBar>
       </div>

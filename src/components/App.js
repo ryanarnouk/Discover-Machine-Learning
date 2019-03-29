@@ -12,6 +12,8 @@ import Hint from './Hint';
 import BugReport from './BugReport'
 import ForgotPassword from './PasswordChange/ForgotPassword';
 import Menu from './GameConnect/Menu';
+import LearnMore from './Homepage/SubPages/LearnMore';
+import PrivacyPolicy from './Homepage/SubPages/PrivacyPolicy';
 
 import RequireAuth from './ProtectedRoutes/RequireAuth';
 import noRequireAuth from './ProtectedRoutes/noRequireAuth';
@@ -28,6 +30,7 @@ import GameInfo from './GameConnect/GameInfo';
 
 // quiz
 import Quiz from './Quiz/Quiz';
+
 
 const user = localStorage.getItem('user');
 
@@ -68,12 +71,10 @@ class Routes extends Component {
             )} />
             <Route path="/signup" component={noRequireAuth(Signup)} />
             <Route path="/login" component={noRequireAuth(Login)} />
-            <Route path="/learnmore" component={() => {window.location.href="/landing-page/learnmore.html"}} />
             <Route path="/about" component={About} />
             <Route path="/profile" component={RequireAuth(Profile)} />
             <Route path="/challenges" component={() => <Challenges profilenavbar={true}/>} />
-            <Route path="/privacypolicy" component={() => {window.location.href="/landing-page/privacypolicy.html"}} />
-            <Route path="/faq" component={() => {window.location.href="/landing-page/faq.html"}} />
+            <Route path="/privacypolicy" component={PrivacyPolicy} />
             <Route path="/hint/:section/:id" component={Hint} />
             <Route path="/bugreport" component={BugReport} />
             <Route path="/forgotpassword" component={ForgotPassword} />
@@ -84,6 +85,7 @@ class Routes extends Component {
             <Route path="/startnew" component={/*RequireAuth(*/StartNewGame/*)*/} />
             <Route path="/leaderboard" component={/*RequireAuth(*/Leaderboard/*)*/} />
             <Route path="/gameinfo" component={GameInfo} />
+            <Route path="/learnmore" component={LearnMore} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
