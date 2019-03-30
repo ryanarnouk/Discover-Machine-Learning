@@ -37,6 +37,8 @@ function Navbar (props) {
             <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/about"}>About</Typography>
             <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/learnmore"}>Learn More</Typography>
             <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/privacypolicy"}>Privacy Policy</Typography>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/startnew"}>Start New Game</Typography>
+            <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/connect"}>Connect to Game</Typography>
             <Typography color="inherit" className={classes.button} onClick={() => window.location.href = "/login"}>Login</Typography>
             <Button variant="contained" color="primary" onClick={() => window.location.href = "/signup"}>Sign Up</Button>
           </Toolbar>
