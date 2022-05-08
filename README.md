@@ -11,7 +11,7 @@ To get set up follow these steps:
 2. Install NPM modules
 `npm install`
 If NPM install fails, try running `sudo npm install -g node-gyp`. 
-3. Set up environment variables 
+3. Set up environment variables
 Sign up for a Firebase account and set up a project, with the project setup firebase would provide you with credentials. 
 ```
 var config = {
