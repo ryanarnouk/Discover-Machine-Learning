@@ -1,6 +1,8 @@
 # Discover Machine Learning
 **An interactive beginner friendly introduction to the world of machine learning with a easy to use, visual code block editor.** 
 
+*Please note that the interactive building block features of Discover Machine Learning may be functioning incorrectly after the project has begun redevelopment. Old commits of the project will have a working code-block functionality and the problem in more current commits will be resolved soon.*
+
 ## Contributing
 ### Getting Started
 To get set up follow these steps: 
