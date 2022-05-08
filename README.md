@@ -4,7 +4,7 @@
 *Please note that the interactive building block features of Discover Machine Learning may be functioning incorrectly after the project has begun redevelopment. Old commits of the project will have a working code-block functionality and the problem in more current commits will be resolved soon.*
 
 ## Contributing
-### Getting Started
+### Getting Started 
 To get set up follow these steps: 
 1. Clone the repository 
 `git clone https://github.com/Azbo400/Discover-Machine-Learning.git`
